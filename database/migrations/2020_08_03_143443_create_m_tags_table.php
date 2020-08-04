@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRoleUserTable extends Migration
+class CreateMTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateRoleUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
-            $table->unsignedInteger('id')->autoIncrement();
-            $table->integer('user_id');
-            $table->integer('role_id');
-            $table->timestamps();
+        Schema::create('m_tags', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->bigInteger('post_id');
+            $table->bigInteger('tag_id');
+            $table->timestamps(0);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateRoleUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_user');
+        Schema::dropIfExists('m_tags');
     }
 }

@@ -18,10 +18,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+include('dashboard.php');
+
 Route::get('/', 'Home\HomeController@index')->name('home');
 Route::get('/home', 'Home\HomeController@index')->name('home');
 Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -19,7 +19,7 @@ class CreateRolesTable extends Migration
             $table->string('description',191);
             $table->boolean('is_default')->default(0);
             $table->boolean('is_admin')->default(0);
-            $table->timestamps();
+            $table->timestamps(0);
         });
     }
 
@@ -30,6 +30,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('roles');
+        Schema::dropIfExists('roles');
     }
 }

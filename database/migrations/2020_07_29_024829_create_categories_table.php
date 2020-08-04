@@ -13,21 +13,21 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('m_categories', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
             $table->tinyInteger('type');
             $table->integer('parent');
-            $table->string('name', 191);
-            $table->string('alias', 191);
+            $table->string('name');
+            $table->string('alias');
             $table->string('description', 500);
-            $table->longText('content', 191);
-            $table->string('image', 191);
-            $table->smallInteger('user_id');
+            $table->longText('content');
+            $table->string('thumbnail');
             $table->smallInteger('sort');
             $table->string('display', 10);
             $table->boolean('blocked')->default(0);
             $table->json('options');
-            $table->timestamps();
+            $table->smallInteger('user_id');
+            $table->timestamps(0);
         });
     }
 
@@ -38,6 +38,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('categories');
+        Schema::dropIfExists('m_categories');
     }
 }
