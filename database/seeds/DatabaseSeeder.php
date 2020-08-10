@@ -41,5 +41,6 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         App\Models\Role_User::insertRoleUser($user->id, true);
+
     }
 }

@@ -11,9 +11,9 @@
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="index.html" class="navbar-brand">
+            <a href="{{ url('dashboard') }}" class="navbar-brand">
                 <small>
-                    <i class="fa fa-leaf"></i>
+                    <i class="fa fa-cubes"></i>
                     {{ config('app.name', 'Laravel') }} 
                 </small>
             </a>
@@ -24,7 +24,7 @@
                 <li class="grey dropdown-modal">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="ace-icon fa fa-tasks"></i>
-                        <span class="badge badge-grey">4</span>
+                        <span class="badge badge-grey">4</span> 
                     </a>
 
                     <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">

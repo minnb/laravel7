@@ -15,8 +15,9 @@ class CreateMTagsTable extends Migration
     {
         Schema::create('m_tags', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->bigInteger('post_id');
-            $table->bigInteger('tag_id');
+            $table->string('name');
+            $table->string('alias')->unique();
+            $table->boolean('blocked')->default(0);
             $table->timestamps(0);
         });
     }

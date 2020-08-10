@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Closure;
 use App\Models\User;
 use App\Models\Roles;
 use Auth;
 
-class RedirectIfAdministrator
+class RedirectIfAdministrator extends Middleware
 {
     /**
      * Handle an incoming request.
@@ -18,12 +18,13 @@ class RedirectIfAdministrator
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()) {
-            if(Roles::isAdmin(Auth::user()->id)){
-                return $next($request);
-            }
+        if (Auth::check() && Roles::isAdmin(Auth::user()->id)) 
+        {
+            return $next($request);
         }
-        return redirect('/');
-        //return $next($request);
+        else
+        {
+            return redirect('/');
+        }
     }
 }

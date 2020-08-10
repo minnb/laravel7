@@ -1,3 +1,28 @@
+<?php
+    function getRootCSS($name)
+    {
+        $route_name = \Str::upper(\Request::route()->getName());
+        if(\Str::contains($route_name, \Str::upper($name))){
+            echo "active open";
+        }
+        else
+        {
+            echo "";
+        }
+    }
+
+    function getActiveCSS($name)
+    {
+        $route_name = \Str::upper(\Request::route()->getName());
+        if(\Str::upper($name) == $route_name){
+            echo "active";
+        }
+        else
+        {
+            echo "";
+        }
+    }
+?>
 <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
     <script type="text/javascript">
         try { ace.settings.loadState('sidebar'); } catch (e) { console.log(e); }
@@ -34,8 +59,8 @@
     </div><!-- /.sidebar-shortcuts -->
 
     <ul class="nav nav-list">
-        <li class="active">
-            <a href="{{ url('/dashboard') }}">
+        <li class="{{ getActiveCSS('dashboard') }}">
+            <a href="{{ url('dashboard') }}">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> Dashboard </span>
             </a>
@@ -43,7 +68,7 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="">
+        <li class="{{ getRootCSS('dashboard.cate') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"> Categories </span>
@@ -54,19 +79,19 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.cate.list') }}">
+                    <a href="{{ route('get.dashboard.cate.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Categories
                     </a>
-
+                    {{ $url ?? '' }}
                     <b class="arrow"></b>
                 </li>
 
             </ul>
         </li>
 
-        <li class="">
+        <li class="{{ getRootCSS('dashboard.post') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-pencil-square-o"></i>
                 <span class="menu-text"> Posts </span>
@@ -77,10 +102,18 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.post.list') }}">
+                    <a href="{{ route('get.dashboard.post.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="{{ getActiveCSS('get.dashboard.post.tag') }}">
+                    <a href="{{ route('get.dashboard.post.tag') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Tags
                     </a>
 
                     <b class="arrow"></b>
@@ -88,7 +121,7 @@
             </ul>
         </li>
 
-        <li class="">
+        <li class="{{ getRootCSS('dashboard.product') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-pencil"></i>
                 <span class="menu-text"> Products </span>
@@ -99,8 +132,8 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.product.list') }}">
+                    <a href="{{ route('get.dashboard.product.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
                     </a>
@@ -108,8 +141,8 @@
                     <b class="arrow"></b>
                 </li>
 
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.product.price.list') }}">
+                    <a href="{{ route('get.dashboard.product.price.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Sales Price
                     </a>
@@ -117,6 +150,14 @@
                     <b class="arrow"></b>
                 </li>
 
+                <li class="{{ getActiveCSS('get.dashboard.product.att.list') }}">
+                    <a href="{{ route('get.dashboard.product.att.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Attributes
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
             </ul>
         </li>
         <li class="">

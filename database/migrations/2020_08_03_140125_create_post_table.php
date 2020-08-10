@@ -13,9 +13,10 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_post', function (Blueprint $table) {
+        Schema::create('m_posts', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('cate_id');
+            $table->smallInteger('type');
+            $table->string('cate_id', 50);
             $table->string('title');
             $table->string('alias');
             $table->string('thumbnail');
@@ -37,6 +38,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_post');
+        Schema::dropIfExists('m_posts');
     }
 }

@@ -14,15 +14,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-    	if(Roles::isAdmin(Auth::User()->id)){
-            return view('dashboard.layouts.index');
-        }else{
-            return redirect('/');
-        }
+    	return view('dashboard.layouts.index');
     }
 
     public function getLogout(){
         Auth::logout();
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     }	
 }
