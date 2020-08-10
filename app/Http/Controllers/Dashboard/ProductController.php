@@ -5,10 +5,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Log; use DB;
 use Auth;use Image;
-use App\Models\Post;
+use App\Models\Product;
 use App\Models\Tag;
 use App\Models\Post_Tag;
 use App\Models\Categories;
+use App\Models\Product_Attributes;
 
 class ProductController extends Controller
 {
@@ -19,31 +20,32 @@ class ProductController extends Controller
 
     public function list()
     {
-        $data = Post::orderBy('id', 'DESC')->get();
+        $data = Product::orderBy('id', 'DESC')->get();
     	return view('dashboard.product.list', compact('data'));
     }
 
     public function create()
     {
-        return view('dashboard.post.create');
+        return view('dashboard.product.create');
     }
 
     public function postCreate(Request $request)
     {
         try{
             DB::beginTransaction();
-                $data = new Post();
-                $data->type = 0;
-                $data->cate_id = implode("|",$request->category);
-                $data->title = trim($request->title);
-                $data->alias = Str::slug($request->title);
+                $data = new Product();
+                $data->sku = '';
+                $data->categories = implode("|",$request->category);
+                $data->name = trim($request->name);
+                $data->alias = Str::slug($request->name);
                 $data->description = empty($request->description)?"":$request->description;
                 $data->content = empty($request->content)?"":$request->content;;
                 $data->blocked = $request->status == 'on' ? 0 : 1;
                 $data->user_id = Auth::user()->id;
-                $data->viewed = 0;
-                $data->votes = 0;
+                $data->tax = '';
+                $data->base_unit = '';
                 $data->options = '{}';
+                
                 if($request->file('fileImage')){
                     foreach($request->file('fileImage') as $file ){
                         $destinationPath = path_storage('images');
@@ -53,22 +55,24 @@ class ProductController extends Controller
                             $data->thumbnail = $destinationPath.'/'.$file_name;
                         }
                     }
-                }else
+                }
+                else
                 {
                     $data->thumbnail = "";
                 }
 
                 $data->save();
+                DB::table("m_products")->where('id', $data->id)->update(['sku'=>str_pad(strval($data->id),8,"0",STR_PAD_LEFT)]);
 
-                if(count($request->tags) > 0)
-                {
-                    for ($i = 0; $i < count($request->tags); $i++) {
-                        DB::table('m_post_tag')->insert([
-                            'post_id' => $data->id,
-                            'tag_id' => $request->tags[$i]
-                        ]);
-                    }
-                }
+                // if(count($request->tags) > 0)
+                // {
+                //     for ($i = 0; $i < count($request->tags); $i++) {
+                //         DB::table('m_post_tag')->insert([
+                //             'post_id' => $data->id,
+                //             'tag_id' => $request->tags[$i]
+                //         ]);
+                //     }
+                // }
                 
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Tạo mới thành công']);
@@ -84,7 +88,7 @@ class ProductController extends Controller
     {
         try
         {
-            $data = Post::find($id);
+            $data = Product::find($id);
             return view('dashboard.product.edit', compact('data', 'id'));
         }
         catch (\Exception $e) 
@@ -97,40 +101,27 @@ class ProductController extends Controller
     {
         try{
             DB::beginTransaction();
-                $data = Post::find($id);
-                $old_img = $data->thumbnail;
-                $data->cate_id = implode("|", $request->category);
-                $data->title = trim($request->title);
-                $data->alias = Str::slug($request->title);
-                $data->description = empty($request->description)?"":$request->description;
-                $data->content = empty($request->content)?"":$request->content;;
-                $data->blocked = $request->status == 'on' ? 0 : 1;
-                $data->user_id = Auth::user()->id;
-
-                if($request->file('fileImage')){
-                    foreach($request->file('fileImage') as $file ){
-                        $destinationPath = path_storage('images');
-                        if(isset($file)){
-                            $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
-                            $file->move($destinationPath, $file_name);
-                            $data->thumbnail = $destinationPath.'/'.$file_name;
-                            delete_image_no_path($old_img);
-                        }
+            $data = Product::find($id);
+            $data->categories = implode("|",$request->category);
+            $data->name = trim($request->name);
+            $data->alias = Str::slug($request->name);
+            $data->description = empty($request->description)?"":$request->description;
+            $data->content = empty($request->content)?"":$request->content;;
+            $data->blocked = $request->status == 'on' ? 0 : 1;
+            $data->user_id = Auth::user()->id;
+            
+            if($request->file('fileImage')){
+                foreach($request->file('fileImage') as $file ){
+                    $destinationPath = path_storage('images');
+                    if(isset($file)){
+                        $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
+                        $file->move($destinationPath, $file_name);
+                        $data->thumbnail = $destinationPath.'/'.$file_name;
                     }
                 }
+            }
 
-                if(count($request->tags) > 0)
-                {
-                    DB::table('m_post_tag')->where('post_id', $id)->delete();
-                    for ($i = 0; $i < count($request->tags); $i++) {
-                        DB::table('m_post_tag')->insert([
-                            'post_id' => $id,
-                            'tag_id' => $request->tags[$i]
-                        ]);
-                    }
-                }
-
-                $data->save();               
+            $data->save();
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Chỉnh sửa dữ liệu thành công']);
         }
@@ -146,7 +137,7 @@ class ProductController extends Controller
         try
         {
             DB::beginTransaction();
-                DB::table('m_posts')->where('id', $id)->update(['blocked'=>1]);
+                DB::table('m_products')->where('id', $id)->update(['blocked'=> 1]);
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Xóa thành công']);
         }

@@ -16,8 +16,8 @@
         </li>
         <li>
             <a href="{{ route('get.dashboard.cate.create') }}">
-                <i class="green ace-icon fa fa-pencil  bigger-120"></i>
-                Add 
+                <i class="red ace-icon fa fa-pencil  bigger-120"></i>
+                Create 
             </a>
         </li>
     </ul>

@@ -41,9 +41,9 @@
             </a>
         </li>
         <li class="">
-            <a data-toggle="tab" href="{{ route('get.dashboard.post.create') }}">
-                <i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>
-                Add post
+            <a href="{{ route('get.dashboard.post.create') }}">
+                <i class="red ace-icon fa fa-pencil-square-o bigger-120"></i>
+                Create Post
             </a>
         </li>
     </ul>

@@ -123,7 +123,7 @@ function path_storage($name)
 }
 
 function getImage($link){
-  $path = '/storage/images/no_image.jpg';
+  $path = '/admin/images/no_image.png';
   return File::exists($link) ? $link : $path;
 }
 
