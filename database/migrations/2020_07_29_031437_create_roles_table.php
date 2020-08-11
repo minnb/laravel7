@@ -15,7 +15,7 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
-            $table->string('name',50);
+            $table->string('name',50)->unique();
             $table->string('description',191);
             $table->boolean('is_default')->default(0);
             $table->boolean('is_admin')->default(0);

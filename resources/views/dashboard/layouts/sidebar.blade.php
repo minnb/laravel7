@@ -160,7 +160,7 @@
                 </li>
             </ul>
         </li>
-        <li class="">
+        <li class="{{ getRootCSS('dashboard.user') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-user"></i>
                 <span class="menu-text"> Users </span>
@@ -171,8 +171,8 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.user.list') }}">
+                    <a href="{{ route('get.dashboard.user.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
                     </a>
@@ -180,8 +180,8 @@
                     <b class="arrow"></b>
                 </li>
 
-                <li class="">
-                    <a href="#">
+                <li class="{{ getActiveCSS('get.dashboard.user.roles') }}">
+                    <a href="{{ route('get.dashboard.user.roles') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Roles
                     </a>

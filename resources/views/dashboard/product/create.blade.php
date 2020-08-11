@@ -1,6 +1,6 @@
 @extends('dashboard.app')
 @section('title', 'Product')
-@section('page-header', 'Add')
+@section('page-header', 'Create')
 @section('stylesheet')  
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugin/jquery.filer/css/jquery.filer.css') }}"/>

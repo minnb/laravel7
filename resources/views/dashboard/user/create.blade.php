@@ -1,26 +1,40 @@
 @extends('dashboard.app')
-@section('title', 'Sales Price')
+@section('title', 'User')
 @section('page-header', 'Create')
 @section('content')
 @include('dashboard.layouts.alert')
-<form class="form-horizontal" role="form" action="{{ route('post.dashboard.product.att.create')}}" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" role="form" action="{{ route('post.dashboard.user.create')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
-        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Sku </label>
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1">UserName </label>
         <div class="col-sm-9">
-            <input type="text" id="form-field-1" placeholder="Unit Of Measure" name="attribute" class="col-xs-10 col-sm-5" required="" value="Unit Of Measure" disabled="" />
+            <input type="text" id="form-field-1" placeholder="user name" name="name" class="col-xs-10 col-sm-5" required value="{{ old('name')}}" />
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Code </label>
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Password </label>
         <div class="col-sm-9">
-            <input type="text" id="form-field-1" placeholder="#example: KG" name="code" class="col-xs-10 col-sm-5" required="" value="{{ old('code')}}" />
+            <input type="password" id="form-field-1" name="password" class="col-xs-10 col-sm-5" required value="" />
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Description </label>
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Re-Password </label>
         <div class="col-sm-9">
-            <input type="text" id="form-field-1" name="description" class="col-xs-10 col-sm-5" value="{{ old('description')}}" />
+            <input type="password" id="form-field-1" name="password_confirmation" class="col-xs-10 col-sm-5" required value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Email </label>
+        <div class="col-sm-9">
+            <input type="email" id="form-field-1" placeholder="email address" name="email" class="col-xs-10 col-sm-5" required value="{{ old('email')}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Role </label>
+        <div class="col-xs-4">
+            <select class="form-control" id="form-field-select-1" name="role" required>
+                <?php getSelectForm(App\Models\Roles::getRoleSelect(), old('role', 3)) ?>
+            </select>
         </div>
     </div>
     <div class="form-group">
@@ -43,9 +57,9 @@
                 Reset
             </a>
             &nbsp; &nbsp; &nbsp;
-            <a class="btn btn-success" href="{{ route('get.dashboard.product.att.list') }}">
+            <a class="btn btn-success" href="{{ route('get.dashboard.user.list') }}">
                 <i class="ace-icon fa fa-list bigger-110"></i>
-                Attributes
+                List
             </a>
         </div>
     </div>
@@ -68,6 +82,5 @@
             //
         });
     });
-
 </script>
 @endsection

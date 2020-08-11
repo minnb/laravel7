@@ -28,4 +28,12 @@ class Role_User extends Model
 		}
 	}
 
+	public static function getRoleByUser($user_id)
+	{
+		return DB::table('roles')
+	            ->join('role_user', 'roles.id', '=', 'role_user.role_id')
+	            ->where('role_user.user_id','=', $user_id)
+	            ->select('roles.*')
+	            ->get()->toArray();
+	}
 }

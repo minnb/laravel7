@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('roles')->delete();
         DB::table('roles')->insert([
             'name' => 'administrator',
             'description' => 'Administrator account',

@@ -1,6 +1,6 @@
 @extends('dashboard.app')
 @section('title', 'Categories')
-@section('page-header', 'Add')
+@section('page-header', 'Create')
 @section('content')
 @include('dashboard.layouts.alert')
 <form class="form-horizontal" role="form" action="{{ route('post.dashboard.cate.create')}}" method="post" enctype="multipart/form-data">

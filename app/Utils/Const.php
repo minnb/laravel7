@@ -8,6 +8,18 @@ function getArrDisplay(){
     return $arr;
 }
 
+function getStatus($status)
+{
+	switch ($status) 
+	{
+	  case 1:
+	    return "<span style='color:red'>Blocked</span>";
+	    break;
+	  case 0:
+	    return "Active";
+	}
+}
+
 function randomColor($id)
 {
 	$color = "Green";
