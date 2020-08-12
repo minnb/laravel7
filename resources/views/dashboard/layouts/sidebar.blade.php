@@ -149,7 +149,14 @@
 
                     <b class="arrow"></b>
                 </li>
+                <li class="{{ getActiveCSS('get.dashboard.product.prdatt.list') }}">
+                    <a href="{{ route('get.dashboard.product.prdatt.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Product Attributes
+                    </a>
 
+                    <b class="arrow"></b>
+                </li>
                 <li class="{{ getActiveCSS('get.dashboard.product.att.list') }}">
                     <a href="{{ route('get.dashboard.product.att.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>

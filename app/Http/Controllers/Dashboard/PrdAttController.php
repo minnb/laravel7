@@ -8,7 +8,7 @@ use App\Models\Product_Attributes;
 use Log; use DB;
 use Auth;
 
-class AttributesController extends Controller
+class PrdAttController extends Controller
 {
 	public function __construct()
     {
@@ -18,29 +18,21 @@ class AttributesController extends Controller
     public function list()
     {
         $data = Attributes::where('parent','>',0)->get();
-    	return view('dashboard.attributes.list', compact('data'));
+    	return view('dashboard.prd-att.list', compact('data'));
     }
 
     public function create($code)
     {
-        return view('dashboard.attributes.create', compact('code'));
+        return view('dashboard.prd-att.create', compact('code'));
     }
 
     public function postCreate(Request $request, $code)
     {
         try{
             DB::beginTransaction();
-                $data = new Attributes();
-                $att = Attributes::where('code', $code)->first();
-                $data->parent = $att->id;
-                $data->code = $code;
-                $data->values = trim($request->code);
-                $data->description = empty($request->description)?"":$request->description;
-                $data->blocked = $request->status == 'on' ? 0 : 1;
-                $data->user_id = Auth::user()->id;
-                $data->save();               
+            
             DB::commit();
-            return redirect()->route('get.dashboard.product.att.list')->with(['flash_message'=>'Tạo mới thành công']);
+            return redirect()->route('get.dashboard.product.prdatt.list')->with(['flash_message'=>'Tạo mới thành công']);
         }
         catch (\Exception $e) 
         {
@@ -54,7 +46,7 @@ class AttributesController extends Controller
         try
         {
             $data = Attributes::find($id);
-            return view('dashboard.attributes.edit', compact('data'));
+            return view('dashboard.prd-att.edit', compact('data'));
         }
         catch (\Exception $e) 
         {
@@ -66,13 +58,9 @@ class AttributesController extends Controller
     {
         try{
             DB::beginTransaction();
-                $data = Attributes::find($id);
-                $data->description = empty($request->description)?"":$request->description;
-                $data->blocked = $request->status == 'on' ? 0 : 1;
-                $data->user_id = Auth::user()->id;
-                $data->save();               
+              
             DB::commit();
-            return redirect()->route('get.dashboard.product.att.list')->with(['flash_message'=>'Tạo mới thành công']);
+            return redirect()->route('get.dashboard.product.prdatt.list')->with(['flash_message'=>'Tạo mới thành công']);
         }
         catch (\Exception $e) 
         {
@@ -94,7 +82,7 @@ class AttributesController extends Controller
                     DB::table('m_attributes')->where('id', $id)->delete();
                 }
             DB::commit();
-            return redirect()->route('get.dashboard.product.att.list')->with(['flash_message'=>'Xóa thành công']);
+            return redirect()->route('get.dashboard.product.prdatt.list')->with(['flash_message'=>'Xóa thành công']);
         }
         catch (\Exception $e) 
         {

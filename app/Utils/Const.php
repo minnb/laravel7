@@ -20,6 +20,21 @@ function getStatus($status)
 	}
 }
 
+function getCodeAttribute($code)
+{
+	switch ($code) 
+	{
+	  case 'UOM':
+	    return "Unit Of Measure";
+	    break;
+	  case 'COLOR':
+	    return "Color";
+	    break;
+	  case 'SIZE':
+	    return "Size";
+	}
+}
+
 function randomColor($id)
 {
 	$color = "Green";

@@ -17,7 +17,12 @@ class CreateProductsAttributesValuesTable extends Migration
             $table->id()->autoIncrement();;
             $table->bigInteger('product_id');
             $table->string('code',20);
-            $table->json('values');         
+            $table->string('lable', 20);
+            $table->decimal('width', 8, 2);         
+            $table->decimal('length', 8, 2);
+            $table->decimal('height', 8, 2);
+            $table->decimal('weight', 8, 2);
+            $table->decimal('cubage', 8, 2);
             $table->boolean('blocked')->default(0);
             $table->integer('user_id');
             $table->timestamps();

@@ -36,13 +36,22 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		Route::post('edit/{id}', ['as'=>'post.dashboard.product.edit','uses'=>'Dashboard\ProductController@postEdit'])->where('id', '[0-9]+');
 
 
+		Route::group(['prefix'=> 'prd-att'], function(){
+			Route::get('list', ['as'=>'get.dashboard.product.prdatt.list','uses'=>'Dashboard\PrdAttController@list']);
+			Route::get('create/{code}', ['as'=>'get.dashboard.product.prdatt.create','uses'=>'Dashboard\PrdAttController@create']);
+			Route::get('edit/{code}/{id}', ['as'=>'get.dashboard.product.prdatt.edit','uses'=>'Dashboard\PrdAttController@edit'])->where('id', '[0-9]+');;
+			Route::get('delete/{id}', ['as'=>'get.dashboard.product.prdatt.delete','uses'=>'Dashboard\PrdAttController@delete'])->where('id', '[0-9]+');
+			Route::post('create/{code}', ['as'=>'post.dashboard.product.prdatt.create','uses'=>'Dashboard\PrdAttController@postCreate']);
+			Route::post('edit/{code}/{id}', ['as'=>'post.dashboard.product.prdatt.edit','uses'=>'Dashboard\PrdAttController@postEdit'])->where('id', '[0-9]+');
+		});
+
 		Route::group(['prefix'=> 'att'], function(){
 			Route::get('list', ['as'=>'get.dashboard.product.att.list','uses'=>'Dashboard\AttributesController@list']);
-			Route::get('create', ['as'=>'get.dashboard.product.att.create','uses'=>'Dashboard\AttributesController@create']);
-			Route::get('edit/{id}', ['as'=>'get.dashboard.product.att.edit','uses'=>'Dashboard\AttributesController@edit'])->where('id', '[0-9]+');;
+			Route::get('create/{code}', ['as'=>'get.dashboard.product.att.create','uses'=>'Dashboard\AttributesController@create']);
+			Route::get('edit/{code}/{id}', ['as'=>'get.dashboard.product.att.edit','uses'=>'Dashboard\AttributesController@edit'])->where('id', '[0-9]+');;
 			Route::get('delete/{id}', ['as'=>'get.dashboard.product.att.delete','uses'=>'Dashboard\AttributesController@delete'])->where('id', '[0-9]+');
-			Route::post('create', ['as'=>'post.dashboard.product.att.create','uses'=>'Dashboard\AttributesController@postCreate']);
-			Route::post('edit/{id}', ['as'=>'post.dashboard.product.att.edit','uses'=>'Dashboard\AttributesController@postEdit'])->where('id', '[0-9]+');
+			Route::post('create/{code}', ['as'=>'post.dashboard.product.att.create','uses'=>'Dashboard\AttributesController@postCreate']);
+			Route::post('edit/{code}/{id}', ['as'=>'post.dashboard.product.att.edit','uses'=>'Dashboard\AttributesController@postEdit'])->where('id', '[0-9]+');
 		});
 
 		Route::group(['prefix'=> 'price'], function(){
