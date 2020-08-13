@@ -18,7 +18,7 @@
     <div class="form-group">
         <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Category </label>
         <div class="col-xs-10">
-            <select multiple="" id="category" name="category[]" class="select2">
+            <select multiple="" id="category" name="category[]" class="select2" data-placeholder="Click to Choose...">
                 {!! getSelectArrayForm(App\Models\Categories::getSelect2Category(0), old('category', isset($data) ? convertStrToArr("|", $data['cate_id']): [0]) ) !!}
             </select>
         </div>

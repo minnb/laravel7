@@ -16,6 +16,7 @@ class CreateProductsAttributesValuesTable extends Migration
         Schema::create('m_product_attributes', function (Blueprint $table) {
             $table->id()->autoIncrement();;
             $table->bigInteger('product_id');
+            $table->integer('attribute_id');
             $table->string('code',20);
             $table->string('lable', 20);
             $table->decimal('width', 8, 2);         
@@ -26,6 +27,7 @@ class CreateProductsAttributesValuesTable extends Migration
             $table->boolean('blocked')->default(0);
             $table->integer('user_id');
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('m_products');
         });
     }
 

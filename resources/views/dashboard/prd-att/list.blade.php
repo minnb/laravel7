@@ -15,21 +15,21 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('get.dashboard.product.att.create', ['code'=>'UOM']) }}">
+            <a href="{{ route('get.dashboard.product.prdatt.create', ['code'=>'UOM']) }}">
                 <i class="red ace-icon fa fa-leaf  bigger-120"></i>
-                Unit Of Measure 
+                Create UOM 
             </a>
         </li>
         <li>
-            <a href="{{ route('get.dashboard.product.att.create', ['code'=>'COLOR']) }}">
+            <a href="{{ route('get.dashboard.product.prdatt.create', ['code'=>'COLOR']) }}">
                 <i class="blue ace-icon fa fa-adjust bigger-120"></i>
-                Color
+                Create Color
             </a>
         </li>
         <li>
-            <a href="{{ route('get.dashboard.product.att.create', ['code'=>'SIZE']) }}">
+            <a href="{{ route('get.dashboard.product.prdatt.create', ['code'=>'SIZE']) }}">
                 <i class="yellow ace-icon fa fa-exchange bigger-120"></i>
-                Size
+                Create Size
             </a>
         </li>
     </ul>
@@ -37,10 +37,15 @@
         <table id="dynamic-table" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Id</th>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
                     <th>Code</th>
-                    <th>Parent</th>
-                    <th>Description</th>
+                    <th>width</th>
+                    <th>length</th>
+                    <th>height</th>
+                    <th>weight</th>
+                    <th>cubage</th>
                     <th>Updated</th>
                     <th>Status</th>
                     <th></th>
@@ -48,22 +53,24 @@
                 <tbody>
                     @foreach($data as $key=>$item)
                     <tr>
-                        <td>
-                            <a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->id }}</a>
-                        </td>
-                        <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->code }}</a></td>
-                        <td>#{{ App\Models\Attributes::find($item->parent)->description }}</td>
-                        <td>{{ $item->description }}</td>
+                        <td><a href="{{ route('get.dashboard.product.prdatt.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->id }}</a></td>
+                        <td>{{ $item->product_id }}</a></td>
+                        <td>{{ App\Models\Product::find($item->product_id)->name }}</td>
+                        <td>{{ $item->code }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->blocked }}</td>
-
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons">
-                                <a class="green" href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">
+                                <a class="green" href="{{ route('get.dashboard.product.prdatt.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">
                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                 </a>
 
-                                <a class="red" href="{{ route('get.dashboard.product.att.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
+                                <a class="red" href="{{ route('get.dashboard.product.prdatt.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                 </a>
                             </div>
@@ -72,14 +79,14 @@
                                 <div class="inline pos-rel">
                                     <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
                                         <li>
-                                            <a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code,'id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                            <a href="{{ route('get.dashboard.product.prdatt.edit', ['code'=>$item->code,'id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
                                                 <span class="green">
                                                     <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('get.dashboard.product.att.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
+                                            <a href="{{ route('get.dashboard.product.prdatt.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
                                                 <span class="red">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 </span>
@@ -115,8 +122,7 @@
             .DataTable( {
                 bAutoWidth: false,
                 "aoColumns": [
-                  { "bSortable": false },
-                  null, null,null, null, null,
+                  null, null,null, null, null,null,null,null,null,null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

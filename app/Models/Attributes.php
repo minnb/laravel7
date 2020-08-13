@@ -11,6 +11,13 @@ class Attributes extends Model
         return DB::select('select id, code as name from m_attributes where parent = '.$parent.' order by code');
     }
 
+    public static function getValuesAttributes($code){
+        return DB::table('m_attributes')->where([
+            ['parent', '>', 0],
+            ['code', $code]
+            ])->orderBy('values')->get();
+    }
+
     public static function getSelect2Category($type =''){
         $data = DB::table('m_categories')->where([
             ['blocked', 0], 

@@ -38,8 +38,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Code</th>
                     <th>Parent</th>
+                    <th>Attribute Name</th>
                     <th>Description</th>
                     <th>Updated</th>
                     <th>Status</th>
@@ -48,11 +48,9 @@
                 <tbody>
                     @foreach($data as $key=>$item)
                     <tr>
-                        <td>
-                            <a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->id }}</a>
-                        </td>
-                        <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->code }}</a></td>
+                        <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->id }}</a></td>
                         <td>#{{ App\Models\Attributes::find($item->parent)->description }}</td>
+                        <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->values }}</a></td>
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->blocked }}</td>
@@ -115,7 +113,7 @@
             .DataTable( {
                 bAutoWidth: false,
                 "aoColumns": [
-                  { "bSortable": false },
+                  { "bSortable": true },
                   null, null,null, null, null,
                   { "bSortable": false }
                 ],
