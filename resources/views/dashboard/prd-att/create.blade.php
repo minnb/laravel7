@@ -26,7 +26,7 @@
     <div class="form-group">
         <label class="col-xs-2 control-label no-padding-right">{{$code}}</label>
         <div class="col-xs-9">
-            @if($code =="UOM")
+            @if($code =="UOM" || $code =="COLOR")
                 @foreach($lstAtt as $check)
                 <div class="control-group ">
                     <div class="checkbox">
@@ -37,8 +37,8 @@
                     </div>
                 </div>
                 @endforeach
-            @elseif($code =="COLOR")
             @elseif($code =="SIZE")
+            
             @endif
         </div>
     </div>

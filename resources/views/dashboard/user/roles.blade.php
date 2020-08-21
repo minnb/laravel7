@@ -67,8 +67,7 @@
             .DataTable( {
                 bAutoWidth: false,
                 "aoColumns": [
-                  { "bSortable": false },
-                  null, null,null, null, null,null,
+                  null, null,null, null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

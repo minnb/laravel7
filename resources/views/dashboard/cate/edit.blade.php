@@ -95,9 +95,9 @@
 </form>
 @endsection
 @section("javascript")  
-<script src="<?php echo asset('admin/plugins/func_ckfinder.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugins/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugin/func_ckfinder.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugin/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         $('#id-input-file-1 , #id-input-file-2').ace_file_input({
