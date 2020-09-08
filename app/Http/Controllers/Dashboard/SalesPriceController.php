@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Http\Requests\SalesPriceRequest;
 use Log; use DB;
 use Auth;use Image;
 use App\Models\Product;
@@ -28,13 +29,19 @@ class SalesPriceController extends Controller
         return view('dashboard.sales_price.create');
     }
 
-    public function postCreate(Request $request)
+    public function postCreate(SalesPriceRequest $request)
     {
         try{
-            DB::beginTransaction();
-                
-            DB::commit();
-            return redirect()->route('get.dashboard.product.price.list')->with(['flash_message'=>'Tạo mới thành công']);
+            if($request->validated()){
+                DB::beginTransaction();
+                    
+                DB::commit();
+
+                return $request->all();
+                //return redirect()->route('get.dashboard.product.price.list')->with(['flash_message'=>'Tạo mới thành công']);
+            }else{
+                return back()->withErrors($e->getMessage())->withInput($request->input());
+            }
         }
         catch (\Exception $e) 
         {

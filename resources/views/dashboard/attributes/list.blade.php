@@ -49,7 +49,7 @@
                     @foreach($data as $key=>$item)
                     <tr>
                         <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->id }}</a></td>
-                        <td>#{{ App\Models\Attributes::find($item->parent)->description }}</td>
+                        <td>#{{ App\Models\Attributes::getDescription($item->parent) }}</td>
                         <td><a href="{{ route('get.dashboard.product.att.edit', ['code'=>$item->code, 'id'=>$item->id]) }}">{{ $item->values }}</a></td>
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->updated_at }}</td>

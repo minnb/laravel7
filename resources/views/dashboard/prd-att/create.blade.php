@@ -93,5 +93,6 @@
         $('.rating').raty('destroy');
         $('.multiselect').multiselect('destroy');
     });
+
 </script>
 @endsection

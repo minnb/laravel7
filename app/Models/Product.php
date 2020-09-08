@@ -10,7 +10,7 @@ class Product extends Model
     {
     	$data = DB::table('m_products')->where([
             ['blocked', 0]
-        ])->select('id','name')->orderBy('id')->get()->toArray();
+        ])->select('id', 'name')->orderBy('id')->get()->toArray();
 
         return $data;
     }

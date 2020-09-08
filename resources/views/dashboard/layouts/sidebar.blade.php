@@ -14,6 +14,18 @@
     function getActiveCSS($name)
     {
         $route_name = \Str::upper(\Request::route()->getName());
+        if(\Str::upper($name) == $route_name || \Str::contains($route_name, \Str::upper($name))){
+            echo "active";
+        }
+        else
+        {
+            echo "";
+        }
+    }
+
+    function getActiveRoot($name)
+    {
+        $route_name = \Str::upper(\Request::route()->getName());
         if(\Str::upper($name) == $route_name){
             echo "active";
         }
@@ -59,7 +71,7 @@
     </div><!-- /.sidebar-shortcuts -->
 
     <ul class="nav nav-list">
-        <li class="{{ getActiveCSS('dashboard') }}">
+        <li class="{{ getActiveRoot('dashboard') }}">
             <a href="{{ url('dashboard') }}">
                 <i class="menu-icon fa fa-tachometer"></i>
                 <span class="menu-text"> Dashboard </span>
@@ -102,7 +114,7 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="{{ getActiveCSS('get.dashboard.post.list') }}">
+                <li class="{{ getActiveCSS('get.dashboard.post') }}">
                     <a href="{{ route('get.dashboard.post.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
@@ -132,7 +144,7 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="{{ getActiveCSS('get.dashboard.product.list') }}">
+                <li class="{{ getActiveCSS('get.dashboard.product.list') }}{{ getActiveCSS('get.dashboard.product.create') }}{{ getActiveCSS('get.dashboard.product.edit') }}">
                     <a href="{{ route('get.dashboard.product.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
@@ -141,7 +153,7 @@
                     <b class="arrow"></b>
                 </li>
 
-                <li class="{{ getActiveCSS('get.dashboard.product.price.list') }}">
+                <li class="{{ getActiveCSS('dashboard.product.price') }}">
                     <a href="{{ route('get.dashboard.product.price.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Sales Price
@@ -149,7 +161,7 @@
 
                     <b class="arrow"></b>
                 </li>
-                <li class="{{ getActiveCSS('get.dashboard.product.prdatt.list') }}">
+                <li class="{{ getActiveCSS('get.dashboard.product.prdatt') }}">
                     <a href="{{ route('get.dashboard.product.prdatt.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Product Attributes
@@ -157,7 +169,7 @@
 
                     <b class="arrow"></b>
                 </li>
-                <li class="{{ getActiveCSS('get.dashboard.product.att.list') }}">
+                <li class="{{ getActiveCSS('get.dashboard.product.att') }}">
                     <a href="{{ route('get.dashboard.product.att.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Attributes
@@ -178,7 +190,7 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
-                <li class="{{ getActiveCSS('get.dashboard.user.list') }}">
+                <li class="{{ getActiveCSS('get.dashboard.user') }}">
                     <a href="{{ route('get.dashboard.user.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
@@ -187,7 +199,7 @@
                     <b class="arrow"></b>
                 </li>
 
-                <li class="{{ getActiveCSS('get.dashboard.user.roles') }}">
+                <li class="{{ getActiveCSS('get.dashboard.user') }}">
                     <a href="{{ route('get.dashboard.user.roles') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Roles

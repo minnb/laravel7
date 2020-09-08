@@ -10,7 +10,11 @@ class Attributes extends Model
     public static function getOptionAttributes($parent){
         return DB::select('select id, code as name from m_attributes where parent = '.$parent.' order by code');
     }
-
+    public static function getDescription($parent)
+    {
+        $data = Attributes::where('parent', $parent)->first();
+        return isset($data) ? $data->description : "";
+    }
     public static function getValuesAttributes($code){
         return DB::table('m_attributes')->where([
             ['parent', '>', 0],
