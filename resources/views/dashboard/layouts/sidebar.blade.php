@@ -96,7 +96,6 @@
                         <i class="menu-icon fa fa-caret-right"></i>
                         Categories
                     </a>
-                    {{ $url ?? '' }}
                     <b class="arrow"></b>
                 </li>
 
