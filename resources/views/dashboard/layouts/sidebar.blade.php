@@ -135,7 +135,7 @@
         <li class="{{ getRootCSS('dashboard.product') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-pencil"></i>
-                <span class="menu-text"> Products </span>
+                <span class="menu-text"> Tours </span>
 
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -178,6 +178,29 @@
                 </li>
             </ul>
         </li>
+
+        <li class="{{ getRootCSS('dashboard.page') }}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text"> Pages </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="{{ getActiveCSS('get.dashboard.page') }}">
+                    <a href="{{ route('get.dashboard.page.home') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Home Page
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+
         <li class="{{ getRootCSS('dashboard.user') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-user"></i>

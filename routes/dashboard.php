@@ -27,6 +27,12 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		Route::get('tags/delete/{id}', ['as'=>'get.dashboard.post.tag.delete','uses'=>'Dashboard\PostController@deleteTag'])->where('id', '[0-9]+');
 	});
 
+	Route::group(['prefix'=> 'page'], function(){
+		Route::get('home-page', ['as'=>'get.dashboard.page.home','uses'=>'Dashboard\PageController@home']);
+
+	});
+
+
 	Route::group(['prefix'=> 'product'], function(){
 		Route::get('list', ['as'=>'get.dashboard.product.list','uses'=>'Dashboard\ProductController@list']);
 		Route::get('create', ['as'=>'get.dashboard.product.create','uses'=>'Dashboard\ProductController@create']);

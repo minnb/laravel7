@@ -13,15 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 include('dashboard.php');
 
 Route::get('/', 'Home\HomeController@index')->name('home');
 Route::get('/home', 'Home\HomeController@index')->name('home');
-Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
-
+Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
