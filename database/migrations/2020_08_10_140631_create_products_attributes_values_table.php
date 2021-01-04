@@ -27,7 +27,7 @@ class CreateProductsAttributesValuesTable extends Migration
             $table->boolean('blocked')->default(0);
             $table->integer('user_id');
             $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('m_products');
+            //$table->foreign('product_id')->references('id')->on('m_products');
         });
     }
 
