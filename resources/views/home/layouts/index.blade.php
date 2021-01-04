@@ -1,6 +1,7 @@
 @extends('home.app')
 @section('content')
   @include('home.layouts.banner')
+
   <section class="whiteSection full-width clearfix aboutSchool">
       <div class="container">
         <div class="row">
@@ -11,16 +12,12 @@
             <div class="schoolInfo wow fadeInUp">
               <p>Chào mừng đến với</p>
               <h2><span>Dã ngoại cuối tuần</span></h2>
-              <p>Dấu chân tự nhiên là dự án giáo dục thiên nhiên cho trẻ em được tài trợ bởi APFNET- tổ chức Châu Á Thái Bình Dương về quản lí và bảo tồn rừng. </p>
-              <p class="aboutP2">Nếu bạn không có thời gian đi xa, tại sao ta lại không đi gần. Thế giới ngay cạnh ta cũng có nhiều cái thú vị</p>
+              <p>{!! $homePage->description !!}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--====================================
-    ——— FEATURE SECTION
-    ===================================== -->
   <section class="colorSection full-width clearfix bg-color-4 servicesSection">
       <div class="container">
         <div class="sectionTitle text-center alt wow fadeInUp">
@@ -39,7 +36,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Ẩm thực</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name1 !!}</p>
               </div>
             </div>
             <div class="media servicesContent wow fadeInUp">
@@ -48,7 +45,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Tình yêu thương</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name2 !!}</p>
               </div>
             </div>
             <div class="media servicesContent wow fadeInUp">
@@ -57,7 +54,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Di chuyển</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name3 !!}</p>
               </div>
             </div>
           </div>
@@ -73,7 +70,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Khám phá</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name4 !!}</p>
               </div>
             </div>
             <div class="media servicesContent wow fadeInUp">
@@ -82,7 +79,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Giáo dục</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name5 !!}</p>
               </div>
             </div>
             <div class="media servicesContent wow fadeInUp">
@@ -91,7 +88,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Hoạt động</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>{!! $MucTieu->name6 !!}</p>
               </div>
             </div>
           </div>

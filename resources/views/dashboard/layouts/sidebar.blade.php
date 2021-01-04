@@ -198,6 +198,14 @@
 
                     <b class="arrow"></b>
                 </li>
+                <li class="{{ getActiveCSS('get.dashboard.banner') }}">
+                    <a href="{{ route('get.dashboard.page.banner') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Banner
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
             </ul>
         </li>
 

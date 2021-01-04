@@ -29,6 +29,16 @@ Route::group(['prefix'=> 'dashboard'], function(){
 
 	Route::group(['prefix'=> 'page'], function(){
 		Route::get('home-page', ['as'=>'get.dashboard.page.home','uses'=>'Dashboard\PageController@home']);
+		Route::post('home-page', ['as'=>'post.dashboard.page.home','uses'=>'Dashboard\PageController@postHome']);
+
+		//Banner
+		Route::get('banner', ['as'=>'get.dashboard.page.banner','uses'=>'Dashboard\PageController@banner']);
+		Route::get('banner/create', ['as'=>'get.dashboard.page.banner.create','uses'=>'Dashboard\PageController@createBanner']);
+		Route::post('banner/create', ['as'=>'post.dashboard.page.banner.create','uses'=>'Dashboard\PageController@postCreateBanner']);
+		Route::get('banner/edit/{id}', ['as'=>'get.dashboard.page.banner.edit','uses'=>'Dashboard\PageController@editBanner']);
+		Route::post('banner/edit/{id}', ['as'=>'post.dashboard.page.banner.edit','uses'=>'Dashboard\PageController@postEditBanner']);
+		Route::get('banner/delete/{id}', ['as'=>'get.dashboard.page.banner.delete','uses'=>'Dashboard\PageController@deleteBanner']);
+
 
 	});
 

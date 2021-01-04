@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\SysPage;
+use App\Utils\HomeMucTieu;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.layouts.index');
+        $homePage = SysPage::where('category','HOMEPAGE')->first();
+        $MucTieu = json_decode($homePage->options);
+        return view('home.layouts.index', compact('homePage','MucTieu'));
     }
 }
