@@ -106,8 +106,8 @@
               </div>
             </div>
             <div class="col-sm-3 col-xs-12">
-              <div class="fb-page" data-href="https://www.facebook.com/Cungconrangoaichoi/" data-tabs="timeline,events" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-lazy="true">
-                <blockquote cite="https://www.facebook.com/Cungconrangoaichoi" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Cungconrangoaichoi">Cùng con ra ngoài chơi</a></blockquote></div>
+              <div class="fb-page" data-href="https://www.facebook.com/CungConRaNgoaiChoi.BinhAnViet" data-tabs="timeline,events" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-lazy="true">
+                <blockquote cite="https://www.facebook.com/CungConRaNgoaiChoi.BinhAnViet" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CungConRaNgoaiChoi.BinhAnViet">Cùng con ra ngoài chơi</a></blockquote></div>
             </div>
           </div>
         </div>
