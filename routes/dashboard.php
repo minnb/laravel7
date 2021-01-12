@@ -39,7 +39,7 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		Route::post('banner/edit/{id}', ['as'=>'post.dashboard.page.banner.edit','uses'=>'Dashboard\PageController@postEditBanner']);
 		Route::get('banner/delete/{id}', ['as'=>'get.dashboard.page.banner.delete','uses'=>'Dashboard\PageController@deleteBanner']);
 
-
+ 
 	});
 
 

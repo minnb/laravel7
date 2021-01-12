@@ -3,18 +3,22 @@
 @section('page-header', 'Banner')
 @section('content')
 @include('dashboard.layouts.alert')
+@if(isset($data))
+<form class="form-horizontal" role="form" action="{{ route('post.dashboard.page.banner.edit', ['id'=>$data[0]->id])}}" method="post" enctype="multipart/form-data">
+@else
 <form class="form-horizontal" role="form" action="{{ route('post.dashboard.page.banner.create')}}" method="post" enctype="multipart/form-data">
+@endif
     @csrf
     <div class="form-group">
         <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Name </label>
         <div class="col-sm-9">
-            <input type="text" id="form-field-1" placeholder="Name" name="name" class="col-xs-10 col-sm-5" required="" value="{{ old('name')}}" />
+            <input type="text" id="form-field-1" placeholder="Name" name="name" class="col-xs-10 col-sm-5" required="" value="{{ old('name', isset($data)?$data[0]->name:'')}}" />
         </div>
     </div>
     <div class="form-group">
         <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Description </label>
         <div class="col-xs-9">
-            <textarea name="description" id="description" rows="6" class="col-xs-9 col-sm-5">{{ old('description')}}</textarea>
+            <textarea name="description" id="description" rows="6" class="col-xs-9 col-sm-5">{{ old('description', isset($data)?$data[0]->description:'')}}</textarea>
         </div>
     </div>
     <div class="form-group">
@@ -25,6 +29,32 @@
             </select>
         </div>
     </div>
+    @if(isset($data))
+        <div class="form-group">
+            <label class="col-xs-2 control-label no-padding-right">Status</label>
+            <div class="col-xs-9">
+                @if($data[0]->blocked == 0)
+                    <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />
+                @else
+                    <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" />
+                @endif
+                <span class="lbl"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label no-padding-right">Image <span>(1920x720)</span></label>
+            <div class="col-xs-4">
+                <label class="ace-file-input">
+                    <input type="file" id="id-input-file-2" name="fileImage[]">
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4">
+                <img style="max-width: 200px" src="{{asset($data[0]->thumbnail)}}">
+            </div>
+        </div>
+    @else
     <div class="form-group">
         <label class="col-xs-2 control-label no-padding-right">Status</label>
         <div class="col-xs-9">
@@ -40,6 +70,7 @@
             </label>
         </div>
     </div>
+    @endif
 
     <div class="clearfix"></div>
     <div class="clearfix form-actions">
@@ -77,7 +108,7 @@
                         <td>
                             <img style="max-width:150px;" src="{{ asset(getImage($item->thumbnail)) }}">
                         </td>
-                        <td><a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
+                        <td><a href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
                         <td>{{ $item->description }}</td>
                         <td>{{ getStatus($item->blocked) }}</td>
                         <td>{{ $item->updated_at }}</td>
@@ -87,11 +118,11 @@
                                     <i class="ace-icon fa fa-search-plus bigger-130"></i>
                                 </a>
 
-                                <a class="green" href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">
+                                <a class="green" href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}">
                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                 </a>
 
-                                <a class="red" href="{{ route('get.dashboard.cate.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
+                                <a class="red" href="{{ route('get.dashboard.page.banner.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                 </a>
                             </div>
@@ -111,14 +142,14 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                            <a href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
                                                 <span class="green">
                                                     <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('get.dashboard.cate.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
+                                            <a href="{{ route('get.dashboard.page.banner.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
                                                 <span class="red">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 </span>

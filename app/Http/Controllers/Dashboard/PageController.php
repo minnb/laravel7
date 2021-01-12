@@ -140,12 +140,46 @@ class PageController extends Controller
     }
     public function editBanner($id)
     {
-        return view('dashboard.page.create');
+        $data = SysPage::where([
+            ['category', 'BANNER'],
+            ['id', $id]])->get();
+        return view('dashboard.page.banner', compact('data'));
     }
 
     public function postEditBanner(Request $request, $id)
     {
-        
+        try{
+            DB::beginTransaction();
+                $data = SysPage::find($id);               
+                $data->name = trim($request->name);
+                $data->alias = Str::slug($request->name);
+                $data->description = empty($request->description)?"":$request->description;
+                $data->link = '';
+                $data->keyword = '';
+                $data->blocked = $request->status == 'on' ? 0 : 1;
+                $data->options = '{}';
+
+                if($request->file('fileImage')){
+                    foreach($request->file('fileImage') as $file ){
+                        $destinationPath = path_storage('images');
+                        if(isset($file)){
+                            $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
+                            $file->move($destinationPath, $file_name);
+                            $data->thumbnail = $destinationPath.'/'.$file_name;
+                        }
+                    }
+                }
+
+                $data->save();
+                
+            DB::commit();
+            return redirect()->route('get.dashboard.page.banner')->with(['flash_message'=>'Chỉnh sửa thành công']);
+        }
+        catch (\Exception $e) 
+        {
+            DB::rollBack();
+            return back()->withErrors($e->getMessage())->withInput($request->input());
+        }
     }
     public function deleteBanner($id)
     {
