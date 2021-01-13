@@ -103,7 +103,7 @@
         <div class="sectionTitle text-center wow fadeInUp">
           <h2>
             <span class="shape shape-left bg-color-4"></span>
-            <span>Sư mệnh</span>
+            <span>Sứ mệnh</span>
             <span class="shape shape-right bg-color-4"></span>
           </h2>
         </div>
@@ -120,14 +120,14 @@
             <div class="testimonialContent  bg-color-2 wow fadeInUp">
               <span class="userSign border-color-2"><i class="fa fa-quote-left color-2" aria-hidden="true"></i></span>
               <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên. Mỗi đứa trẻ đều học hỏi một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
-              <h3>Phát triển bản thân</h3>
+              <h3>Phát triển</h3>
             </div>
           </div>
           <div class="col-sm-4 col-xs-12">
             <div class="testimonialContent  bg-color-3 wow fadeInUp">
               <span class="userSign border-color-3"><i class="fa fa-quote-left color-3" aria-hidden="true"></i></span>
               <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên. Mỗi đứa trẻ đều học hỏi một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
-              <h3>Phát triển giao tiếp</h3>
+              <h3>Giao tiếp</h3>
             </div>
           </div>
         </div>
