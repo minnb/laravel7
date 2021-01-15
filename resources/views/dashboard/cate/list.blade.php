@@ -51,7 +51,7 @@
                             <a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">{{ $item->id }}</a>
                         </td>
                         <td><a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
-                        <td>{{ $item->parent }}</td>
+                        <td>{{ App\Models\Categories::find($item->parent)->name }}</td>
                         <td>{{ $item->updated_at }}</td>
                         <td>{{ $item->blocked }}</td>
 

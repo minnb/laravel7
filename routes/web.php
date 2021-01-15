@@ -20,3 +20,6 @@ Route::get('/', 'Home\HomeController@index')->name('home');
 Route::get('/home', 'Home\HomeController@index')->name('home');
 Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
 
+//detail tour
+Route::get('{cate}/{id}{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\TourController@detailTour'])->where('id', '[0-9]+');
+

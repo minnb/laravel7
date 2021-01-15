@@ -15,12 +15,12 @@
           <div class="col-sm-1 bg-color-6 hidden-xs">fix bar</div>
         </div>
       </div>
-      <div class="footerInfoArea full-width clearfix" style="background-image: url(assets/img/footer/footer-bg-1.png);">
+      <div class="footerInfoArea full-width clearfix" style="background-image: url({{asset('assets/img/footer/footer-bg-1.png')}});">
         <div class="container">
           <div class="row">
             <div class="col-sm-3 col-xs-12">
               <div class="footerTitle">
-                <a href="index.html"><img src="assets/img/logo-footer.png"></a>
+                <a href="index.html"><img src="{{asset('assets/img/logo-footer.png')}}"></a>
               </div>
               <div class="footerInfo">
                 <p>Số 18 ngõ 52 Hoàng Công Chất, Bắc Từ Liêm, Hà Nội</p>
@@ -72,7 +72,7 @@
                   <li>
                     <div class="media">
                       <a class="media-left" href="single-blog.html">
-                        <img class="media-object img-rounded border-color-1" src="assets/img/footer/footer-img-1.png" alt="Image">
+                        <img class="media-object img-rounded border-color-1" src="{{asset('assets/img/footer/footer-img-1.png')}}" alt="Image">
                       </a>
                       <div class="media-body">
                         <h5 class="media-heading"><a href="single-blog.html">Trại ngựa Bá Vân</a></h5>
@@ -83,7 +83,7 @@
                   <li>
                     <div class="media">
                       <a class="media-left" href="single-blog-left-sidebar.html">
-                        <img class="media-object img-rounded border-color-2" src="assets/img/footer/footer-img-2.png" alt="Image">
+                        <img class="media-object img-rounded border-color-2" src="{{asset('assets/img/footer/footer-img-2.png')}}" alt="Image">
                       </a>
                       <div class="media-body">
                         <h5 class="media-heading"><a href="single-blog-left-sidebar.html">Đồng Cừu Gia Hưng</a></h5>
@@ -94,7 +94,7 @@
                   <li>
                     <div class="media">
                       <a class="media-left" href="single-blog-left-sidebar.html">
-                        <img class="media-object img-rounded border-color-4" src="assets/img/footer/footer-img-3.png" alt="Image">
+                        <img class="media-object img-rounded border-color-4" src="{{asset('assets/img/footer/footer-img-3.png')}}" alt="Image">
                       </a>
                       <div class="media-body">
                         <h5 class="media-heading"><a href="single-blog-left-sidebar.html">Vườn quốc gia Ba Vì</a></h5>
@@ -137,22 +137,22 @@
     <div class="scrolling">
       <a href="#pageTop" class="backToTop hidden-xs" id="backToTop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
     </div>
-    <script src="assets/plugins/jquery/jquery-min.js"></script>
-    <script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="assets/plugins/selectbox/jquery.selectbox-0.1.3.min.js"></script>
-    <script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
-    <script src="assets/plugins/waypoint/waypoints.min.js"></script>
-    <script src="assets/plugins/counter-up/jquery.counterup.min.js"></script>
-    <script src="assets/plugins/isotope/isotope.min.js"></script>
-    <script src="assets/plugins/fancybox/jquery.fancybox.min.js"></script>
-    <script src="assets/plugins/isotope/isotope-triger.js"></script>
-    <script src="assets/plugins/countdown/jquery.syotimer.js"></script>
-    <script src="assets/plugins/velocity/velocity.min.js"></script>
-    <script src="assets/plugins/smoothscroll/SmoothScroll.js"></script>
-    <script src="assets/plugins/wow/wow.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="{{ asset('assets/plugins/jquery/jquery-min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/selectbox/jquery.selectbox-0.1.3.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/owl-carousel/owl.carousel.js') }}"></script>
+    <script src="{{asset('assets/plugins/waypoint/waypoints.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/counter-up/jquery.counterup.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/isotope/isotope.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/fancybox/jquery.fancybox.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/isotope/isotope-triger.js') }}"></script>
+    <script src="{{asset('assets/plugins/countdown/jquery.syotimer.js') }}"></script>
+    <script src="{{asset('assets/plugins/velocity/velocity.min.js') }}"></script>
+    <script src="{{asset('assets/plugins/smoothscroll/SmoothScroll.js') }}"></script>
+    <script src="{{asset('assets/plugins/wow/wow.min.js') }}"></script>
+    <script src="{{asset('assets/js/app.js') }}"></script>
 </body>
 </html>

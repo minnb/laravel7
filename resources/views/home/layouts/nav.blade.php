@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-sm-7">
           <ul class="list-inline topList">
-            <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i> <a href="mailto:info@yourdomain.com">dieuhanh.binhanviet@gmail.com</a></li>
+            <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i> <a href="mailto:dieuhanh.binhanviet@gmail.com">dieuhanh.binhanviet@gmail.com</a></li>
             <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> 086 888 1336</li>
           </ul>
         </div>
@@ -50,7 +50,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><img src="assets/img/logo-school.png" alt="Kidz School"></a>
+        <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/img/logo-school.png')}}" alt="Kidz School"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

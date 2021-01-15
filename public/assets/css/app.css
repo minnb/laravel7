@@ -1068,7 +1068,6 @@ aside {
 }
 
 .pageTitleSection {
-  background-image: url("../img/page-title/page-title-bg.jpg");
   width: 100%;
   background-size: cover;
   background-position: center center;
@@ -4532,7 +4531,7 @@ footer .color-bar {
 
 /*======== 5.6 COURSES SECTION ========*/
 .block h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   text-transform: inherit;
   font-weight: 700;
   text-overflow: ellipsis;

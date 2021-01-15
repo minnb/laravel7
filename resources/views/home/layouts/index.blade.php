@@ -183,78 +183,28 @@
             <span class="shape shape-right bg-color-4"></span>
           </h2>
         </div>
-
         <div class="row ">
+        @if(isset($topTourIndex))
+        @foreach($topTourIndex as $key=>$item)
           <div class="col-sm-6 col-md-3 col-xs-12 block">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="course-single-left-sidebar.html"><img src="assets/img/home/courses/course-1.jpg" alt="image" class="img-responsive"></a>
+              <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{asset($item->thumbnail)}}" alt="image" class="img-responsive"></a>
               <div class="caption border-color-1">
-                <h3><a href="course-single-left-sidebar.html" class="color-1">Vườn quốc gia Ba Vì</a></h3>
+                <h3><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-1">{!! $item->name !!}</a></h3>
                 <ul class="list-unstyled">
                   <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 10 tuổi</li>
                   <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>
                 </ul>
-                <p>“Hành trình vạn dặm bắt đầu từ bước chân nhỏ bé”  Nụ cười trong trẻo, những bỡ ngỡ, thích thú của các bạn nhỏ khi lần đầu được làm quen, nhìn ngắm một thế giới ...</p>
+                <p>{!! \Illuminate\Support\Str::limit($item->description, 150, '...') !!}</p>
                 <ul class="list-inline btn-yellow">
-                  <li><a href="cart-page.html" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
-                  <li><a href="course-single-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
+                  <li><a href="#" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
+                  <li><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-3 col-xs-12 block">
-            <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="course-single-left-sidebar.html"><img src="assets/img/home/courses/course-2.jpg" alt="image" class="img-responsive"></a>
-              <div class="caption border-color-1">
-                <h3><a href="course-single-left-sidebar.html" class="color-1">Tour Ninh Bình</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 14 tuổi</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>
-                </ul>
-                <p>“Hành trình vạn dặm bắt đầu từ bước chân nhỏ bé”  Nụ cười trong trẻo, những bỡ ngỡ, thích thú của các bạn nhỏ khi lần đầu được làm quen, nhìn ngắm một thế giới ...</p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="cart-page.html" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
-                  <li><a href="course-single-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3 col-xs-12 block">
-            <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="course-single-left-sidebar.html"><img src="assets/img/home/courses/course-3.jpg" alt="image" class="img-responsive"></a>
-              <div class="caption border-color-1">
-                <h3><a href="course-single-left-sidebar.html" class="color-1">Trải nghiệm Ecopark</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 14 tuổi</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>
-                </ul>
-                <p>“Hành trình vạn dặm bắt đầu từ bước chân nhỏ bé”  Nụ cười trong trẻo, những bỡ ngỡ, thích thú của các bạn nhỏ khi lần đầu được làm quen, nhìn ngắm một thế giới ...</p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="cart-page.html" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
-                  <li><a href="course-single-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-                    <div class="col-sm-6 col-md-3 col-xs-12 block">
-            <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="course-single-left-sidebar.html"><img src="assets/img/home/courses/course-4.jpg" alt="image" class="img-responsive"></a>
-              <div class="caption border-color-1">
-                <h3><a href="course-single-left-sidebar.html" class="color-1">Thung Nham Ninh Bình</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 14 tuổi</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>
-                </ul>
-                <p>“Hành trình vạn dặm bắt đầu từ bước chân nhỏ bé”  Nụ cười trong trẻo, những bỡ ngỡ, thích thú của các bạn nhỏ khi lần đầu được làm quen, nhìn ngắm một thế giới ...</p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="cart-page.html" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
-                  <li><a href="course-single-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
+          @endif
         </div>
       </div>
     </section>
