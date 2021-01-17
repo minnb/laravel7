@@ -1,3 +1,6 @@
+<?php
+  $footerTop4Tour = App\Models\Product::Top4Product(4);
+?>
     <footer>
       <div class="container-fluid color-bar clearfix">
         <div class="row">
@@ -65,43 +68,25 @@
             </div>
             <div class="col-sm-3 col-xs-12">
               <div class="footerTitle">
-                <h4>Hành trình</h4>
+                <h4>Dã ngoại cuối tuần</h4>
               </div>
               <div class="footerInfo">
                 <ul class="list-unstyled postLink">
+                  @if(isset($footerTop4Tour))
+                  @foreach($footerTop4Tour as $item)
                   <li>
                     <div class="media">
-                      <a class="media-left" href="single-blog.html">
-                        <img class="media-object img-rounded border-color-1" src="{{asset('assets/img/footer/footer-img-1.png')}}" alt="Image">
+                      <a class="media-left" href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">
+                        <img class="media-object img-rounded border-color-1" src="{{asset($item->thumbnail)}}" alt="{!! $item->name !!}">
                       </a>
                       <div class="media-body">
-                        <h5 class="media-heading"><a href="single-blog.html">Trại ngựa Bá Vân</a></h5>
-                        <p>July 7 - 2020</p>
+                        <h5 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h5>
+                        <p>{!! $item->updated_at !!}</p>
                       </div>
                     </div>
                   </li>
-                  <li>
-                    <div class="media">
-                      <a class="media-left" href="single-blog-left-sidebar.html">
-                        <img class="media-object img-rounded border-color-2" src="{{asset('assets/img/footer/footer-img-2.png')}}" alt="Image">
-                      </a>
-                      <div class="media-body">
-                        <h5 class="media-heading"><a href="single-blog-left-sidebar.html">Đồng Cừu Gia Hưng</a></h5>
-                        <p>July 17 - 2020</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <a class="media-left" href="single-blog-left-sidebar.html">
-                        <img class="media-object img-rounded border-color-4" src="{{asset('assets/img/footer/footer-img-3.png')}}" alt="Image">
-                      </a>
-                      <div class="media-body">
-                        <h5 class="media-heading"><a href="single-blog-left-sidebar.html">Vườn quốc gia Ba Vì</a></h5>
-                        <p>July 27 - 2020</p>
-                      </div>
-                    </div>
-                  </li>
+                  @endforeach
+                  @endif
                 </ul>
               </div>
             </div>

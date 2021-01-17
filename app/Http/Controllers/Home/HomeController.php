@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $homePage = SysPage::where('category','HOMEPAGE')->first();
         $MucTieu = json_decode($homePage->options);
-        $topTourIndex = Product::where('blocked',0)->orderBy('id', 'desc')->limit(4)->get();
+        $topTourIndex = Product::Top4Product(4);
         return view('home.layouts.index', compact('homePage','MucTieu','topTourIndex'));
     }
 }

@@ -50,7 +50,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/img/logo-school.png')}}" alt="Kidz School"></a>
+        <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/logo-school.png')}}" alt="Kidz School"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

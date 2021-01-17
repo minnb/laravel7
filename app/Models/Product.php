@@ -14,4 +14,9 @@ class Product extends Model
 
         return $data;
     }
+
+    public static function Top4Product($limit = 4)
+    {
+    	return DB::table('m_products')->where('blocked', 0)->orderBy('id', 'desc')->limit(4)->get();
+    }
 }
