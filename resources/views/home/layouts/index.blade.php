@@ -112,68 +112,27 @@
           <div class="col-sm-4 col-xs-12">
             <div class="testimonialContent  bg-color-4 wow fadeInUp">
               <span class="userSign border-color-4"><i class="fa fa-quote-left color-1" aria-hidden="true"></i></span>
-              <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên. Mỗi đứa trẻ đều học hỏi một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
+              <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên.</p>
               <h3>Gắn kết</h3>
             </div>
           </div>
           <div class="col-sm-4 col-xs-12">
             <div class="testimonialContent  bg-color-2 wow fadeInUp">
               <span class="userSign border-color-2"><i class="fa fa-quote-left color-2" aria-hidden="true"></i></span>
-              <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên. Mỗi đứa trẻ đều học hỏi một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
+              <p>Giúp mọi trẻ em phát triển ý thức về bản thân, sức khỏe và hạnh phúc</p>
               <h3>Phát triển</h3>
             </div>
           </div>
           <div class="col-sm-4 col-xs-12">
             <div class="testimonialContent  bg-color-3 wow fadeInUp">
               <span class="userSign border-color-3"><i class="fa fa-quote-left color-3" aria-hidden="true"></i></span>
-              <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên. Mỗi đứa trẻ đều học hỏi một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
+              <p>Thúc đẩy kỹ năng truyền đạt và biểu cảm của trẻ dưới mọi hình thức.</p>
               <h3>Giao tiếp</h3>
             </div>
           </div>
         </div>
       </div>
     </section>
-  <!--====================================
-    ——— COUNT UP SECTION
-    ===================================== -->
-    <section class="countUpSection">
-      <div class="container">
-        <div class="sectionTitleSmall wow fadeInUp">
-          <h2>Lợi ích</h2>
-          <p>Giúp mọi trẻ em phát triển</p>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-3 col-xs-12">
-            <div class="text-center wow fadeInUp">
-              <div class="counter">179</div>
-              <div class="counterInfo bg-color-1">Thể chất</div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="text-center wow fadeInUp">
-              <div class="counter">579</div>
-              <div class="counterInfo bg-color-2">Trí tuệ</div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="text-center wow fadeInUp">
-              <div class="counter">279</div>
-              <div class="counterInfo bg-color-3">Cảm nhận</div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-12">
-            <div class="text-center wow fadeInUp">
-              <div class="counter">479</div>
-              <div class="counterInfo bg-color-4">Tương tác</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--====================================
-    ——— WHITE SECTION
-    ===================================== -->
     <section class="whiteSection full-width clearfix coursesSection "  id="ourCourses" >
       <div class="container">
         <div class="sectionTitle text-center">
@@ -208,10 +167,6 @@
         </div>
       </div>
     </section>
-
-    <!--====================================
-    ——— WHITE SECTION
-    ===================================== -->
     <section class="whiteSection full-width clearfix homeGallerySection" id="ourGallery">
       <div class="container">
         <div class="sectionTitle text-center">
@@ -221,7 +176,6 @@
             <span class="shape shape-right bg-color-4"></span>
           </h2>
         </div>
-
         <div class="row">
           <div class="col-xs-12 ">
             <div class="filter-container isotopeFilters wow fadeInUp">
@@ -234,16 +188,16 @@
             </div>
           </div>
         </div>
-                <div class="row isotopeContainer" id="container">
+         <div class="row isotopeContainer" id="container">
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector charity ">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_1.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-01.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_1.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-01.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -254,12 +208,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector nature ">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_2.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/gala-02.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_2.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/gala-02.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -270,12 +224,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector nature ">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_3.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-02.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_3.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-02.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -286,12 +240,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector charity">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_4.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-03.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_4.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-03.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -302,12 +256,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector nature">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_5.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-04.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_5.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-04.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -318,12 +272,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector children ">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_6.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-05.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_6.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-05.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -334,12 +288,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector children">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_7.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-06.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_7.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-06.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -350,12 +304,12 @@
           <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector children ">
             <article class="wow fadeInUp">
               <figure>
-                <img src="assets/img/home/home_gallery/gallery_sm_8.jpg" alt="image" class="img-rounded">
+                <img src="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-07.jpg" alt="da-ngoai-cuoi-tuan-cung-con" class="img-rounded">
                 <div class="overlay-background">
                   <div class="inner"></div>
                 </div>
                 <div class="overlay">
-                  <a data-fancybox="images" href="assets/img/home/home_gallery/gallery_lg_8.jpg">
+                  <a data-fancybox="images" href="assets/img/home/home_gallery/cung-con-ra-ngoai-choi-07.jpg">
                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -363,11 +317,11 @@
             </article>
           </div>
         </div>
-
+        <!--
         <div class="btnArea">
           <a href="photo-gallery.html" class="btn btn-primary">Xem tất cả</a>
         </div>
-
+        -->
       </div>
     </section>
 
@@ -390,12 +344,12 @@
               <a href="single-blog-left-sidebar.html"><img src="assets/img/home/news/news-1.jpg" alt="image" class="img-responsive"></a>
               <div class="sticker-round bg-color-1">10 <br>July</div>
               <div class="caption border-color-1">
-                <h3><a href="single-blog-left-sidebar.html" class="color-1">Đồng cừu Gia Hưng - Thung Nham Ninh Bình</a></h3>
+                <h3><a href="single-blog-left-sidebar.html" class="color-1">Đồng cừu Gia Hưng</a></h3>
                 <ul class="list-inline">
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
                 </ul>
-                <p> Cánh đồng cừu rộng lớn nằm yên ả bên triền đê, hứa hẹn mang đến cho bạn nhiều bức ảnh sống ảo tuyệt đẹp. </p>
+                <p> <strong>Cánh đồng cừu</strong> rộng lớn nằm yên ả bên triền đê, hứa hẹn mang đến cho bạn nhiều bức ảnh sống ảo tuyệt đẹp. </p>
                 <ul class="list-inline btn-yellow">
                   <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>
@@ -408,12 +362,12 @@
               <a href="single-blog-left-sidebar.html"><img src="assets/img/home/news/news-2.jpg" alt="image" class="img-responsive"></a>
               <div class="sticker-round bg-color-1">20 <br>July</div>
               <div class="caption border-color-1">
-                <h3><a href="single-blog-left-sidebar.html" class="color-1">Trải nghiệm vườn quốc gia Ba Vì</a></h3>
+                <h3><a href="single-blog-left-sidebar.html" class="color-1">Vườn quốc gia Ba Vì</a></h3>
                 <ul class="list-inline">
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
                 </ul>
-                <p> Vườn quốc gia Ba Vì đặc biệt thú vị và hấp dẫn vào dịp cuối tuần. Khám phá, trải nghiệm tuyệt vời. </p>
+                <p>Vườn quốc gia <strong>Ba Vì</strong> đặc biệt thú vị và hấp dẫn vào dịp cuối tuần. Khám phá, vui chơi và trải nghiệm tuyệt vời. </p>
                 <ul class="list-inline btn-yellow">
                   <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>
@@ -432,7 +386,7 @@
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
                   <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
                 </ul>
-                <p> Từng đàn ngựa tung tăng gặm cỏ, thỏa sức chạy nhảy, trại ngựa Bá Vân vào lúc ấy tựa như một thảo nguyên thu nhỏ. </p>
+                <p>Từng đàn ngựa tung tăng gặm cỏ, thỏa sức chạy nhảy, <strong>trại ngựa Bá Vân</strong> vào lúc ấy tựa như một thảo nguyên... </p>
                 <ul class="list-inline btn-yellow">
                   <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>

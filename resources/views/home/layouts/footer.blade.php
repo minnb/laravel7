@@ -27,13 +27,13 @@
               </div>
               <div class="footerInfo">
                 <p>Số 18 ngõ 52 Hoàng Công Chất, Bắc Từ Liêm, Hà Nội</p>
-                <p>Hotline: 036 630 8123</p>
+                <p>Hotline: 0396 652 955</p>
                 <p>dieuhanh.binhanviet@gmail.com</p>
               </div>
             </div>
             <div class="col-sm-3 col-xs-12">
               <div class="footerTitle">
-                <h4>Tour trải nghiệm</h4>
+                <h4>Địa điểm trải nghiệm</h4>
               </div>
               <div class="footerInfo">
                 <ul class="list-unstyled footerList">
@@ -59,8 +59,12 @@
                   </li>
                   <li>
                     <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                      Hà Giang
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Hà Giang
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Sơn Tây
                     </a>
                   </li>
                 </ul>

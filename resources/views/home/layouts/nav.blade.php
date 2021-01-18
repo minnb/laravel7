@@ -23,7 +23,7 @@
         <div class="col-sm-7">
           <ul class="list-inline topList">
             <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i> <a href="mailto:dieuhanh.binhanviet@gmail.com">dieuhanh.binhanviet@gmail.com</a></li>
-            <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> 086 888 1336</li>
+            <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> 0396.652.955</li>
           </ul>
         </div>
         <div class="col-sm-5">
