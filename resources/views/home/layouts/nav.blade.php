@@ -50,38 +50,30 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/logo-school.png')}}" alt="Kidz School"></a>
+        <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/da-ngoai-cuoi-tuan-cung-con.png')}}" alt="Dã ngoại cuối tuần cùng con"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown singleDrop color-1  active ">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="{{route('home')}}" role="button" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Trang chủ</span>
             </a>
           </li>
           <li class="dropdown singleDrop color-5 ">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
+            <a href="#ourCourses" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
           </li>
           <li class="dropdown singleDrop color-2 ">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Hình ảnh</span></a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class=" "><a href="#">Tour trong nước</a></li>
-              <li class=" "><a href="#">Tour ngước ngoài</a></li>
-            </ul>
+            <a href="#ourGallery" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Hình ảnh</span></a>
           </li>
 
           <li class="dropdown singleDrop color-3 ">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-calendar bg-color-6" aria-hidden="true"></i> <span>Video</span></a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class=" "><a href="#">Tour 1 ngày</a></li>
-              <li class=" "><a href="#">Tour 2 ngày</a></li>
-            </ul>
+            <a href="#latestNews" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-calendar bg-color-6" aria-hidden="true"></i> <span>Hành trình</span></a>
           </li>
 
           <li class="dropdown singleDrop color-4 ">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Liên hệ</span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Liên hệ</span></a>
           </li>
         </ul>
       </div>

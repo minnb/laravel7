@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-push-6 col-xs-12">
-            <img src="assets/img/home/about-school.png" alt="image" class="img-responsive wow fadeInUp">
+            <img src="assets/img/home/about-school.png" alt="Dã ngoại cuối tuần" class="img-responsive wow fadeInUp">
           </div>
           <div class="col-sm-6 col-sm-pull-6 col-xs-12">
             <div class="schoolInfo wow fadeInUp">
@@ -60,7 +60,7 @@
           </div>
           <div class="col-sm-4 hidden-xs">
             <div class="text-center wow fadeInUp">
-              <img src="assets/img/home/services.png" alt="image">
+              <img src="assets/img/home/services.png" alt="{!! $MucTieu->name4 !!}">
             </div>
           </div>
           <div class="col-sm-4 col-xs-12">
@@ -147,7 +147,7 @@
         @foreach($topTourIndex as $key=>$item)
           <div class="col-sm-6 col-md-3 col-xs-12 block">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{asset($item->thumbnail)}}" alt="image" class="img-responsive"></a>
+              <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-responsive"></a>
               <div class="caption border-color-1">
                 <h3><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-1">{!! $item->name !!}</a></h3>
                 <ul class="list-unstyled">
@@ -172,7 +172,7 @@
         <div class="sectionTitle text-center">
           <h2 class="wow fadeInUp">
             <span class="shape shape-left bg-color-4"></span>
-            <span>Chương trình</span>
+            <span>Hình ảnh</span>
             <span class="shape shape-right bg-color-4"></span>
           </h2>
         </div>
@@ -181,9 +181,9 @@
             <div class="filter-container isotopeFilters wow fadeInUp">
               <ul class="list-inline filter">
                 <li class="active"><a href="#" data-filter="*">Tất cả</a></li>
-                <li><a href="#" data-filter=".charity">Tour dã ngoại cuối tuần</a></li>
-                <li><a href="#" data-filter=".nature">Teambuiding</a></li>
-                <li><a href="#" data-filter=".children">GALA</a></li>
+                <li><a href="#" data-filter=".charity">Dã ngoại cuối tuần</a></li>
+                <li><a href="#" data-filter=".nature">Sự kiện</a></li>
+                <li><a href="#" data-filter=".children">Hội nghị</a></li>
               </ul>
             </div>
           </div>
@@ -325,9 +325,6 @@
       </div>
     </section>
 
-    <!--====================================
-    ——— WHITE SECTION
-    ===================================== -->
     <section class="whiteSection full-width clearfix newsSection" id="latestNews">
       <div class="container">
         <div class="sectionTitle text-center">
@@ -341,7 +338,7 @@
         <div class="row">
           <div class="col-sm-4 col-xs-12 block ">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="single-blog-left-sidebar.html"><img src="assets/img/home/news/news-1.jpg" alt="image" class="img-responsive"></a>
+              <a href="#"><img src="assets/img/home/news/news-1.jpg" alt="image" class="img-responsive"></a>
               <div class="sticker-round bg-color-1">10 <br>July</div>
               <div class="caption border-color-1">
                 <h3><a href="single-blog-left-sidebar.html" class="color-1">Đồng cừu Gia Hưng</a></h3>
@@ -359,7 +356,7 @@
           
           <div class="col-sm-4 col-xs-12 block ">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="single-blog-left-sidebar.html"><img src="assets/img/home/news/news-2.jpg" alt="image" class="img-responsive"></a>
+              <a href="#"><img src="assets/img/home/news/news-2.jpg" alt="image" class="img-responsive"></a>
               <div class="sticker-round bg-color-1">20 <br>July</div>
               <div class="caption border-color-1">
                 <h3><a href="single-blog-left-sidebar.html" class="color-1">Vườn quốc gia Ba Vì</a></h3>
@@ -378,7 +375,7 @@
 
         <div class="col-sm-4 col-xs-12 block ">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="single-blog-left-sidebar.html"><img src="assets/img/home/news/news-3.jpg" alt="image" class="img-responsive"></a>
+              <a href="#"><img src="assets/img/home/news/news-3.jpg" alt="image" class="img-responsive"></a>
               <div class="sticker-round bg-color-1">20 <br>July</div>
               <div class="caption border-color-1">
                 <h3><a href="single-blog-left-sidebar.html" class="color-1">Trại ngựa Bá Vân</a></h3>

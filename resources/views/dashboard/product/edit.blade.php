@@ -9,6 +9,24 @@
 @include('dashboard.layouts.alert')
 <form class="form-horizontal" role="form" action="{{ route('post.dashboard.product.edit', ['id'=>$id])}}" method="post" enctype="multipart/form-data">
     @csrf
+        <div class="tabbable">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a data-toggle="tab" href="#Content">
+                    <i class="green ace-icon fa fa-home bigger-120"></i>
+                    Content
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#Gallery">
+                    Gallery
+                    <span class="badge badge-danger"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="Content" class="tab-pane fade in active">
+
     <div class="form-group">
         <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> SKU </label>
         <div class="col-sm-9">
@@ -69,22 +87,28 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="clearfix form-actions">
-        <div class="col-md-offset-2 col-md-9">
-            <button class="btn btn-info" type="Submit">
-                <i class="ace-icon fa fa-check bigger-110"></i>
-                Submit
-            </button>
-            &nbsp; &nbsp; &nbsp;
-            <a class="btn" href="#">
-                <i class="ace-icon fa fa-undo bigger-110"></i>
-                Reset
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a class="btn btn-success" href="{{ route('get.dashboard.product.list') }}">
-                <i class="ace-icon fa fa-list bigger-110"></i>
-                Lists
-            </a>
+            </div>
+            <div id="Gallery" class="tab-pane fade in active">
+                Gallery
+            </div>
+        </div>
+        <div class="clearfix form-actions">
+            <div class="col-md-offset-2 col-md-9">
+                <button class="btn btn-info" type="Submit">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    Submit
+                </button>
+                &nbsp; &nbsp; &nbsp;
+                <a class="btn" href="#">
+                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                    Reset
+                </a>
+                &nbsp; &nbsp; &nbsp;
+                <a class="btn btn-success" href="{{ route('get.dashboard.product.list') }}">
+                    <i class="ace-icon fa fa-list bigger-110"></i>
+                    Lists
+                </a>
+            </div>
         </div>
     </div>
 </form>

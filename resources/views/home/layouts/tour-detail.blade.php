@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-9 col-sm-8 col-xs-12 block">
         <div class="thumbnail thumbnailContent alt">
-          <img src="{!! asset($detailTour->thumbnail) !!}" alt="image" class="img-responsive">
+          <img src="{!! asset($detailTour->thumbnail) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
           <div class="caption border-color-1">
             <h3 class="color-1">{!! $detailTour->name !!}</h3>
             <p>{!! $detailTour->content !!}</p>
@@ -40,10 +40,10 @@
                    	@foreach($panelTour as $key=>$item)
                       <li class="media">
                         <div class="media-left">
-                          <a href="#"><img src="{{ asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-rounded" style="max-width: 60px"></a>
+                          <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{ asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-rounded" style="max-width: 60px"></a>
                         </div>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="#">{!! $item->name !!}</a></h4>
+                          <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
                           <p>{!! $item->created_at !!}</p>
                         </div>
                       </li>

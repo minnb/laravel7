@@ -4688,6 +4688,16 @@ footer .color-bar {
   background-color: transparent;
 }
 
+.caption ol{
+  margin-left:25px;
+}
+.caption ol li{
+  padding-top:5px;
+}
+.caption ul li{
+  padding:5px 0;
+}
+
 .thumbnailContent.alt > .caption .table {
   border-color: #dedede !important;
 }
