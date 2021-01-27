@@ -336,60 +336,26 @@
         </div>
 
         <div class="row">
+        @if(isset($topPostIndex))
+        @foreach($topPostIndex as $key=>$item)
           <div class="col-sm-4 col-xs-12 block ">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="#"><img src="assets/img/home/news/news-1.jpg" alt="image" class="img-responsive"></a>
-              <div class="sticker-round bg-color-1">10 <br>July</div>
+              <a href="{{ route('get.home.post.detail',['cate'=>'hanh-trinh-trai-nghiem','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->title).'.html'])}}"><img src="{{ asset($item->thumbnail)}}" alt="{!! $item->title !!}" class="img-responsive"></a>
               <div class="caption border-color-1">
-                <h3><a href="single-blog-left-sidebar.html" class="color-1">Đồng cừu Gia Hưng</a></h3>
+                <h3><a href="{{ route('get.home.post.detail',['cate'=>'hanh-trinh-trai-nghiem','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->title).'.html'])}}" class="color-6" alt="{!! $item->title !!}">{!! $item->title !!}</a></h3>
                 <ul class="list-inline">
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
+                  <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
+                  <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
                 </ul>
-                <p> <strong>Cánh đồng cừu</strong> rộng lớn nằm yên ả bên triền đê, hứa hẹn mang đến cho bạn nhiều bức ảnh sống ảo tuyệt đẹp. </p>
+                <p> {!! \Illuminate\Support\Str::limit($item->description, 160, '...') !!}</p>
                 <ul class="list-inline btn-yellow">
-                  <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
+                  <li><a href="{{ route('get.home.post.detail',['cate'=>'hanh-trinh-trai-nghiem','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->title).'.html'])}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>
               </div>
             </div>
-          </div>
-          
-          <div class="col-sm-4 col-xs-12 block ">
-            <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="#"><img src="assets/img/home/news/news-2.jpg" alt="image" class="img-responsive"></a>
-              <div class="sticker-round bg-color-1">20 <br>July</div>
-              <div class="caption border-color-1">
-                <h3><a href="single-blog-left-sidebar.html" class="color-1">Vườn quốc gia Ba Vì</a></h3>
-                <ul class="list-inline">
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
-                </ul>
-                <p>Vườn quốc gia <strong>Ba Vì</strong> đặc biệt thú vị và hấp dẫn vào dịp cuối tuần. Khám phá, vui chơi và trải nghiệm tuyệt vời. </p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        
-
-        <div class="col-sm-4 col-xs-12 block ">
-            <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="#"><img src="assets/img/home/news/news-3.jpg" alt="image" class="img-responsive"></a>
-              <div class="sticker-round bg-color-1">20 <br>July</div>
-              <div class="caption border-color-1">
-                <h3><a href="single-blog-left-sidebar.html" class="color-1">Trại ngựa Bá Vân</a></h3>
-                <ul class="list-inline">
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-user" aria-hidden="true"></i>Lê Tám</a></li>
-                  <li><a href="single-blog-left-sidebar.html"><i class="fa fa-comments-o" aria-hidden="true"></i>4 Bình luận</a></li>
-                </ul>
-                <p>Từng đàn ngựa tung tăng gặm cỏ, thỏa sức chạy nhảy, <strong>trại ngựa Bá Vân</strong> vào lúc ấy tựa như một thảo nguyên... </p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="single-blog-left-sidebar.html" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          </div> 
+        @endforeach   
+        @endif
         </div>
 
       </div>

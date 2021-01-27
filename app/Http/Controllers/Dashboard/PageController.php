@@ -143,7 +143,7 @@ class PageController extends Controller
         $data = SysPage::where([
             ['category', 'BANNER'],
             ['id', $id]])->get();
-        return view('dashboard.page.banner', compact('data'));
+        return view('dashboard.page.banner_edit', compact('data'));
     }
 
     public function postEditBanner(Request $request, $id)

@@ -73,7 +73,7 @@
           </li>
 
           <li class="dropdown singleDrop color-4 ">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Liên hệ</span></a>
+            <a href="{{route('lien-he')}}" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Liên hệ</span></a>
           </li>
         </ul>
       </div>
