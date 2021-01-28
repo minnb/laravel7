@@ -11,128 +11,94 @@
           <div class="col-sm-6 col-sm-pull-6 col-xs-12">
             <div class="schoolInfo wow fadeInUp">
               <p>Chào mừng đến với</p>
-              <h2><span>Dã ngoại cuối tuần</span></h2>
+              <h2><span>Cùng con ra ngoài chơi</span></h2>
               <p>{!! $homePage->description !!}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  <section class="colorSection full-width clearfix bg-color-4 servicesSection">
-      <div class="container">
-        <div class="sectionTitle text-center alt wow fadeInUp">
-          <h2>
-            <span class="shape shape-left bg-color-3"></span>
-            <span>Mục tiêu</span>
-            <span class="shape shape-right bg-color-3"></span>
-          </h2>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-4 col-xs-12">
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-cutlery bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Ẩm thực</h3>
-                <p>{!! $MucTieu->name1 !!}</p>
-              </div>
-            </div>
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-heart bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Tình yêu thương</h3>
-                <p>{!! $MucTieu->name2 !!}</p>
-              </div>
-            </div>
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-shield bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Di chuyển</h3>
-                <p>{!! $MucTieu->name3 !!}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 hidden-xs">
-            <div class="text-center wow fadeInUp">
-              <img src="assets/img/home/services.png" alt="{!! $MucTieu->name4 !!}">
-            </div>
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-car bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Khám phá</h3>
-                <p>{!! $MucTieu->name4 !!}</p>
-              </div>
-            </div>
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-graduation-cap bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Giáo dục</h3>
-                <p>{!! $MucTieu->name5 !!}</p>
-              </div>
-            </div>
-            <div class="media servicesContent wow fadeInUp">
-              <span class="media-left">
-                <i class="fa fa-leaf bg-color-4" aria-hidden="true"></i>
-              </span>
-              <div class="media-body">
-                <h3 class="media-heading">Hoạt động</h3>
-                <p>{!! $MucTieu->name6 !!}</p>
-              </div>
-            </div>
-          </div>
+  <!-- <section class="promotionWrapper " style="background-image: url({{asset('assets/img/home/promotion-1.jpg')}});" > -->
+  <section class="colorSection full-width clearfix bg-color-5 teamSection" id="ourTeam">
+      <div class="container">
+        <div class="promotionInfo wow fadeInUp">
+          <h2 style="color:white">Sứ mệnh của chúng tôi</h2>
+          <p style="color:white; line-height: 28px;font-size: 16.5px">Cùng con ra ngoài chơi được xây dựng dựa trên sứ mệnh tổ chức tour trải nghiệm tự nhiên, cùng Trẻ ra ngoài chơi, đáp ứng tối đa kỳ vọng trải nghiệm, khám phá tự nhiên, văn hóa, giải trí, kích hoạt đa giác quan của trẻ, giúp trẻ phát triển khả năng tiềm ẩn của chính mình từ đó định vị bản thân và làm chủ cuộc đời</p>
+          <a href="{{route('lien-he')}}" class="btn btn-primary"><i class="fa fa-phone" aria-hidden="true"></i>Liên hệ</a>
         </div>
       </div>
     </section>
- <!-- ====================================
-    ——— TESTIMONIAL SECTION
-    ===================================== -->
-    <section class="mainContent full-width clearfix testimonialArea">
+
+    <section class="colorSection full-width clearfix servicesSection">
       <div class="container">
-        <div class="sectionTitle text-center wow fadeInUp">
-          <h2>
+        <div class="sectionTitle text-center " >
+          <h2 class="wow fadeInUp">
             <span class="shape shape-left bg-color-4"></span>
-            <span>Sứ mệnh</span>
+            <span>Mục tiêu</span>
             <span class="shape shape-right bg-color-4"></span>
           </h2>
         </div>
 
-        <div class="row testimonial-grid wow fadeInUp">
-          <div class="col-sm-4 col-xs-12">
-            <div class="testimonialContent  bg-color-4 wow fadeInUp">
-              <span class="userSign border-color-4"><i class="fa fa-quote-left color-1" aria-hidden="true"></i></span>
-              <p>Nuôi dưỡng các mối quan hệ và sự kết nối giữa trẻ em, người lớn và thế giới tự nhiên.</p>
-              <h3>Gắn kết</h3>
+        <div class="row ">
+          <div class="col-sm-6 col-lg-4 col-xs-12">
+            <div class="media featuresContent wow fadeInUp">
+              <span class="media-left bg-color-1">
+                <i class="fa fa-graduation-cap bg-color-1" aria-hidden="true"></i>
+              </span>
+              <div class="media-body">
+                <h3 class="media-heading color-1">Phát triển giao tiếp</h3>
+                <p>Mỗi một bạn nhỏ đều có khả năng giao tiếp, thể hiện bản thân theo nhiều cách. Các hoạt động trải nghiệm của chúng tôi đều có các hoạt động thúc đẩy kỹ năng truyền đạt và biểu cảm của trẻ dưới mọi hình thức.</p>
+              </div>
             </div>
           </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class="testimonialContent  bg-color-2 wow fadeInUp">
-              <span class="userSign border-color-2"><i class="fa fa-quote-left color-2" aria-hidden="true"></i></span>
-              <p>Giúp mọi trẻ em phát triển ý thức về bản thân, sức khỏe và hạnh phúc</p>
-              <h3>Phát triển</h3>
+          <div class="col-sm-6 col-lg-4 col-xs-12">
+            <div class="media featuresContent wow fadeInUp">
+              <span class="media-left bg-color-2">
+                <i class="fa fa-leaf bg-color-2" aria-hidden="true"></i>
+              </span>
+              <div class="media-body">
+                <h3 class="media-heading color-2">Kết nối</h3>
+                <p>Hoạt động dã ngoại tạo ra các mối quan hệ cộng đồng và sự kết nối giữa trẻ em, người lớn và thế giới xung quanh. Trẻ sẽ được học một cách chủ động thông qua việc khám phá thế giới bằng tất cả các giác quan.</p>
+              </div>
             </div>
           </div>
-          <div class="col-sm-4 col-xs-12">
-            <div class="testimonialContent  bg-color-3 wow fadeInUp">
-              <span class="userSign border-color-3"><i class="fa fa-quote-left color-3" aria-hidden="true"></i></span>
-              <p>Thúc đẩy kỹ năng truyền đạt và biểu cảm của trẻ dưới mọi hình thức.</p>
-              <h3>Giao tiếp</h3>
+          <div class="col-sm-6 col-lg-4 col-xs-12">
+            <div class="media featuresContent wow fadeInUp">
+              <span class="media-left bg-color-3">
+                <i class="fa fa-shield bg-color-6" aria-hidden="true"></i>
+              </span>
+              <div class="media-body">
+                <h3 class="media-heading color-3">Ý thức tự giác</h3>
+                <p>Có thể nói “ý thức tự giác” là một hình thức rèn luyện bản thân có chọn lọc, tạo nên những thói quen mới trong cách nghĩ, cách hành động và diễn thuyết để nâng cao bản thân và hướng đến thành công </p>
+              </div>
             </div>
+          </div>         
+        </div>
+      </div>
+    </section>
+ 
+     <section class="colorSection full-width clearfix bg-color-5 teamSection" id="ourTeam">
+      <div class="container">
+        <div class="sectionTitle text-center alt">
+          <h2 class="wow fadeInUp">
+            <span class="shape shape-left bg-color-3"></span>
+            <span>Giá trị cốt lõi</span>
+            <span class="shape shape-right bg-color-3"></span>
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="Lead gia-tri-cot-loi"><strong>Mọi trẻ em đều tò mò:</strong> Trẻ luôn tự hỏi, đặt câu hỏi và khám phá về thế giới xung quanh</p>
+            <p class="gia-tri-cot-loi"><strong>Mọi trẻ em đều học chủ động:</strong> Trẻ em học tốt nhất khi được tham gia tích cực vào các hoạt động trải nghiệm và khám phá</p>
+            <p class="text-sm gia-tri-cot-loi"><strong>Trẻ em đều rất thông minh:</strong> Hầu như không có giới hạn cho những gì trẻ em có thể học. Với môi trường và sự hỗ trợ phù hợp, trẻ em có thể học hầu hết mọi thứ. không khó đề giúp trẻ phát triển những kỹ năng tự tin, thể chất, sáng tạo</p>
+            <p class="text-xs gia-tri-cot-loi"><strong></strong>Nếu được trải nghiệm hoạt động dã ngoại thiên nhiên kết hợp hoạt náo đồng đội, là quãng thời gian tuyệt vời để kết nối những thành viên trong gia đình. Bên cạnh đó cảm nhận bầu không khí trong lành của thiên nhiên chắc chắn sẽ khiến các gia đình gắn kết hơn, yêu thêm chuyến dã ngoại cuối tuần</p>
+            <p class="text-xs gia-tri-cot-loi"><strong></strong> Cùng Con Ra ngoài Chơi luôn cố  gắng hết mình để thực hiện các hành trình dã ngoại dã ngoại có ý nghĩa về giáo dục và trải nghiệm tự nhiên đặc biệt là cam kết các dịch vụ với khách hàng</p>
           </div>
         </div>
       </div>
     </section>
+
     <section class="whiteSection full-width clearfix coursesSection "  id="ourCourses" >
       <div class="container">
         <div class="sectionTitle text-center">
