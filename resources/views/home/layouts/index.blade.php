@@ -20,7 +20,7 @@
     </section>
 
   <!-- <section class="promotionWrapper " style="background-image: url({{asset('assets/img/home/promotion-1.jpg')}});" > -->
-  <section class="colorSection full-width clearfix bg-color-5 teamSection" id="ourTeam">
+  <section class="colorSection full-width clearfix bg-color-4  teamSection" id="ourTeam">
       <div class="container">
         <div class="promotionInfo wow fadeInUp">
           <h2 style="color:white">Sứ mệnh của chúng tôi</h2>
@@ -78,7 +78,7 @@
       </div>
     </section>
  
-     <section class="colorSection full-width clearfix bg-color-5 teamSection" id="ourTeam">
+     <section class="colorSection full-width clearfix teamSection" id="ourTeam">
       <div class="container">
         <div class="sectionTitle text-center alt">
           <h2 class="wow fadeInUp">
