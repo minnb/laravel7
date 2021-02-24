@@ -61,7 +61,8 @@ Examples:
 ATTENTION: The trailing slash is required.
 */
 
-$baseUrl = "http://localhost:8099/projects/vivu2c/public/storage/conent/";
+//$baseUrl = "http://localhost:8001/projects/laravel7/public/storage/conent/";
+$baseUrl = "https://dangoaicuoituancungcon.com/public/storage/conent/";
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
@@ -327,9 +328,9 @@ For more complex configuration options visit our Developer's Guide
 $config['XSendfile'] = false;
 
 
-include_once "plugins/imageresize/plugin.php";
-include_once "plugins/fileeditor/plugin.php";
-include_once "plugins/zip/plugin.php";
+//include_once "plugin/imageresize/plugin.php";
+//include_once "plugin/fileeditor/plugin.php";
+//include_once "plugin/zip/plugin.php";
 
 $config['plugin_imageresize']['smallThumb'] = '90x90';
 $config['plugin_imageresize']['mediumThumb'] = '120x120';

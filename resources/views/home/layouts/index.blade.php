@@ -78,13 +78,13 @@
       </div>
     </section>
  
-     <section class="colorSection full-width clearfix teamSection" id="ourTeam">
+     <section class="colorSection full-width clearfix teamSection bg-color-3" id="ourTeam">
       <div class="container">
         <div class="sectionTitle text-center alt">
           <h2 class="wow fadeInUp">
-            <span class="shape shape-left bg-color-3"></span>
+            <span class="shape shape-left"></span>
             <span>Giá trị cốt lõi</span>
-            <span class="shape shape-right bg-color-3"></span>
+            <span class="shape shape-right"></span>
           </h2>
         </div>
         <div class="row">
