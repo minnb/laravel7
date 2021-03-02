@@ -18,7 +18,7 @@
       <div class="col-md-9 col-sm-8 col-xs-12 block">
         <div class="thumbnail thumbnailContent alt">
           <div class="caption">
-            <h3 class="color-1">{!! $detailPost->title !!}</h3>
+            <h3 class="color-10">{!! $detailPost->title !!}</h3>
             <p>{!! $detailPost->content !!}</p>
           </div>
         </div>

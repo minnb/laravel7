@@ -19,8 +19,24 @@
         <div class="thumbnail thumbnailContent alt">
           <img src="{!! asset($detailTour->thumbnail) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
           <div class="caption border-color-1">
-            <h3 class="color-1">{!! $detailTour->name !!}</h3>
+            <h2 class="color-10">{!! $detailTour->name !!}</h2>
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><strong>{{ App\Models\Categories::getLocationByCate($detailTour->categories) }}</strong></a></li>
+              <li><span style="margin-left:10px"></span></li>
+              <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>0 Bình luận</a></li>
+            </ul>
+            <hr class="border-color-2">
+            <h3 class="color-10">Những trải nghiệm thú vị</h3>
+              <p>{!! $tourPolicy->experience !!}</p>
+            <h3 class="color-10">Lịch trình</h3>
             <p>{!! $detailTour->content !!}</p>
+
+            <h3 class="color-10">Dịch vụ đi kèm</h3>
+              <p>{!! $tourPolicy->service !!}</p>
+            <h3 class="color-10">Chính sách phụ thu</h3>
+              <p>{!! $tourPolicy->policy !!}</p>
+            <h3 class="color-10">Điều khoản</h3>
+              <p>{!! $tourPolicy->rules !!}</p>
           </div>
         </div>
         <div class="btnArea">

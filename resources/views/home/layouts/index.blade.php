@@ -115,7 +115,7 @@
             <div class="thumbnail thumbnailContent wow fadeInUp">
               <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-responsive"></a>
               <div class="caption border-color-1">
-                <h3><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-1">{!! $item->name !!}</a></h3>
+                <h3><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-3">{!! $item->name !!}</a></h3>
                 <ul class="list-unstyled">
                   <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 10 tuổi</li>
                   <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>

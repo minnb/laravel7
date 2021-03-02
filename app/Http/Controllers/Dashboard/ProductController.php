@@ -10,6 +10,7 @@ use App\Models\Tag;
 use App\Models\Post_Tag;
 use App\Models\Categories;
 use App\Models\Product_Attributes;
+use App\Utils\TourOpt;
 
 class ProductController extends Controller
 {
@@ -31,6 +32,12 @@ class ProductController extends Controller
 
     public function postCreate(Request $request)
     {
+        $tourOpt = new TourOpt();
+        $tourOpt->experience = empty($request->experience)?"":$request->experience;
+        $tourOpt->service = empty($request->service)?"":$request->service;
+        $tourOpt->policy = empty($request->policy)?"":$request->policy;
+        $tourOpt->rules = empty($request->rules)?"":$request->rules;
+
         try{
             DB::beginTransaction();
                 $data = new Product();
@@ -39,12 +46,12 @@ class ProductController extends Controller
                 $data->name = trim($request->name);
                 $data->alias = Str::slug($request->name);
                 $data->description = empty($request->description)?"":$request->description;
-                $data->content = empty($request->content)?"":$request->content;;
+                $data->content = empty($request->content)?"":$request->content;
                 $data->blocked = $request->status == 'on' ? 0 : 1;
                 $data->user_id = Auth::user()->id;
                 $data->tax = '';
                 $data->base_unit = '';
-                $data->options = '{}';
+                $data->options = json_encode($tourOpt);
                 
                 if($request->file('fileImage')){
                     foreach($request->file('fileImage') as $file ){
@@ -89,7 +96,13 @@ class ProductController extends Controller
         try
         {
             $data = Product::find($id);
-            return view('dashboard.product.edit', compact('data', 'id'));
+
+            $tourPolicy = new TourOpt();
+            if($data->options != '{}' || empty($data->options))
+            {
+                $tourPolicy = json_decode($data->options);
+            }
+            return view('dashboard.product.edit', compact('data', 'id', 'tourPolicy'));
         }
         catch (\Exception $e) 
         {
@@ -110,6 +123,14 @@ class ProductController extends Controller
             $data->blocked = $request->status == 'on' ? 0 : 1;
             $data->user_id = Auth::user()->id;
             
+            $tourOpt = new TourOpt();
+            $tourOpt->experience = empty($request->experience)?"":$request->experience;
+            $tourOpt->service = empty($request->service)?"":$request->service;
+            $tourOpt->policy = empty($request->policy)?"":$request->policy;
+            $tourOpt->rules = empty($request->rules)?"":$request->rules;
+
+            $data->options = json_encode($tourOpt);
+
             if($request->file('fileImage')){
                 foreach($request->file('fileImage') as $file ){
                     $destinationPath = path_storage('images');

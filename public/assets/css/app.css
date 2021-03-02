@@ -83,8 +83,8 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
+  font-size: 15px;
   line-height: 21px;
   color: #666666;
   font-weight: 400;
@@ -100,7 +100,7 @@ ul li {
 }
 
 p {
-  font-size: 14px;
+  font-size: 15px;
   color: #666666;
   font-weight: 400;
   line-height: 24px;
@@ -126,6 +126,13 @@ h5 {
   text-transform: inherit;
 }
 
+hr{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 2px solid #ddd;
+}
+}
 .form-control {
   box-shadow: none;
 }
@@ -393,6 +400,12 @@ a:focus {
 .form-control:focus {
   box-shadow: none;
 }
+
+.color-10 {
+  margin: 20px 0;
+  color: #003c71 !important;
+}
+
 
 .color-1 {
   color: #f0c24b !important;
@@ -4531,17 +4544,17 @@ footer .color-bar {
 
 /*======== 5.6 COURSES SECTION ========*/
 .block h3 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: inherit;
-  font-weight: 700;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
 }
 
 .block h3 a {
-  text-overflow: ellipsis;
+  /*text-overflow: ellipsis;*/
   white-space: nowrap;
   overflow: hidden;
   display: block;

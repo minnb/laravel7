@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SysPage;
 use App\Utils\HomeMucTieu;
+use App\Utils\TourOpt;
 use App\Models\Product;
 
 class TourController extends Controller
@@ -30,6 +31,11 @@ class TourController extends Controller
         $panelTour = Product::where([
             ['id','!=', $id],
             ['blocked',0]])->orderBy('id', 'desc')->limit(4)->get();
-        return view('home.layouts.tour-detail', compact('detailTour', 'panelTour'));
+        $tourPolicy = new TourOpt();
+        if($detailTour->options != '{}' || empty($detailTour->options))
+        {
+            $tourPolicy = json_decode($detailTour->options);
+        }
+        return view('home.layouts.tour-detail', compact('detailTour', 'panelTour', 'tourPolicy'));
     }
 }

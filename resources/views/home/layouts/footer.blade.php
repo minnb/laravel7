@@ -35,38 +35,18 @@
               <div class="footerTitle">
                 <h4>Địa điểm trải nghiệm</h4>
               </div>
+              <?php 
+                $topLocation = App\Models\Categories::getCateBySort(0);
+              ?>
               <div class="footerInfo">
                 <ul class="list-unstyled footerList">
+                  @foreach($topLocation as $item)
                   <li>
                     <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Ba Vì
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ $item->name }}
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Ninh Bình
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Thái Nguyên
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Hà Nội
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Hà Giang
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i>Sơn Tây
-                    </a>
-                  </li>
+                  @endforeach
                 </ul>
               </div>
             </div>

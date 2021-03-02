@@ -1,5 +1,17 @@
 <?php
 
+function getCateType(){
+    $arr = [
+      '0' => 'Location',
+      '1' => 'Title',
+      '2' => 'Park',
+      '3' => 'Pagodas',
+      '4' => 'Cinema',
+      '5' => 'Playground'
+    ];
+    return $arr;
+}
+
 function getArrDisplay(){
     $arr = [
       'Category' => 'Category',

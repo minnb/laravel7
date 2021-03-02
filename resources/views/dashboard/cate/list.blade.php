@@ -34,8 +34,9 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Parent</th>
-                    <th>Updated</th>
+                    <th>Type</th>
                     <th>Status</th>
+                    <th>Updated</th>
                     <th></th>
                 </tr>
                 <tbody>
@@ -52,9 +53,9 @@
                         </td>
                         <td><a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
                         <td>{{ App\Models\Categories::find($item->parent)->name }}</td>
-                        <td>{{ $item->updated_at }}</td>
+                        <td>{{ getCateType()[$item->sort] }}</td>
                         <td>{{ $item->blocked }}</td>
-
+                        <td>{{ $item->updated_at }}</td>
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons">
                                 <a class="blue" href="#">
@@ -129,7 +130,7 @@
                 bAutoWidth: false,
                 "aoColumns": [
                   { "bSortable": false },
-                  null, null,null, null, null,
+                  null, null,null, null, null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

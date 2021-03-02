@@ -23,6 +23,12 @@
                     <span class="badge badge-danger"></span>
                 </a>
             </li>
+            <li>
+                <a data-toggle="tab" href="#Policy">
+                    Policy
+                    <span class="badge badge-danger"></span>
+                </a>
+            </li>
         </ul>
         <div class="tab-content">
             <div id="Content" class="tab-pane fade in active">
@@ -73,13 +79,39 @@
                 <ul class="ace-thumbnails clearfix">
                     <li>
                         <a href="assets/images/gallery/image-2.jpg" data-rel="colorbox">
-                            <img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-2.jpg" />
+                            <img width="150" height="150" alt="150x150" src="{{ asset('assets/img/home/courses/course-1.jpg') }}" />
                             <div class="text">
                                 <div class="inner">Sample Caption on Hover</div>
                             </div>
                         </a>
                     </li>                                    
                 </ul>
+            </div>
+            <div id="Policy" class="tab-pane fade in active">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Trải nghiệm </label>
+                    <div class="col-xs-9">
+                        <textarea name="experience" id="experience" rows="6" class="col-xs-9 col-sm-5">{{ old('experience')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Dịch vụ</label>
+                    <div class="col-xs-9">
+                        <textarea name="service" id="service" rows="6" class="col-xs-9 col-sm-5">{{ old('service')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Chính sách</label>
+                    <div class="col-xs-9">
+                        <textarea name="policy" id="policy" rows="6" class="col-xs-9 col-sm-5">{{ old('policy')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Điều khoản</label>
+                    <div class="col-xs-9">
+                        <textarea name="rules" id="rules" rows="6" class="col-xs-9 col-sm-5">{{ old('rules')}}</textarea>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="clearfix form-actions">
@@ -104,9 +136,9 @@
 </form>
 @endsection
 @section("javascript")  
-<script src="<?php echo asset('admin/plugin/func_ckfinder.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/func_ckfinder.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
 <script src="{{asset('admin/js/select2.min.js') }}"></script>
 <script src="{{asset('admin/js/jquery-ui.custom.min.js') }}"></script>
 <script src="{{asset('admin/js/jquery.ui.touch-punch.min.js') }}"></script>
@@ -136,6 +168,23 @@
     
     $(document).ready(function(){
         ckeditor('content')
+        $('.textarea').wysihtml5();
+    });
+
+    $(document).ready(function(){
+        ckeditor('experience')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('service')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('policy')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('rules')
         $('.textarea').wysihtml5();
     });
 

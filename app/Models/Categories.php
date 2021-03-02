@@ -33,4 +33,22 @@ class Categories extends Model
     	return DB::table('m_categories')->whereIn('id', $arr_id)->get();
     }
 
+    public static function getLocationByCate($categories){
+        $listCate = Categories::getCateByArr(convertStrToArr("|", $categories))->where('sort', 0)->first();
+        if(isset($listCate)){
+            return $listCate->name;
+        }else{
+            return 'Việt Nam';
+        }
+    }
+
+    public static function getCateBySort($sort)
+    {
+        return DB::table('m_categories')->where([
+            ['type', 1],
+            ['sort', $sort],
+            ['parent', '>', 0]
+        ])->inRandomOrder()->take(10)->get();
+    }
+
 }
