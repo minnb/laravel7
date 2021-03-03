@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6 col-sm-pull-6 col-xs-12">
             <div class="schoolInfo wow fadeInUp">
-              <p>Chào mừng đến với</p>
+              <p>Chào mừng bạn đến với</p>
               <h2><span>Cùng con ra ngoài chơi</span></h2>
               <p>{!! $homePage->description !!}</p>
             </div>
