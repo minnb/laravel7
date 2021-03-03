@@ -6,6 +6,7 @@
 /project
 /vendor
 /storage
+/public/*.html
 .htaccess
 .env
 .phpunit.result.cache
