@@ -3,7 +3,7 @@
 @section('page-header', 'Create')
 @section('stylesheet')  
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugin/jquery.filer/css/jquery.filer.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/jquery.filer/css/jquery.filer.css') }}"/>
 @endsection
 @section('content')
 @include('dashboard.layouts.alert')
@@ -75,7 +75,7 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div id="Gallery" class="tab-pane fade in active">
+            <div id="Gallery" class="tab-pane fade">
                 <ul class="ace-thumbnails clearfix">
                     <li>
                         <a href="assets/images/gallery/image-2.jpg" data-rel="colorbox">
@@ -87,7 +87,7 @@
                     </li>                                    
                 </ul>
             </div>
-            <div id="Policy" class="tab-pane fade in active">
+            <div id="Policy" class="tab-pane fade">
                 <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Trải nghiệm </label>
                     <div class="col-xs-9">
@@ -144,7 +144,7 @@
 <script src="{{asset('admin/js/jquery.ui.touch-punch.min.js') }}"></script>
 <script src="{{asset('admin/js/bootbox.js') }}"></script>
 <script src="{{asset('admin/js/bootstrap-multiselect.min.js') }}"></script>
-<script src="{{asset('admin/plugin/jquery.filer/js/jquery.filer.min.js') }}"></script>
+<script src="{{asset('admin/plugins/jquery.filer/js/jquery.filer.min.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         $('#id-input-file-1 , #id-input-file-2').ace_file_input({

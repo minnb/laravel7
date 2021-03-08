@@ -21,7 +21,13 @@ Route::get('/home', 'Home\HomeController@index')->name('home');
 Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
 //page
 Route::get('/lien-he', 'Home\HomeController@contact')->name('lien-he');
-//detail tour
-Route::get('{cate}/{id}{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\TourController@detailTour'])->where('id', '[0-9]+');
-Route::get('post/{cate}/{id}{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');
 
+
+//detail tour
+Route::get('/{cate}', ['as'=>'get.home.tour.list','uses'=>'Home\ProductController@list']);
+Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\ProductController@detail'])->where('id', '[0-9]+');
+
+
+
+//blog
+Route::get('/post/{cate}/{id}{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');

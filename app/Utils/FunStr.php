@@ -1,5 +1,20 @@
 <?php
 
+function getRoute1Name($cate){
+  switch ($cate) 
+  {
+    case 0:
+      return "tour-da-ngoai-cuoi-tuan";
+      break;
+    case 1:
+      return "khoa-hoc";
+      break;
+    case 3:
+      return "hanh-trinh-trai-nghiem";
+      break;
+  }
+}
+
 function randomString($length = 10)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -51,7 +66,7 @@ function makeUnicode($str)
 		$str = str_replace($value,$nonUnicode,$str);
     }
 
-	$str=trim(strtolower($str));
+	  $str=trim(strtolower($str));
     $str=rtrim($str,"-");
     return $str;
 }

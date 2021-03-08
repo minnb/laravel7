@@ -52,7 +52,11 @@
         </button>
         <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/da-ngoai-cuoi-tuan-cung-con.png')}}" alt="Dã ngoại cuối tuần cùng con"></a>
       </div>
+<?php 
+  $route_name = \Str::upper(\Request::route()->getName());
 
+
+ ?>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -61,17 +65,27 @@
               <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Trang chủ</span>
             </a>
           </li>
-          <li class="dropdown singleDrop color-5 ">
-            <a href="#ourCourses" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
-          </li>
-          <li class="dropdown singleDrop color-2 ">
-            <a href="#ourGallery" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Hình ảnh</span></a>
-          </li>
-
-          <li class="dropdown singleDrop color-3 ">
-            <a href="#latestNews" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-calendar bg-color-6" aria-hidden="true"></i> <span>Hành trình</span></a>
-          </li>
-
+          @if($route_name ==  "HOME")
+            <li class="dropdown singleDrop color-5 ">
+              <a href="#ourCourses" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
+            </li>
+            <li class="dropdown singleDrop color-3 ">
+                <a href="#latestNews" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-graduation-cap bg-color-6" aria-hidden="true"></i> <span>Khóa học</span></a>
+            </li>
+            <li class="dropdown singleDrop color-2 ">
+              <a href="#ourGallery" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-picture-o bg-color-6" aria-hidden="true"></i> <span>Hình ảnh</span></a>
+            </li>
+          @else
+            <li class="dropdown singleDrop color-5 ">
+              <a href="{{ route('get.home.tour.list', ['cate'=>getRoute1Name(0)]) }}" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
+            </li>
+            <li class="dropdown singleDrop color-2 ">
+              <a href="{{ route('get.home.tour.list', ['cate'=>getRoute1Name(1)]) }}" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-graduation-cap bg-color-6" aria-hidden="true"></i> <span>Khóa học</span></a>
+            </li>
+            <li class="dropdown singleDrop color-3 ">
+                <a href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-picture-o bg-color-6" aria-hidden="true"></i> <span>Hình ảnh</span></a>
+            </li>
+          @endif
           <li class="dropdown singleDrop color-4 ">
             <a href="{{route('lien-he')}}" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Liên hệ</span></a>
           </li>

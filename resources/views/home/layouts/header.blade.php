@@ -52,6 +52,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&family=Open+Sans+Condensed:wght@300&family=Sriracha&display=swap" rel="stylesheet">
   <link href="{{asset('assets/css/app.css') }}" rel="stylesheet">
+  <link href="{{asset('assets/css/style.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('assets/css/default.css') }}" id="option_color">
   
   <!--[if lt IE 9]>

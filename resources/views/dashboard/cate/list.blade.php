@@ -33,6 +33,7 @@
                     </th>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Alias</th>
                     <th>Parent</th>
                     <th>Type</th>
                     <th>Status</th>
@@ -53,6 +54,7 @@
                         </td>
                         <td><a href="{{ route('get.dashboard.cate.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
                         <td>{{ App\Models\Categories::find($item->parent)->name }}</td>
+                        <td>{{ $item->alias }}</td>
                         <td>{{ getCateType()[$item->sort] }}</td>
                         <td>{{ $item->blocked }}</td>
                         <td>{{ $item->updated_at }}</td>
@@ -130,7 +132,7 @@
                 bAutoWidth: false,
                 "aoColumns": [
                   { "bSortable": false },
-                  null, null,null, null, null,null,
+                  null, null,null, null, null,null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

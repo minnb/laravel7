@@ -56,10 +56,10 @@
                    	@foreach($panelTour as $key=>$item)
                       <li class="media">
                         <div class="media-left">
-                          <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{ asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-rounded" style="max-width: 60px"></a>
+                          <a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{ asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-rounded" style="max-width: 60px"></a>
                         </div>
                         <div class="media-body">
-                          <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
+                          <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
                           <p>{!! $item->created_at !!}</p>
                         </div>
                       </li>

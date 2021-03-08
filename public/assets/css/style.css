@@ -1,0 +1,9 @@
+.courseList .media-left img.thumb-course {
+	max-width: 230px;
+	max-height: auto;
+}
+
+.thumbnail > a img{
+	height: 230px;
+	max-width: auto;
+}

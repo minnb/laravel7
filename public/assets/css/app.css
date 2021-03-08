@@ -7670,7 +7670,7 @@ footer .color-bar {
   font-family: 'Roboto', sans-serif;
   text-transform: inherit;
   font-weight: 700;
-  line-height: 20px;
+  /*line-height: 20px;*/
   margin: 0 0 20px 0;
   width: 100%;
   text-overflow: ellipsis;
