@@ -22,7 +22,7 @@
     <![endif]-->
     <link rel="stylesheet" href="{{ asset('admin/css/ace-skins.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/ace-rtl.min.css') }}" />
-
+    <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}" />
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
     <![endif]-->

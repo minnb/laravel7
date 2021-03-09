@@ -17,7 +17,8 @@
     <div class="row">
       <div class="col-md-9 col-sm-8 col-xs-12 block">
         <div class="thumbnail thumbnailContent alt">
-          <img src="{!! asset($detailTour->thumbnail) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
+          <?php $img_single = App\Models\ImageSingle::getPathImage($detailTour->id); ?>
+          <img src="{!! asset($img_single) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
           <div class="caption border-color-1">
             <h2 class="color-10">{!! $detailTour->name !!}</h2>
             <ul class="list-inline">

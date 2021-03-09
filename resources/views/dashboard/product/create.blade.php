@@ -54,10 +54,18 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right">Thumbnail</label>
+                    <label class="col-xs-2 control-label no-padding-right">Thumbnail <span class="img-size">(270x230)</span></label>
                     <div class="col-xs-4">
                         <label class="ace-file-input">
                             <input type="file" id="id-input-file-2" name="fileImage[]">
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right">Image <span class="img-size">(870x470)</span></label>
+                    <div class="col-xs-4">
+                        <label class="ace-file-input">
+                            <input type="file" id="id-input-file-2" name="fileImage2[]">
                         </label>
                     </div>
                 </div>

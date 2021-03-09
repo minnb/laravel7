@@ -11,6 +11,7 @@ use App\Models\Post_Tag;
 use App\Models\Categories;
 use App\Models\Product_Attributes;
 use App\Utils\TourOpt;
+use App\Models\ImageSingle;
 
 class ProductController extends Controller
 {
@@ -53,9 +54,9 @@ class ProductController extends Controller
                 $data->base_unit = '';
                 $data->options = json_encode($tourOpt);
                 
+                $destinationPath = path_storage('images');
                 if($request->file('fileImage')){
                     foreach($request->file('fileImage') as $file ){
-                        $destinationPath = path_storage('images');
                         if(isset($file)){
                             $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
                             $file->move($destinationPath, $file_name);
@@ -70,6 +71,22 @@ class ProductController extends Controller
 
                 $data->save();
                 DB::table("m_products")->where('id', $data->id)->update(['sku'=>str_pad(strval($data->id),8,"0",STR_PAD_LEFT)]);
+
+               
+                if($request->file('fileImage2')){
+                    foreach($request->file('fileImage2') as $file2 ){
+                        
+                        if(isset($file2)){
+                            $file_name2 = time().randomString().'.'.$file2->getClientOriginalExtension();
+                            $file2->move($destinationPath, $file_name2);
+                            
+                            $imgSingle = new ImageSingle();
+                            $imgSingle->post_id = $data->id;
+                            $imgSingle->path = $destinationPath.'/'.$file_name2;
+                            $imgSingle->save();
+                        }
+                    }
+                }
 
                 // if(count($request->tags) > 0)
                 // {
@@ -131,9 +148,9 @@ class ProductController extends Controller
 
             $data->options = json_encode($tourOpt);
 
+            $destinationPath = path_storage('images');
             if($request->file('fileImage')){
                 foreach($request->file('fileImage') as $file ){
-                    $destinationPath = path_storage('images');
                     if(isset($file)){
                         $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
                         $file->move($destinationPath, $file_name);
@@ -142,6 +159,27 @@ class ProductController extends Controller
                 }
             }
 
+            if($request->file('fileImage2')){
+                foreach($request->file('fileImage2') as $file2 ){
+                    if(isset($file2)){
+                        $file_name2 = time().randomString().'.'.$file2->getClientOriginalExtension();
+
+                        $imgSingle = ImageSingle::where('post_id', $id)->first();
+                        if(isset($imgSingle)){
+                            $file2->move($destinationPath, $file_name2);
+
+                            $imgSingle->path = $destinationPath.'/'.$file_name2;
+                            $imgSingle->save();
+                        }else{
+                            $imgSingle = new ImageSingle();
+                            $imgSingle->post_id = $id;
+                            $imgSingle->path = $destinationPath.'/'.$file_name2;
+                            $imgSingle->save();
+                        }
+
+                    }
+                }
+            }
             $data->save();
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Chỉnh sửa dữ liệu thành công']);
