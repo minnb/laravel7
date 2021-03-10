@@ -42,6 +42,15 @@ class Categories extends Model
         }
     }
 
+    //get list location
+    public static function getListLocation(){
+        return Categories::where([
+            ['blocked', 0],
+            ['parent', '>', 2],
+            ['sort', 0]
+        ])->get();
+    }
+
     public static function getCateBySort($sort)
     {
         return DB::table('m_categories')->where([

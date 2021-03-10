@@ -30,4 +30,4 @@ Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\Pr
 
 
 //blog
-Route::get('/post/{cate}/{id}{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');
+Route::get('/blog/{cate}/{id}-{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');

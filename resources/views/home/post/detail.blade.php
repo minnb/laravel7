@@ -20,6 +20,16 @@
           <div class="caption">
             <h3 class="color-10">{!! $detailPost->title !!}</h3>
             <p>{!! $detailPost->content !!}</p>
+            <hr class="border-color-3">
+            <?php $tagPostDetail = App\Models\Post_Tag::getTagByPostId($detailPost->id);  ?>
+            @if(isset($tagPostDetail))
+              <p>
+                <i class="fa fa-tag"></i>
+                  @foreach($tagPostDetail as $item)
+                  <a href="#" class="badge-link">{!! $item->name !!} <span class="badge"></span></a>
+                  @endforeach
+              </p>
+            @endif
           </div>
         </div>
       </div>
@@ -40,7 +50,7 @@
                         </div>
                         <div class="media-body">
                           <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
-                          <p>{!! $item->created_at !!}</p>
+                          <p class="crt-date"><i class="fa fa-map-marker" aria-hidden="true"></i> {!! App\Models\Categories::getLocationByCate($item->categories) !!}</p>
                         </div>
                       </li>
                       @endforeach

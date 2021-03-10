@@ -18,7 +18,9 @@
       <div class="col-md-9 col-sm-8 col-xs-12 block">
         <div class="thumbnail thumbnailContent alt">
           <?php $img_single = App\Models\ImageSingle::getPathImage($detailTour->id); ?>
-          <img src="{!! asset($img_single) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
+          @if($img_single != "")
+            <img src="{!! asset($img_single) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
+          @endif
           <div class="caption border-color-1">
             <h2 class="color-10">{!! $detailTour->name !!}</h2>
             <ul class="list-inline">
@@ -38,10 +40,15 @@
               <p>{!! $tourPolicy->policy !!}</p>
             <h3 class="color-10">Điều khoản</h3>
               <p>{!! $tourPolicy->rules !!}</p>
+            <hr class="border-color-3">
+            <?php $lstTag = App\Models\Categories::getCateByArr(convertStrToArr("|", $detailTour->categories)) ?>
+              <p>
+                <i class="fa fa-tag"></i>
+                @foreach($lstTag as $item)
+                <a href="#" class="badge-link">{!! $item->name !!} <span class="badge"></span></a>
+                @endforeach
+              </p>
           </div>
-        </div>
-        <div class="btnArea">
-          <a href="#" class="btn btn-primary">Đặt tour</a>
         </div>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-12">
@@ -61,7 +68,7 @@
                         </div>
                         <div class="media-body">
                           <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
-                          <p>{!! $item->created_at !!}</p>
+                          <p class="crt-date"><i class="fa fa-map-marker" aria-hidden="true"></i> {!! App\Models\Categories::getLocationByCate($item->categories) !!}</p>
                         </div>
                       </li>
                       @endforeach

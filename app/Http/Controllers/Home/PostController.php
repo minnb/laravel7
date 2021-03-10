@@ -29,6 +29,6 @@ class PostController extends Controller
     {
         $detailPost = Post::find($id);
         $panelTour = Product::where('blocked',0)->orderBy('id', 'desc')->limit(4)->get();
-        return view('home.layouts.post-detail', compact('detailPost','panelTour'));
+        return view('home.post.detail', compact('detailPost','panelTour'));
     }
 }
