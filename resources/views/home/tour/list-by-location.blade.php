@@ -3,11 +3,11 @@
 <section class="pageTitleSection" style="background-image: url('{{asset('assets/img/page-title/page-title-bg.jpg')}}'">
   <div class="container">
     <div class="pageTitleInfo">
-      <h2>{!! $cate_name->name !!}</h2>
+      <h2>{!! $location_name->name !!}</h2>
       <ol class="breadcrumb">
         <li><a href="{{ route('home')}}">Trang chủ</a></li>
-        <li><a href="#">{!! $cate_name->name !!}</a></li>
-        <li class="active"></li>
+        <li><a href="#">{!! $cate_name->name !!}a</a></li>
+        <li >{!! $location_name->name !!}</li>
       </ol>
     </div>
   </div>

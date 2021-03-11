@@ -998,13 +998,13 @@ aside {
 /*======== 2.2 SECTION TITLE ========*/
 @media (min-width: 320px) {
   .whiteSection, .mainContent, .lightSection, .colorSection {
-    padding: 50px 0;
+    padding: 30px 0;
   }
 }
 
 @media (min-width: 768px) {
   .whiteSection, .mainContent, .lightSection, .colorSection {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 }
 
@@ -4546,7 +4546,7 @@ footer .color-bar {
 .block h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: inherit;
-  font-weight: 600;
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -4574,7 +4574,7 @@ footer .color-bar {
 
 @media (min-width: 1200px) {
   .block h3 {
-    font-size: 24px;
+    font-size: 23px;
   }
 }
 
@@ -7669,7 +7669,7 @@ footer .color-bar {
 .courseList .media-body .media-heading a {
   font-family: 'Roboto', sans-serif;
   text-transform: inherit;
-  font-weight: 700;
+  font-weight: 500;
   /*line-height: 20px;*/
   margin: 0 0 20px 0;
   width: 100%;

@@ -36,13 +36,13 @@
                 <h4>Địa điểm trải nghiệm</h4>
               </div>
               <?php 
-                $topLocation = App\Models\Categories::getCateBySort(0);
+                $topLocation = App\Models\Categories::getListLocation();
               ?>
               <div class="footerInfo">
                 <ul class="list-unstyled footerList">
                   @foreach($topLocation as $item)
                   <li>
-                    <a href="#">
+                    <a href="{{ route('get.home.tour.location.list',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">
                       <i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ $item->name }}
                     </a>
                   </li>
@@ -65,7 +65,7 @@
                       </a>
                       <div class="media-body">
                         <h5 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h5>
-                        <p>{!! $item->updated_at !!}</p>
+                         <p class="crt-date"><i class="fa fa-map-marker" aria-hidden="true"></i> {!! App\Models\Categories::getLocationByCate($item->categories) !!}</p>
                       </div>
                     </div>
                   </li>

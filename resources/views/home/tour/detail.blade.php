@@ -26,7 +26,7 @@
             <ul class="list-inline">
               <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><strong>{{ App\Models\Categories::getLocationByCate($detailTour->categories) }}</strong></a></li>
               <li><span style="margin-left:10px"></span></li>
-              <li><a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>0 Bình luận</a></li>
+              <li><i class="fa fa-clock-o" aria-hidden="true"></i> <strong>{!! getTourTime()[$detailTour->base_unit] !!}</li>
             </ul>
             <hr class="border-color-2">
             <h3 class="color-10">Những trải nghiệm thú vị</h3>

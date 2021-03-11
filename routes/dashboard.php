@@ -78,6 +78,14 @@ Route::group(['prefix'=> 'dashboard'], function(){
 			Route::post('create', ['as'=>'post.dashboard.product.price.create','uses'=>'Dashboard\SalesPriceController@postCreate']);
 			Route::post('edit/{id}', ['as'=>'post.dashboard.product.price.edit','uses'=>'Dashboard\SalesPriceController@postEdit'])->where('id', '[0-9]+');
 		});
+
+		Route::group(['prefix'=> 'schedule'], function(){
+			Route::get('list', ['as'=>'get.dashboard.product.schedule.list','uses'=>'Dashboard\ScheduleController@list']);
+			Route::post('create', ['as'=>'post.dashboard.product.schedule.create','uses'=>'Dashboard\ScheduleController@postCreate']);
+			Route::get('edit/{id}', ['as'=>'get.dashboard.product.schedule.edit','uses'=>'Dashboard\ScheduleController@edit'])->where('id', '[0-9]+');;
+			Route::post('edit/{id}', ['as'=>'post.dashboard.product.schedule.edit','uses'=>'Dashboard\ScheduleController@postEdit'])->where('id', '[0-9]+');
+		});
+
 	});
 
 

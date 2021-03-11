@@ -47,6 +47,14 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Time </label>
+                    <div class="col-xs-4">
+                        <select class="form-control" id="form-field-select-1" name="base_unit" required="">
+                            <?php selectedOption(getTourTime(), '1N') ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right">Status</label>
                     <div class="col-xs-9">
                         <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />

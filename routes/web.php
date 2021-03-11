@@ -25,6 +25,7 @@ Route::get('/lien-he', 'Home\HomeController@contact')->name('lien-he');
 
 //detail tour
 Route::get('/{cate}', ['as'=>'get.home.tour.list','uses'=>'Home\ProductController@list']);
+Route::get('/{cate}/dia-diem/{id}-{name}', ['as'=>'get.home.tour.location.list','uses'=>'Home\ProductController@listByLocation']);
 Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\ProductController@detail'])->where('id', '[0-9]+');
 
 

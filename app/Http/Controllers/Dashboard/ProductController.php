@@ -46,6 +46,7 @@ class ProductController extends Controller
                 $data->categories = implode("|",$request->category);
                 $data->name = trim($request->name);
                 $data->alias = Str::slug($request->name);
+                $data->base_unit = $request->base_unit;
                 $data->description = empty($request->description)?"":$request->description;
                 $data->content = empty($request->content)?"":$request->content;
                 $data->blocked = $request->status == 'on' ? 0 : 1;
@@ -135,6 +136,7 @@ class ProductController extends Controller
             $data->categories = implode("|",$request->category);
             $data->name = trim($request->name);
             $data->alias = Str::slug($request->name);
+            $data->base_unit = $request->base_unit;
             $data->description = empty($request->description)?"":$request->description;
             $data->content = empty($request->content)?"":$request->content;;
             $data->blocked = $request->status == 'on' ? 0 : 1;

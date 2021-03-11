@@ -1,23 +1,93 @@
 @extends('dashboard.app')
-@section('title', 'Product')
-@section('page-header', 'List')
+@section('title', 'Pages')
+@section('page-header', 'Banner')
 @section('content')
 @include('dashboard.layouts.alert')
-<div class="clearfix">
-    <div class="pull-right tableTools-container"></div>
-</div>
+@if(isset($data))
+<form class="form-horizontal" role="form" action="{{ route('post.dashboard.page.banner.edit', ['id'=>$data[0]->id])}}" method="post" enctype="multipart/form-data">
+@else
+<form class="form-horizontal" role="form" action="{{ route('post.dashboard.page.banner.create')}}" method="post" enctype="multipart/form-data">
+@endif
+    @csrf
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Name </label>
+        <div class="col-sm-9">
+            <input type="text" id="form-field-1" placeholder="Name" name="name" class="col-xs-10 col-sm-5" required="" value="{{ old('name', isset($data)?$data[0]->name:'')}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Description </label>
+        <div class="col-xs-9">
+            <textarea name="description" id="description" rows="6" class="col-xs-9 col-sm-5">{{ old('description', isset($data)?$data[0]->description:'')}}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Link </label>
+        <div class="col-xs-4">
+            <select class="form-control" id="form-field-select-1" name="display" required="">
+                <?php selectedOption(getArrDisplay(), 'Category') ?>
+            </select>
+        </div>
+    </div>
+    @if(isset($data))
+        <div class="form-group">
+            <label class="col-xs-2 control-label no-padding-right">Status</label>
+            <div class="col-xs-9">
+                @if($data[0]->blocked == 0)
+                    <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />
+                @else
+                    <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" />
+                @endif
+                <span class="lbl"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label no-padding-right">Image <span>(1920x720)</span></label>
+            <div class="col-xs-4">
+                <label class="ace-file-input">
+                    <input type="file" id="id-input-file-2" name="fileImage[]">
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-4">
+                <img style="max-width: 200px" src="{{asset($data[0]->thumbnail)}}">
+            </div>
+        </div>
+    @else
+    <div class="form-group">
+        <label class="col-xs-2 control-label no-padding-right">Status</label>
+        <div class="col-xs-9">
+            <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />
+            <span class="lbl"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label no-padding-right">Image <span>(1920x720)</span></label>
+        <div class="col-xs-4">
+            <label class="ace-file-input">
+                <input type="file" id="id-input-file-2" name="fileImage[]">
+            </label>
+        </div>
+    </div>
+    @endif
+
+    <div class="clearfix"></div>
+    <div class="clearfix form-actions">
+        <div class="col-md-offset-2 col-md-9">
+            <button class="btn btn-info" type="Submit">
+                <i class="ace-icon fa fa-check bigger-110"></i>
+                Submit
+            </button>
+        </div>
+    </div>
+</form>
 <div class="tabbable">
     <ul class="nav nav-tabs" id="myTab">
         <li class="active">
             <a data-toggle="tab" href="#home">
                 <i class="green ace-icon fa fa-home bigger-120"></i>
-                List
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('get.dashboard.product.create') }}">
-                <i class="red ace-icon fa fa-pencil  bigger-120"></i>
-                Create
+                Banner
             </a>
         </li>
     </ul>
@@ -25,54 +95,61 @@
         <table id="dynamic-table" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Thumbnail</th>
-                    <th>Sku</th>
+                    <th>Image</th>
                     <th>Name</th>
-                    <th>Categories</th>
-                    <th>Time</th>
+                    <th>Description</th>
                     <th>Status</th>
+                    <th>Updated</th>
                     <th></th>
                 </tr>
                 <tbody>
                     @foreach($data as $key=>$item)
                     <tr>
-                        <td><a href="{{ route('get.dashboard.product.edit', ['id'=>$item->id]) }}">{{ $item->id }}</a></td>
-                        <td><img style="max-width:60px;" src="{{ asset(getImage($item->thumbnail)) }}"></td>
-                        <td><a href="{{ route('get.dashboard.product.edit', ['id'=>$item->id]) }}">{{ $item->sku }}</a></td>
-                        <td><a href="{{ route('get.dashboard.product.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
                         <td>
-                            <?php $listCate = App\Models\Categories::getCateByArr(convertStrToArr("|", $item->categories)); ?>
-                            @if(isset($listCate))
-                                @foreach($listCate as $i)
-                                    <span style="color:{{ randomColor(rand(1, 9)) }}">{{ $i->name }}; </span>
-                                @endforeach
-                            @endif
+                            <img style="max-width:150px;" src="{{ asset(getImage($item->thumbnail)) }}">
                         </td>
-                        <td>{{ $item->base_unit }}</td>
-                        <td>{{ $item->blocked }}</td>
+                        <td><a href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}">{{ $item->name }}</a></td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ getStatus($item->blocked) }}</td>
+                        <td>{{ $item->updated_at }}</td>
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons">
-                                <a class="green" href="{{ route('get.dashboard.product.edit', ['id'=>$item->id]) }}">
+                                <a class="blue" href="#">
+                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
+                                </a>
+
+                                <a class="green" href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}">
                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                 </a>
 
-                                <a class="red" href="{{ route('get.dashboard.product.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
+                                <a class="red" href="{{ route('get.dashboard.page.banner.delete', ['id'=>$item->id]) }}" onclick="return alertDelete();">
                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                 </a>
                             </div>
+
                             <div class="hidden-md hidden-lg">
                                 <div class="inline pos-rel">
+                                    <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                        <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+                                    </button>
+
                                     <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
                                         <li>
-                                            <a href="{{ route('get.dashboard.product.edit', ['id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                <span class="blue">
+                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('get.dashboard.page.banner.edit', ['id'=>$item->id]) }}" class="tooltip-success" data-rel="tooltip" title="Edit">
                                                 <span class="green">
                                                     <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                 </span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('get.dashboard.product.price.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
+                                            <a href="{{ route('get.dashboard.page.banner.delete', ['id'=>$item->id]) }}" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="return alertDelete();">
                                                 <span class="red">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 </span>
@@ -107,24 +184,9 @@
             //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
             .DataTable( {
                 bAutoWidth: false,
-                "aoColumns": [
-                  { "bSortable": false },
-                  null, null,null, null, null,null,
-                  { "bSortable": false }
+                "aoColumns": [null, null,null, null, null,{ "bSortable": false }
                 ],
                 "aaSorting": [],
-                //"bProcessing": true,
-                //"bServerSide": true,
-                //"sAjaxSource": "http://127.0.0.1/table.php"   ,
-                //,
-                //"sScrollY": "200px",
-                //"bPaginate": false,
-                //"sScrollX": "100%",
-                //"sScrollXInner": "120%",
-                //"bScrollCollapse": true,
-                //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-                //you may want to wrap the table inside a "div.dataTables_borderWrap" element
-                //"iDisplayLength": 50
                 select: {
                     style: 'multi'
                 }
@@ -169,23 +231,18 @@
                   }       
                 ]
             } );
-            myTable.buttons().container().appendTo( $('.tableTools-container') );
-            //style the message box
-                var defaultCopyAction = myTable.button(1).action();
-            myTable.button(1).action(function (e, dt, button, config) {
-                defaultCopyAction(e, dt, button, config);
-                $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
-            });
-            
-            var defaultColvisAction = myTable.button(0).action();
-            myTable.button(0).action(function (e, dt, button, config) {
-                defaultColvisAction(e, dt, button, config);
-                if($('.dt-button-collection > .dropdown-menu').length == 0) {
-                    $('.dt-button-collection')
-                    .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
-                    .find('a').attr('href', '#').wrap("<li />")
-                }
-                $('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
+
+            $('#id-input-file-1 , #id-input-file-2').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false //| true | large
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
             });
         
             setTimeout(function() {

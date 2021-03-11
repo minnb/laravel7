@@ -52,6 +52,15 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Time </label>
+                    <div class="col-xs-4">
+                        <select class="form-control" id="form-field-select-1" name="base_unit" required="">
+                            <?php selectedOption(getTourTime(), old('base_unit', isset($data) ? $data['base_unit']: '1N')) ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right">Status</label>
                     <div class="col-xs-9">

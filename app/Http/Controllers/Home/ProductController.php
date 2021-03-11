@@ -32,8 +32,19 @@ class ProductController extends Controller
         $cate_name = Categories::where('alias', $cate)->first();
         $lstProduct = Product::where([
             ['blocked', 0]
-            ])->orderBy('id')->orderBy('id', 'desc')->paginate(4);
+            ])->orderBy('id', 'desc')->paginate(4);
         return view('home.tour.list', compact('lstProduct','cate_name'));
+    }
+
+    public function listByLocation($cate, $id, $name)
+    {
+        $cate_name = Categories::where('alias', $cate)->first();
+        $location_name = Categories::find($id);
+        $lstProduct = Product::where([
+            ['blocked', 0],
+            ['Categories', 'like', '%'.$id.'%']
+            ])->orderBy('id', 'desc')->paginate(4);
+        return view('home.tour.list-by-location', compact('lstProduct','cate_name','location_name'));
     }
 
     public function detail($cate, $id, $name)
