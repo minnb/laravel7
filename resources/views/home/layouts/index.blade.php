@@ -118,7 +118,7 @@
               <div class="caption border-color-1">
                 <h3><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-3">{!! $item->name !!}</a></h3>
                 <ul class="list-unstyled">
-                  <?php $startDate = App\Models\ScheduleTour::getScheduleByTourId($item->id); ?>
+                  <?php $startDate = App\Models\ScheduleTour::getScheduleByTourId($item->id); ?> 
                   <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Khởi hành: {{ $startDate == "1990-01-01" ? "Liên hệ" : date("d/m/Y", strtotime($startDate)) }}</li>
                   <li><i class="fa fa-clock-o" aria-hidden="true"></i> {!! getTourTime()[$item->base_unit] !!}</li>
                 </ul>

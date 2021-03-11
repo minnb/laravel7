@@ -46,7 +46,7 @@ class ProductController extends Controller
             ])->orderBy('id', 'desc')->paginate(4);
         return view('home.tour.list-by-location', compact('lstProduct','cate_name','location_name'));
     }
-
+ 
     public function detail($cate, $id, $name)
     {
         $detailTour = Product::find($id);
