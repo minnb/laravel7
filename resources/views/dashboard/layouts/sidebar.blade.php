@@ -148,16 +148,20 @@
                         <i class="menu-icon fa fa-caret-right"></i>
                         Lists
                     </a>
-
                     <b class="arrow"></b>
                 </li>
-
                 <li class="{{ getActiveCSS('dashboard.product.price') }}">
                     <a href="{{ route('get.dashboard.product.price.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Sales Price
                     </a>
-
+                    <b class="arrow"></b>
+                </li>
+                 <li class="{{ getActiveCSS('dashboard.product.schedule') }}">
+                    <a href="{{ route('get.dashboard.product.schedule.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Schedule
+                    </a>
                     <b class="arrow"></b>
                 </li>
                 <li class="{{ getActiveCSS('get.dashboard.product.prdatt') }}">

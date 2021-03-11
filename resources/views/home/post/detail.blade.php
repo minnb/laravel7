@@ -3,11 +3,11 @@
 <section class="pageTitleSection" style="background-image: url('{{asset('assets/img/page-title/page-title-bg.jpg')}}'">
   <div class="container">
     <div class="pageTitleInfo">
-      <h2>{!! $detailTour->name !!}</h2>
+      <h2>{!! $detailPost->title !!}</h2>
       <ol class="breadcrumb">
         <li><a href="{{ route('home')}}">Trang chủ</a></li>
         <li><a href="#">Dã ngoại cuối tuần</a></li>
-        <li class="active">{!! $detailTour->name !!}</li>
+        <li class="active">{!! $detailPost->title !!}</li>
       </ol>
     </div>
   </div>
@@ -17,14 +17,20 @@
     <div class="row">
       <div class="col-md-9 col-sm-8 col-xs-12 block">
         <div class="thumbnail thumbnailContent alt">
-          <img src="{!! asset($detailTour->thumbnail) !!}" alt="{!! $detailTour->name !!}" class="img-responsive">
-          <div class="caption border-color-1">
-            <h3 class="color-1">{!! $detailTour->name !!}</h3>
-            <p>{!! $detailTour->content !!}</p>
+          <div class="caption">
+            <h3 class="color-10">{!! $detailPost->title !!}</h3>
+            <p>{!! $detailPost->content !!}</p>
+            <hr class="border-color-3">
+            <?php $tagPostDetail = App\Models\Post_Tag::getTagByPostId($detailPost->id);  ?>
+            @if(isset($tagPostDetail))
+              <p>
+                <i class="fa fa-tag"></i>
+                  @foreach($tagPostDetail as $item)
+                  <a href="#" class="badge-link">{!! $item->name !!} <span class="badge"></span></a>
+                  @endforeach
+              </p>
+            @endif
           </div>
-        </div>
-        <div class="btnArea">
-          <a href="#" class="btn btn-primary">Đặt tour</a>
         </div>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-12">
@@ -44,7 +50,7 @@
                         </div>
                         <div class="media-body">
                           <h4 class="media-heading"><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">{!! $item->name !!}</a></h4>
-                          <p>{!! $item->created_at !!}</p>
+                          <p class="crt-date"><i class="fa fa-map-marker" aria-hidden="true"></i> {!! App\Models\Categories::getLocationByCate($item->categories) !!}</p>
                         </div>
                       </li>
                       @endforeach
@@ -59,3 +65,4 @@
   </div>
 </section>
 @endsection
+

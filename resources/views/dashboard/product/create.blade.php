@@ -3,7 +3,7 @@
 @section('page-header', 'Create')
 @section('stylesheet')  
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/select2.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugin/jquery.filer/css/jquery.filer.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/plugins/jquery.filer/css/jquery.filer.css') }}"/>
 @endsection
 @section('content')
 @include('dashboard.layouts.alert')
@@ -20,6 +20,12 @@
             <li>
                 <a data-toggle="tab" href="#Gallery">
                     Gallery
+                    <span class="badge badge-danger"></span>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#Policy">
+                    Policy
                     <span class="badge badge-danger"></span>
                 </a>
             </li>
@@ -41,6 +47,14 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Time </label>
+                    <div class="col-xs-4">
+                        <select class="form-control" id="form-field-select-1" name="base_unit" required="">
+                            <?php selectedOption(getTourTime(), '1N') ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right">Status</label>
                     <div class="col-xs-9">
                         <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />
@@ -48,10 +62,18 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right">Thumbnail</label>
+                    <label class="col-xs-2 control-label no-padding-right">Thumbnail <span class="img-size">(270x230)</span></label>
                     <div class="col-xs-4">
                         <label class="ace-file-input">
                             <input type="file" id="id-input-file-2" name="fileImage[]">
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right">Image <span class="img-size">(870x470)</span></label>
+                    <div class="col-xs-4">
+                        <label class="ace-file-input">
+                            <input type="file" id="id-input-file-2" name="fileImage2[]">
                         </label>
                     </div>
                 </div>
@@ -69,17 +91,43 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-            <div id="Gallery" class="tab-pane fade in active">
+            <div id="Gallery" class="tab-pane fade">
                 <ul class="ace-thumbnails clearfix">
                     <li>
                         <a href="assets/images/gallery/image-2.jpg" data-rel="colorbox">
-                            <img width="150" height="150" alt="150x150" src="assets/images/gallery/thumb-2.jpg" />
+                            <img width="150" height="150" alt="150x150" src="{{ asset('assets/img/home/courses/course-1.jpg') }}" />
                             <div class="text">
                                 <div class="inner">Sample Caption on Hover</div>
                             </div>
                         </a>
                     </li>                                    
                 </ul>
+            </div>
+            <div id="Policy" class="tab-pane fade">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Trải nghiệm </label>
+                    <div class="col-xs-9">
+                        <textarea name="experience" id="experience" rows="6" class="col-xs-9 col-sm-5">{{ old('experience')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Dịch vụ</label>
+                    <div class="col-xs-9">
+                        <textarea name="service" id="service" rows="6" class="col-xs-9 col-sm-5">{{ old('service')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Chính sách</label>
+                    <div class="col-xs-9">
+                        <textarea name="policy" id="policy" rows="6" class="col-xs-9 col-sm-5">{{ old('policy')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Điều khoản</label>
+                    <div class="col-xs-9">
+                        <textarea name="rules" id="rules" rows="6" class="col-xs-9 col-sm-5">{{ old('rules')}}</textarea>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="clearfix form-actions">
@@ -104,15 +152,15 @@
 </form>
 @endsection
 @section("javascript")  
-<script src="<?php echo asset('admin/plugin/func_ckfinder.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/func_ckfinder.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
 <script src="{{asset('admin/js/select2.min.js') }}"></script>
 <script src="{{asset('admin/js/jquery-ui.custom.min.js') }}"></script>
 <script src="{{asset('admin/js/jquery.ui.touch-punch.min.js') }}"></script>
 <script src="{{asset('admin/js/bootbox.js') }}"></script>
 <script src="{{asset('admin/js/bootstrap-multiselect.min.js') }}"></script>
-<script src="{{asset('admin/plugin/jquery.filer/js/jquery.filer.min.js') }}"></script>
+<script src="{{asset('admin/plugins/jquery.filer/js/jquery.filer.min.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         $('#id-input-file-1 , #id-input-file-2').ace_file_input({
@@ -136,6 +184,23 @@
     
     $(document).ready(function(){
         ckeditor('content')
+        $('.textarea').wysihtml5();
+    });
+
+    $(document).ready(function(){
+        ckeditor('experience')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('service')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('policy')
+        $('.textarea').wysihtml5();
+    });
+    $(document).ready(function(){
+        ckeditor('rules')
         $('.textarea').wysihtml5();
     });
 

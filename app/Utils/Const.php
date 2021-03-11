@@ -1,5 +1,27 @@
 <?php
 
+function getCateType(){
+    $arr = [
+      '0' => 'Location',
+      '1' => 'Title',
+      '2' => 'Park',
+      '3' => 'Pagodas',
+      '4' => 'Cinema',
+      '5' => 'Playground'
+    ];
+    return $arr;
+}
+
+function getTourTime(){
+    $arr = [
+      '1N' => 'Trong ngày',
+      '2N1D' => '2 Ngày 1 Đêm',
+      '3N2D' => '3 Ngày 2 Đêm',
+      '4N3D' => '4 Ngày 3 Đêm'
+    ];
+    return $arr;
+}
+
 function getArrDisplay(){
     $arr = [
       'Category' => 'Category',

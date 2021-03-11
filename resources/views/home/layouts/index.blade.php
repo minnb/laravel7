@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6 col-sm-pull-6 col-xs-12">
             <div class="schoolInfo wow fadeInUp">
-              <p>Chào mừng đến với</p>
+              <p>Chào mừng bạn đến với</p>
               <h2><span>Cùng con ra ngoài chơi</span></h2>
               <p>{!! $homePage->description !!}</p>
             </div>
@@ -113,17 +113,19 @@
         @foreach($topTourIndex as $key=>$item)
           <div class="col-sm-6 col-md-3 col-xs-12 block">
             <div class="thumbnail thumbnailContent wow fadeInUp">
-              <a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}"><img src="{{asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-responsive"></a>
+              <a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}">
+                <img src="{{asset($item->thumbnail)}}" alt="{!! $item->name !!}" class="img-responsive"></a>
               <div class="caption border-color-1">
-                <h3><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-1">{!! $item->name !!}</a></h3>
+                <h3><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="color-3">{!! $item->name !!}</a></h3>
                 <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Từ 2 đến 10 tuổi</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>1 ngày</li>
+                  <?php $startDate = App\Models\ScheduleTour::getScheduleByTourId($item->id); ?>
+                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Khởi hành: {{ $startDate == "1990-01-01" ? "Liên hệ" : date("d/m/Y", strtotime($startDate)) }}</li>
+                  <li><i class="fa fa-clock-o" aria-hidden="true"></i> {!! getTourTime()[$item->base_unit] !!}</li>
                 </ul>
                 <p>{!! \Illuminate\Support\Str::limit($item->description, 150, '...') !!}</p>
                 <ul class="list-inline btn-yellow">
                   <li><a href="#" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
-                  <li><a href="{{ route('get.home.tour.detail',['cate'=>'da-ngoai-cuoi-tuan','id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
+                  <li><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>
                 </ul>
               </div>
             </div>

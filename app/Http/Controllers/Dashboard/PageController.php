@@ -18,7 +18,7 @@ class PageController extends Controller
         $this->middleware('admin');
     }
 
-	public function home()
+	public function home() 
     {
         $data = SysPage::where('category','HOMEPAGE')->get();
         $muctieu = json_decode($data[0]->options);

@@ -33,9 +33,11 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Sort </label>
-        <div class="col-xs-9">
-            <input type="number" name="sort" placeholder="0" class="col-xs-9 col-sm-5" value="0" style="text-align: center;" value="{{ old('sort')}}" />
+        <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Type </label>
+        <div class="col-xs-4">
+            <select class="form-control" id="form-field-select-1" name="sort">
+                <?php selectedOption(getCateType(), 'Location') ?>
+            </select>
         </div>
     </div>
     <div class="form-group">
@@ -84,9 +86,9 @@
 </form>
 @endsection
 @section("javascript")  
-<script src="<?php echo asset('admin/plugin/func_ckfinder.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/ckeditor/ckeditor.js'); ?>"></script>
-<script src="<?php echo asset('admin/plugin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/func_ckfinder.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/ckeditor/ckeditor.js'); ?>"></script>
+<script src="<?php echo asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         $('#id-input-file-1 , #id-input-file-2').ace_file_input({

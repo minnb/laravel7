@@ -24,7 +24,7 @@
         <div class="col-xs-4">
             <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a Uom..." name="uom[]" required>
                 <option value="">  </option>
-                {!! getSelectArrayForm(App\Models\Product::getSelect2Products(), old('product', isset($data) ? convertStrToArr("|", $data['product_id']): [0])) !!}
+                
             </select>
         </div>
     </div>
@@ -117,7 +117,7 @@
         $('.multiselect').multiselect('destroy');
     });
 
- if(!ace.vars['touch']) {
+    if(!ace.vars['touch']) {
                     $('.chosen-select').chosen({allow_single_deselect:true}); 
                     //resize the chosen on window resize
             

@@ -1,0 +1,16 @@
+.courseList .media-left img.thumb-course {
+	max-width: 230px;
+	max-height: auto;
+}
+
+.thumbnail > a img{
+	height: 230px;
+	max-width: auto;
+}
+
+.media-body p.crt-date{
+	font-size: 11.5px;
+}
+.v-margin-right-15{
+	margin-right: 15px; font-size: 14px;
+}

@@ -43,7 +43,7 @@
               </span>
               <div class="media-body">
                 <h3 class="media-heading">Email:</h3>
-                <p><a href="mailto:hello@example.com">dieuhanh.binhanviet@gmail.com</a>  Or
+                <p><a href="mailto:hello@example.com">dieuhanh.binhanviet@gmail.com</a>
                 </p>
               </div>
             </div>
