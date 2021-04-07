@@ -28,6 +28,7 @@ Route::get('/{cate}', ['as'=>'get.home.tour.list','uses'=>'Home\ProductControlle
 Route::get('/{cate}/dia-diem/{id}-{name}', ['as'=>'get.home.tour.location.list','uses'=>'Home\ProductController@listByLocation']);
 Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\ProductController@detail'])->where('id', '[0-9]+');
 
+Route::post('/tour/post/guide/{type}', ['as'=>'post.home.tour.guide','uses'=>'Home\ProductController@guide']);
 
 
 //blog

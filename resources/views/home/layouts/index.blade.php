@@ -122,7 +122,6 @@
                   <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Khởi hành: {{ $startDate == "1990-01-01" ? "Liên hệ" : date("d/m/Y", strtotime($startDate)) }}</li>
                   <li><i class="fa fa-clock-o" aria-hidden="true"></i> {!! getTourTime()[$item->base_unit] !!}</li>
                 </ul>
-                <p>{!! \Illuminate\Support\Str::limit($item->description, 150, '...') !!}</p>
                 <ul class="list-inline btn-yellow">
                   <li><a href="#" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Đăng ký</a></li>
                   <li><a href="{{ route('get.home.tour.detail',['cate'=>getRoute1Name(0),'id'=>$item->id, 'name'=>Illuminate\Support\Str::slug($item->name).'.html'])}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Chi tiết</a></li>

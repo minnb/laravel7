@@ -53,36 +53,31 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="homeContactContent">
-              <form action="#" method="POST" role="form">
+              <form action="{{ route('post.home.tour.guide', ['type'=>'CONTACT']) }}" method="POST" role="form">
+                @csrf
                 <div class="row">
                   <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
                       <i class="fa fa-user"></i>
-                      <input type="text" class="form-control border-color-1" id="exampleInputEmail1" placeholder="Họ tên">
+                      <input type="text" class="form-control border-color-1" id="exampleInputEmail1" placeholder="Họ tên" name="name">
                     </div>
                   </div>
                   <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
                       <i class="fa fa-envelope" aria-hidden="true"></i>
-                      <input type="text" class="form-control border-color-2" id="exampleInputEmail2" placeholder="Địa chỉ email">
+                      <input type="text" class="form-control border-color-2" id="exampleInputEmail2" placeholder="Địa chỉ email" name="email">
                     </div>
                   </div>
                   <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
                       <i class="fa fa-phone" aria-hidden="true"></i>
-                      <input type="text" class="form-control border-color-5" id="exampleInputEmail3" placeholder="Điện thoại">
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-xs-12">
-                    <div class="form-group">
-                      <i class="fa fa-book" aria-hidden="true"></i>
-                      <input type="text" class="form-control border-color-6" id="exampleInputEmail4" placeholder="Tiêu đề">
+                      <input type="text" class="form-control border-color-5" id="exampleInputEmail3" placeholder="Điện thoại" name="phone">
                     </div>
                   </div>
                   <div class="col-xs-12">
                     <div class="form-group">
                       <i class="fa fa-comments" aria-hidden="true"></i>
-                      <textarea class="form-control border-color-4" placeholder="Nội dung"></textarea>
+                      <textarea class="form-control border-color-4" placeholder="Nội dung" name="content"></textarea>
                     </div>
                   </div>
                   <div class="col-xs-12">

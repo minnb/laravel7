@@ -14,6 +14,7 @@ function getCateType(){
 
 function getTourTime(){
     $arr = [
+      'NO'=> 'Liên hệ',
       '1N' => 'Trong ngày',
       '2N1D' => '2 Ngày 1 Đêm',
       '3N2D' => '3 Ngày 2 Đêm',

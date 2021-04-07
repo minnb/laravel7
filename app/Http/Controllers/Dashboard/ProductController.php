@@ -52,7 +52,7 @@ class ProductController extends Controller
                 $data->blocked = $request->status == 'on' ? 0 : 1;
                 $data->user_id = Auth::user()->id;
                 $data->tax = '';
-                $data->base_unit = '';
+                $data->base_unit = $request->base_unit;
                 $data->options = json_encode($tourOpt);
                 
                 $destinationPath = path_storage('images');
