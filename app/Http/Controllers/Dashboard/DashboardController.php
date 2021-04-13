@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Log;
 use Auth;
 use App\Models\Roles;
+use App\Models\Contact;
 class DashboardController extends Controller
 {
     public function __construct()
@@ -14,7 +15,8 @@ class DashboardController extends Controller
 
     public function index()
     {
-    	return view('dashboard.layouts.index');
+        $contact_Dasboard = Contact::orderBy('id', 'DESC')->limit(5)->get();
+    	return view('dashboard.layouts.index', compact('contact_Dasboard'));
     }
 
     public function getLogout(){
