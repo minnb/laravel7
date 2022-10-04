@@ -16,18 +16,19 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
 Route::get('404', 'HomeController@page_404');
-/*
+
 Route::fallback(function () {
     return redirect('/');
 });
-*/
-include('dashboard.php');
 
-if(config('app.front_end') == 'event_vietpeace')
-{
-    include('event.php');
-}
-elseif (config('app.front_end') == 'picnic_vietpeace') 
-{
-    include('picnic.php');
-}
+include('dashboard.php');
+include('event.php');
+
+// if(config('app.front_end') == 'event_vietpeace')
+// {
+//     include('event.php');
+// }
+// elseif (config('app.front_end') == 'picnic_vietpeace') 
+// {
+//     include('picnic.php');
+// }
