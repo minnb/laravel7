@@ -18,13 +18,14 @@ class RedirectIfAdministrator extends Middleware
      */
     public function handle($request, Closure $next)
     {
-        // if (Auth::check() && Roles::isAdmin(Auth::user()->id)) 
-        // {
-        //     return $next($request);
-        // }
-        // else
-        // {
-        //     return redirect('/');
-        // }
+        //if (Auth::check() && Roles::isAdmin(Auth::user()->id)) 
+        if (Auth::check())
+        {
+            return $next($request);
+        }
+        else
+        {
+            return redirect('/');
+        }
     }
 }
