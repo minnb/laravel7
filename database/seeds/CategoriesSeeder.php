@@ -40,5 +40,20 @@ class CategoriesSeeder extends Seeder
             'options' => '{}',
             'user_id' =>0,
         ]);
+
+        DB::table('m_categories')->insert([
+            'type' => 2,
+            'parent' => 0,
+            'name' => '__PAGE__',
+            'alias' => 'page',
+            'description' => 'Root category',
+            'content' => 'Root category',
+            'thumbnail' => '',
+            'sort' => 2,
+            'display' => '',
+            'blocked' => 0,
+            'options' => '{}',
+            'user_id' =>0,
+        ]);
     }
 }

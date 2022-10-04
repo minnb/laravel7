@@ -1,15 +1,29 @@
 <?php
 
-function getCateType(){
+function getCateType()
+{
     $arr = [
       '0' => 'Location',
       '1' => 'Title',
       '2' => 'Park',
       '3' => 'Pagodas',
       '4' => 'Cinema',
-      '5' => 'Playground'
+      '5' => 'Playground',
+      '6' => 'Teambuiding',
+      '7' => 'Summer Camp',
+      '8' => 'Event'
     ];
     return $arr;
+}
+
+function getTypeCate()
+{
+	return 
+	[
+		'0' => 'POST',
+		'1' => 'PRODUCT',
+		'2' => 'PAGE'
+	];
 }
 
 function getTourTime(){

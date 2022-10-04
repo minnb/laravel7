@@ -3,6 +3,7 @@
 @section('page-header', 'Home Page')
 @section('content')
 @include('dashboard.layouts.alert')
+@if(isset($data))
 <form class="form-horizontal" role="form" action="{{ route('post.dashboard.page.home')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
@@ -59,6 +60,9 @@
         </div>
     </div>
 </form>
+@else
+    <h1>ERROR</h1>
+@endif
 
 @endsection
 @section('javascript')

@@ -53,9 +53,7 @@
         <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/da-ngoai-cuoi-tuan-cung-con.png')}}" alt="Dã ngoại cuối tuần cùng con"></a>
       </div>
 <?php 
-  $route_name = \Str::upper(\Request::route()->getName());
-
-
+    $route_name = \Str::upper(\Request::route()->getName());
  ?>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -65,7 +63,7 @@
               <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Trang chủ</span>
             </a>
           </li>
-          @if($route_name ==  "HOME")
+          @if($route_name == "HOME")
             <li class="dropdown singleDrop color-5 ">
               <a href="#ourCourses" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o bg-color-6" aria-hidden="true"></i> <span>Chương trình</span></a>
             </li>

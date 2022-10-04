@@ -27,10 +27,34 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		Route::get('tags/delete/{id}', ['as'=>'get.dashboard.post.tag.delete','uses'=>'Dashboard\PostController@deleteTag'])->where('id', '[0-9]+');
 	});
 
+	Route::group(['prefix'=> 'customer'], function(){
+		Route::get('list', ['as'=>'get.dashboard.customer.list','uses'=>'Dashboard\CustomerController@list']);
+		Route::get('create', ['as'=>'get.dashboard.customer.create','uses'=>'Dashboard\CustomerController@create']);
+		Route::get('edit/{id}', ['as'=>'get.dashboard.customer.edit','uses'=>'Dashboard\CustomerController@edit'])->where('id', '[0-9]+');;
+		Route::get('delete/{id}', ['as'=>'get.dashboard.customer.delete','uses'=>'Dashboard\CustomerController@delete'])->where('id', '[0-9]+');
+		Route::post('create', ['as'=>'post.dashboard.customer.create','uses'=>'Dashboard\CustomerController@postCreate']);
+		Route::post('edit/{id}', ['as'=>'post.dashboard.customer.edit','uses'=>'Dashboard\CustomerController@postEdit'])->where('id', '[0-9]+');
+	});
+
+	Route::group(['prefix'=> 'teams'], function(){
+		Route::get('list', ['as'=>'get.dashboard.teams.list','uses'=>'Dashboard\TeamsController@list']);
+		Route::get('create', ['as'=>'get.dashboard.teams.create','uses'=>'Dashboard\TeamsController@create']);
+		Route::get('edit/{id}', ['as'=>'get.dashboard.teams.edit','uses'=>'Dashboard\TeamsController@edit'])->where('id', '[0-9]+');;
+		Route::get('delete/{id}', ['as'=>'get.dashboard.teams.delete','uses'=>'Dashboard\TeamsController@delete'])->where('id', '[0-9]+');
+		Route::post('create', ['as'=>'post.dashboard.teams.create','uses'=>'Dashboard\TeamsController@postCreate']);
+		Route::post('edit/{id}', ['as'=>'post.dashboard.teams.edit','uses'=>'Dashboard\TeamsController@postEdit'])->where('id', '[0-9]+');
+	});
+
 	Route::group(['prefix'=> 'page'], function(){
 		Route::get('home-page', ['as'=>'get.dashboard.page.home','uses'=>'Dashboard\PageController@home']);
 		Route::post('home-page', ['as'=>'post.dashboard.page.home','uses'=>'Dashboard\PageController@postHome']);
-
+		//page
+		Route::get('list', ['as'=>'get.dashboard.pageSingle.list','uses'=>'Dashboard\PageController@list']);
+		Route::get('create', ['as'=>'get.dashboard.pageSingle.create','uses'=>'Dashboard\PageController@createPage']);
+		Route::post('create', ['as'=>'post.dashboard.pageSingle.create','uses'=>'Dashboard\PageController@postCreatePage']);
+		Route::get('edit/{id}', ['as'=>'get.dashboard.pageSingle.edit','uses'=>'Dashboard\PageController@editPage']);
+		Route::post('edit/{id}', ['as'=>'post.dashboard.pageSingle.edit','uses'=>'Dashboard\PageController@postEditPage']);
+		Route::get('delete/{id}', ['as'=>'get.dashboard.pageSingle.delete','uses'=>'Dashboard\PageController@deletePage']);
 		//Banner
 		Route::get('banner', ['as'=>'get.dashboard.page.banner','uses'=>'Dashboard\PageController@banner']);
 		Route::get('banner/create', ['as'=>'get.dashboard.page.banner.create','uses'=>'Dashboard\PageController@createBanner']);

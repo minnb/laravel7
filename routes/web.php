@@ -14,22 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
+Route::get('404', 'HomeController@page_404');
+Route::fallback(function () {
+    return redirect('/');
+});
 include('dashboard.php');
 
-Route::get('/', 'Home\HomeController@index')->name('home');
-Route::get('/home', 'Home\HomeController@index')->name('home');
-Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
-//page
-Route::get('/lien-he', 'Home\HomeController@contact')->name('lien-he');
-
-
-//detail tour
-Route::get('/{cate}', ['as'=>'get.home.tour.list','uses'=>'Home\ProductController@list']);
-Route::get('/{cate}/dia-diem/{id}-{name}', ['as'=>'get.home.tour.location.list','uses'=>'Home\ProductController@listByLocation']);
-Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\ProductController@detail'])->where('id', '[0-9]+');
-
-Route::post('/tour/post/guide/{type}', ['as'=>'post.home.tour.guide','uses'=>'Home\ProductController@guide']);
-
-
-//blog
-Route::get('/blog/{cate}/{id}-{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');
+if(config('app.front_end') == 'event_vietpeace')
+{
+    include('event.php');
+}
+elseif (config('app.front_end') == 'picnic_vietpeace') 
+{
+    include('picnic.php');
+}

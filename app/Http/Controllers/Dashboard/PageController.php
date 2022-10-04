@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Log; use DB;
 use Auth;use Image;
 use App\Models\Roles;
+use App\Models\Post;
 use App\Models\Categories;
 use App\Models\SysPage;
 use App\Utils\HomeMucTieu;
@@ -20,9 +21,28 @@ class PageController extends Controller
 
 	public function home() 
     {
-        $data = SysPage::where('category','HOMEPAGE')->get();
-        $muctieu = json_decode($data[0]->options);
-        return view('dashboard.page.home', compact('data','muctieu'));
+
+            $data = SysPage::where('category','HOMEPAGE')->get();
+            if(isset($data) && $data->count() > 0)
+            {
+                $muctieu = json_decode($data[0]->options);
+            }
+            else
+            {
+                $muctieu = new HomeMucTieu();
+                $data = new SysPage();               
+                $data->category = 'HOMEPAGE';
+                $data->name = '';
+                $data->alias = '';
+                $data->description = "giới thiệu website";
+                $data->link = '';
+                $data->keyword = '';
+                $data->blocked = 0;
+                $data->thumbnail = "";
+                $data->options = json_encode($muctieu);
+                $data->save();
+            }
+            return view('dashboard.page.home', compact('data','muctieu'));
     }
 
     public function postHome(Request $request)
@@ -184,5 +204,112 @@ class PageController extends Controller
     public function deleteBanner($id)
     {
         
+    }
+
+    public function list()
+    {
+        $category = Categories::where('name','__PAGE__')->first();
+        $data = Post::where('blocked', 0)->where('type', 2)->orderBy('id', 'DESC')->get();
+        return view('dashboard.page.list', compact('data'));
+    }
+
+    public function createPage()
+    {
+        return view('dashboard.page.create');
+    }
+
+    public function postCreatePage(Request $request)
+    {
+        try{
+            DB::beginTransaction();
+                $data = new Post();
+                $data->type = 2;
+                $data->cate_id = implode("|",$request->category);
+                $data->title = trim($request->title);
+                $data->alias = Str::slug($request->title);
+                $data->description = "";
+                $data->content = empty($request->content)?"":$request->content;;
+                $data->blocked = $request->status == 'on' ? 0 : 1;
+                $data->user_id = Auth::user()->id;
+                $data->viewed = 0;
+                $data->votes = 0;
+                $data->options = '{}';
+                if($request->file('fileImage')){
+                    foreach($request->file('fileImage') as $file ){
+                        $destinationPath = path_storage('images');
+                        if(isset($file)){
+                            $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
+                            $file->move($destinationPath, $file_name);
+                            $data->thumbnail = $destinationPath.'/'.$file_name;
+                        }
+                    }
+                }else
+                {
+                    $data->thumbnail = "";
+                }
+
+                $data->save();
+            
+            DB::commit();
+            return redirect()->route('get.dashboard.pageSingle.list')->with(['flash_message'=>'Tạo mới thành công']);
+        }
+        catch (\Exception $e) 
+        {
+            DB::rollBack();
+            return back()->withErrors($e->getMessage())->withInput($request->input());
+        }
+    }
+
+    public function editPage($id)
+    {
+        try
+        {
+            $data = Post::find($id);
+            return view('dashboard.page.edit', compact('data', 'id'));
+        }
+        catch (\Exception $e) 
+        {
+            return back()->withErrors($e->getMessage());
+        }
+    }
+    
+    public function postEditPage(Request $request, $id)
+    {
+        try{
+            DB::beginTransaction();
+                $data = Post::find($id);
+                $data->cate_id = implode("|", $request->category);
+                $data->title = trim($request->title);
+                $data->alias = Str::slug($request->title);
+                $data->content = empty($request->content)?"":$request->content;;
+                $data->blocked = $request->status == 'on' ? 0 : 1;
+                $data->user_id = Auth::user()->id;
+                $data->save();               
+            DB::commit();
+            return redirect()->route('get.dashboard.pageSingle.list')->with(['flash_message'=>'Chỉnh sửa dữ liệu thành công']);
+        }
+        catch (\Exception $e) 
+        {
+            DB::rollBack();
+            return back()->withErrors($e->getMessage())->withInput($request->input());
+        }
+    }
+
+    public function deletePage($id)
+    {
+        try{
+            DB::beginTransaction();
+                $data = Post::find($id);
+                $data->blocked = 1;
+                $data->user_id = Auth::user()->id;
+                $data->save();               
+            DB::commit();
+            return redirect()->route('get.dashboard.pageSingle.list')->with(['flash_message'=>'Disable thành công']);
+        }
+        catch (\Exception $e) 
+        {
+            DB::rollBack();
+            return back()->withErrors($e->getMessage())->withInput($request->input());
+        }
     }
 }

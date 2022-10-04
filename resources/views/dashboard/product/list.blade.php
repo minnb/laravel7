@@ -30,6 +30,7 @@
                     <th>Sku</th>
                     <th>Name</th>
                     <th>Categories</th>
+                    <th>Tags</th>
                     <th>Time</th>
                     <th>Status</th>
                     <th></th>
@@ -49,6 +50,7 @@
                                 @endforeach
                             @endif
                         </td>
+                        <td>{{ \App\Models\Tag::getListTagsFromArr($item->id) }}</td>
                         <td>{{ $item->base_unit }}</td>
                         <td>{{ $item->blocked }}</td>
                         <td>
@@ -109,7 +111,7 @@
                 bAutoWidth: false,
                 "aoColumns": [
                   { "bSortable": false },
-                  null, null,null, null, null,null,
+                  null, null,null, null, null,null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

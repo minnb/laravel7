@@ -1,7 +1,6 @@
 @extends('home.app')
 @section('content')
   @include('home.layouts.banner')
-
   <section class="whiteSection full-width clearfix aboutSchool">
       <div class="container">
         <div class="row">

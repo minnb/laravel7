@@ -27,6 +27,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Thumbnail</th>
+                    <th>Type</th>
                     <th>Title</th>
                     <th>Category</th>
                     <th>Status</th>
@@ -40,6 +41,7 @@
                             <a href="{{ route('get.dashboard.post.edit', ['id'=>$item->id]) }}">{{ $item->id }}</a>
                         </td>
                         <td><img style="max-width:60px;" src="{{ asset(getImage($item->thumbnail)) }}"></td>
+                        <td>{{ getTypeCate()[$item->type] }}</td>
                         <td><a href="{{ route('get.dashboard.post.edit', ['id'=>$item->id]) }}">{{ $item->title }}</a></td>
                         <td>
                             <?php $listCate = App\Models\Categories::getCateByArr(convertStrToArr("|", $item->cate_id)); ?>
@@ -110,7 +112,7 @@
                 bAutoWidth: false,
                 "aoColumns": [
                   { "bSortable": false },
-                  null, null,null, null, null,
+                  null, null,null, null, null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

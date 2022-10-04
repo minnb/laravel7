@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    'front_end'=> env('APP_NAME', 'vietpeace'),
     'name' => env('APP_NAME', 'Laravel'),
     'version' => env('APP_VER', 'v1.0'),
     /*

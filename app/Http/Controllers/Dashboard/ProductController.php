@@ -71,9 +71,8 @@ class ProductController extends Controller
                 }
 
                 $data->save();
-                DB::table("m_products")->where('id', $data->id)->update(['sku'=>str_pad(strval($data->id),8,"0",STR_PAD_LEFT)]);
-
-               
+                
+                DB::table("m_products")->where('id', $data->id)->update(['sku'=>str_pad(strval($data->id),8,"0",STR_PAD_LEFT)]);           
                 if($request->file('fileImage2')){
                     foreach($request->file('fileImage2') as $file2 ){
                         
@@ -89,16 +88,17 @@ class ProductController extends Controller
                     }
                 }
 
-                // if(count($request->tags) > 0)
-                // {
-                //     for ($i = 0; $i < count($request->tags); $i++) {
-                //         DB::table('m_post_tag')->insert([
-                //             'post_id' => $data->id,
-                //             'tag_id' => $request->tags[$i]
-                //         ]);
-                //     }
-                // }
-                
+                //tag
+                if(count($request->tags) > 0)
+                {
+                    for ($i = 0; $i < count($request->tags); $i++) {
+                        DB::table('m_post_tag')->insert([
+                            'post_id' => $data->id,
+                            'tag_id' => $request->tags[$i]
+                        ]);
+                    }
+                }
+
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Tạo mới thành công']);
         }
@@ -182,6 +182,18 @@ class ProductController extends Controller
                     }
                 }
             }
+
+            if(isset($request->tags) && count($request->tags) > 0)
+            {
+                DB::table('m_post_tag')->where('post_id', $id)->delete();
+                for ($i = 0; $i < count($request->tags); $i++) {
+                    DB::table('m_post_tag')->insert([
+                        'post_id' => $id,
+                        'tag_id' => $request->tags[$i]
+                    ]);
+                }
+            }
+
             $data->save();
             DB::commit();
             return redirect()->route('get.dashboard.product.list')->with(['flash_message'=>'Chỉnh sửa dữ liệu thành công']);

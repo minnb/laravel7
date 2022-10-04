@@ -21,8 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function page_404()
     {
-        return view('home.layouts.index');
+        return view('404');
     }
 }

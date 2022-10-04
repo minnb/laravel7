@@ -19,6 +19,7 @@ class CreateMContactTable extends Migration
             $table->string('name', 191);
             $table->string('phone', 30);
             $table->string('email', 100);
+            $table->string('image', 199);
             $table->text('content');
             $table->json('options');
             $table->boolean('flag')->default(0);

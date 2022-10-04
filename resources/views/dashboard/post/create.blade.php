@@ -31,7 +31,6 @@
             </select>
         </div>
     </div>
-
     <div class="form-group">
         <label class="col-xs-2 control-label no-padding-right">Status</label>
         <div class="col-xs-9">

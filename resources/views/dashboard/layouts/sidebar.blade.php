@@ -194,6 +194,13 @@
             <b class="arrow"></b>
 
             <ul class="submenu">
+                <li class="{{ getActiveCSS('get.dashboard.pageSingle') }}">
+                    <a href="{{ route('get.dashboard.pageSingle.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        List
+                    </a>
+                    <b class="arrow"></b>
+                </li>
                 <li class="{{ getActiveCSS('get.dashboard.page') }}">
                     <a href="{{ route('get.dashboard.page.home') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
@@ -206,6 +213,44 @@
                     <a href="{{ route('get.dashboard.page.banner') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Banner
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+        <li class="{{ getRootCSS('dashboard.teams') }}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-user-plus"></i>
+                <span class="menu-text"> Teams </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li class="{{ getActiveCSS('get.dashboard.teams') }}">
+                    <a href="{{ route('get.dashboard.teams.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Lists
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>        
+        <li class="{{ getRootCSS('dashboard.customer') }}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-comment"></i>
+                <span class="menu-text"> Customer </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li class="{{ getActiveCSS('get.dashboard.customer') }}">
+                    <a href="{{ route('get.dashboard.customer.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Lists
                     </a>
 
                     <b class="arrow"></b>

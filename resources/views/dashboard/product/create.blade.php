@@ -55,6 +55,14 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tags </label>
+                    <div class="col-xs-10">
+                        <select multiple="" id="tags" name="tags[]" class="select2">
+                            {!! getSelectArrayForm(App\Models\Tag::getSelect2Tags(), old('tags', isset($data) ? convertStrToArr("|", $data['tags']): [0]) ) !!}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right">Status</label>
                     <div class="col-xs-9">
                         <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />

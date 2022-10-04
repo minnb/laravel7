@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function list()
     {
-        $data = Post::where('blocked', 0)->orderBy('id', 'DESC')->get();
+        $data = Post::where('blocked', 0)->where('type', 0)->orderBy('id', 'DESC')->get();
     	return view('dashboard.post.list', compact('data'));
     }
 

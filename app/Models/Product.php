@@ -19,4 +19,13 @@ class Product extends Model
     {
     	return DB::table('m_products')->where('blocked', 0)->orderBy('id', 'desc')->limit(4)->get();
     }
+
+    public static function getProductByAlias($alias, $limit = 3)
+    {
+        return DB::table('m_products')
+            ->join('m_categories', 'm_categories.id', '=', 'm_products.categories')
+            ->where('m_categories.alias','=', $alias)
+            ->where('m_products.description','!=','')
+            ->select('m_products.*')->orderBy('m_products.created_at', 'desc')->limit($limit)->get();
+    }
 }

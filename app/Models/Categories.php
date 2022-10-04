@@ -60,4 +60,8 @@ class Categories extends Model
         ])->inRandomOrder()->take(10)->get();
     }
 
+    public static function getServicePage()
+    {
+       return Categories::where(['blocked' => 0, 'type'=> 2])->where('parent','>',0)->orderBy('id')->get();
+    }
 }

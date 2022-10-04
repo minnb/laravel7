@@ -61,7 +61,16 @@
                         </select>
                     </div>
                 </div>
+                
                 <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tags </label>
+                    <div class="col-xs-10">
+                        <select multiple="" id="tags" name="tags[]" class="select2">
+                            {!! getSelectArrayForm(App\Models\Tag::getSelect2Tags(), old('tags', isset($data) ? App\Models\Post_Tag::getArrTags($data['id']): [0]) ) !!}
+                        </select>
+                    </div>
+                </div>
+                            <div class="form-group">
                     <label class="col-xs-2 control-label no-padding-right">Status</label>
                     <div class="col-xs-9">
                         @if($data['blocked'] == 0)
