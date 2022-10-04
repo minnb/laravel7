@@ -53,7 +53,7 @@
         <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('assets/img/da-ngoai-cuoi-tuan-cung-con.png')}}" alt="Dã ngoại cuối tuần cùng con"></a>
       </div>
 <?php 
-    $route_name = \Str::upper(\Request::route()->getName());
+    $route_name = 'HOME' ; //\Str::upper(\Request::route()->getName());
  ?>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
