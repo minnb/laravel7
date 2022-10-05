@@ -2,7 +2,7 @@
 	<div class="slider-parallax-inner">
 		<div class="container clearfix vertical-middle" style="z-index: 3;">
 			<div class="heading-block title-center nobottomborder">
-				<h1>The Apple WWDC Event starts in:</h1>
+				<h1>Teambuiding - Viết tiếp tuổi thanh xuân</h1>
 			</div>
 		</div>
 	</div>
