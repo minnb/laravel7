@@ -82,6 +82,7 @@ function selectedOption($array, $select){
     }
   }
 }
+
 //use for get from Models
 function getSelectForm($data, $select = 0){
   foreach($data as $value){
@@ -94,6 +95,7 @@ function getSelectForm($data, $select = 0){
     }
   }
 }
+
 function getSelectArrayForm($data, $select){
   foreach($data as $value){
     $id = $value->id;
@@ -116,7 +118,8 @@ function path_storage($name)
   $path_server = 'storage/'.$name;
   $str = date("Ym");
   $path = $path_server.'/'.$str;
-  if (!file_exists($path)) {
+  if (!file_exists($path)) 
+  {
     mkdir($path, 0777, true);
   }
   return $path;

@@ -1,6 +1,7 @@
 <?php
 
-Route::group(['prefix'=> 'dashboard'], function(){
+Route::group(['prefix'=> 'dashboard'], function()
+{
 	Route::group(['prefix'=> 'auth'], function(){
 		Route::get('logout', ['as'=>'get.dashboard.auth.logout','uses'=>'Dashboard\DashboardController@getLogout']);
 	});
@@ -63,9 +64,7 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		Route::post('banner/edit/{id}', ['as'=>'post.dashboard.page.banner.edit','uses'=>'Dashboard\PageController@postEditBanner']);
 		Route::get('banner/delete/{id}', ['as'=>'get.dashboard.page.banner.delete','uses'=>'Dashboard\PageController@deleteBanner']);
 
- 
-	});
-
+ 	});
 
 	Route::group(['prefix'=> 'product'], function(){
 		Route::get('list', ['as'=>'get.dashboard.product.list','uses'=>'Dashboard\ProductController@list']);
@@ -111,7 +110,6 @@ Route::group(['prefix'=> 'dashboard'], function(){
 		});
 
 	});
-
 
 	Route::group(['prefix'=> 'user'], function(){
 		Route::get('list', ['as'=>'get.dashboard.user.list','uses'=>'Dashboard\UserController@list']);
