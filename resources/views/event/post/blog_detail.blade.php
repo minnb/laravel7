@@ -1,6 +1,6 @@
 @extends('event.app')
 @section('content')
-<section id="page-title">
+<section id="page-title" style="background-image: url({{asset('event/images/background/11.png')}});">
 	<div class="container clearfix">
 		<h1>{{$product_detail->title}}</h1>
 		<span><i>Cho những kỷ niệm đẹp</i></span>
@@ -19,6 +19,7 @@
 				@else
 					<p>Chưa có dữ liệu</p>
 				@endif
+				<div class="divider divider-right"><i class="icon-heart"></i></div>
 			</div>
 			@include('event.post.event_sidebar')
 		</div>

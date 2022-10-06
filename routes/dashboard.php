@@ -37,6 +37,15 @@ Route::group(['prefix'=> 'dashboard'], function()
 		Route::post('edit/{id}', ['as'=>'post.dashboard.customer.edit','uses'=>'Dashboard\CustomerController@postEdit'])->where('id', '[0-9]+');
 	});
 
+	Route::group(['prefix'=> 'video'], function(){
+		Route::get('list', ['as'=>'get.dashboard.video.list','uses'=>'Dashboard\VideoController@list']);
+		Route::get('create', ['as'=>'get.dashboard.video.create','uses'=>'Dashboard\VideoController@create']);
+		Route::get('edit/{id}', ['as'=>'get.dashboard.video.edit','uses'=>'Dashboard\VideoController@edit'])->where('id', '[0-9]+');;
+		Route::get('delete/{id}', ['as'=>'get.dashboard.video.delete','uses'=>'Dashboard\VideoController@delete'])->where('id', '[0-9]+');
+		Route::post('create', ['as'=>'post.dashboard.video.create','uses'=>'Dashboard\VideoController@postCreate']);
+		Route::post('edit/{id}', ['as'=>'post.dashboard.video.edit','uses'=>'Dashboard\VideoController@postEdit'])->where('id', '[0-9]+');
+	});
+
 	Route::group(['prefix'=> 'teams'], function(){
 		Route::get('list', ['as'=>'get.dashboard.teams.list','uses'=>'Dashboard\TeamsController@list']);
 		Route::get('create', ['as'=>'get.dashboard.teams.create','uses'=>'Dashboard\TeamsController@create']);

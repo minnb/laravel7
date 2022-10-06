@@ -30,6 +30,9 @@
 									<li><a href="{{ route('get.event.service', ['alias'=>$item->alias]) }}">{{$item->name}}</a></li>
 								@endforeach
 							@endif
+							<li><a href="https://vietpeacetravel.com/"><div>Vietpeace Travel</div></a>
+							<li><a href="{{ route('get.event.price.check') }}"><div>Báo giá</div></a></li>
+							<li><a href="{{ route('get.event.price.check') }}"><div>Liên hệ</div></a>
 						</ul>
 					</div>
 				</div>
