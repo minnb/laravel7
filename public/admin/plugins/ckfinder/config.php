@@ -62,7 +62,7 @@ ATTENTION: The trailing slash is required.
 */
 
 //$baseUrl = "http://localhost:8001/projects/laravel7/public/storage/conent/";
-$baseUrl = "https://dangoaicuoituancungcon.com/public/storage/conent/";
+$baseUrl = "https://event.vietpeacetravel.com/public/storage/conent/";
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
