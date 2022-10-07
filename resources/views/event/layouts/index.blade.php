@@ -10,6 +10,7 @@
 			@include('event.layouts.right_sidebar')
 			<div class="clear"></div>
 		</div>
+		@include('event.layouts.promotion')
 		@include('event.layouts.testimonials')
 	</div>
 </section>
