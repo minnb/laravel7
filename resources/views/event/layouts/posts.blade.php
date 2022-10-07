@@ -10,7 +10,6 @@
 				<div class="entry-image d-md-none d-lg-block">
 					<a href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">
 						<img src="{{asset($item->thumbnail)}}" alt="Inventore voluptates velit totam ipsa tenetur">
-						<div class="entry-date">10<span>Apr</span></div>
 					</a>
 				</div>
 				<div class="entry-c">

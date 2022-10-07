@@ -30,5 +30,4 @@
 	</div>
 </div>
 <div class="clear"></div>
-<div class="divider divider-short divider-center"><i class="icon-circle-blank"></i></div>
 @endif

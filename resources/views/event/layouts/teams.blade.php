@@ -1,25 +1,27 @@
 <?php
-	$data_teams_home_page = \App\Models\Teams::where('blocked', 0)->limit(3)->get();
+	$data_teams_home_page = \App\Models\Teams::where('blocked', 0)->first();
 ?>
 @if(isset($data_teams_home_page))
-<div class="heading-block center">
-	<h2>BÌNH AN VIỆT</h2>
-	<span>Đã tổ chức hơn 1000+ chương trình, sự kiện lớn nhỏ.</span>
-</div>
-
-@foreach($data_teams_home_page as $item)
-<div class="col_one_third nobottommargin">
-	<div class="team">
-		<div class="team-image">
-			<img src="{{asset($item->image)}}" alt="{{ $item->name }} /{{ $item->position }}">
-		</div>
-		<div class="team-desc">
-			<div class="team-title"><h4>{{ $item->name }}</h4><span>/ {{ $item->position }}, <small>Vietpeace.</small></span></div>
-			<div class="team-content">{{ $item->experience }}</div>
+	<div class="divider divider-center"><a href="#" data-scrollto="#header"><i class="icon-chevron-up"></i></a></div>
+	<div class="fslider testimonial" data-animation="fade" data-arrows="false">
+		<div class="flexslider">
+			<div class="slider-wrap">
+				<div class="slide">
+					<div class="testi-image">
+						<a href="#"><img src="{{asset($data_teams_home_page->image)}}" alt="{{ $data_teams_home_page->name }}"></a>
+					</div>
+					<div class="testi-content">
+						<p>{{ $data_teams_home_page->experience }}</p>
+						<div class="testi-meta">
+							{{ $data_teams_home_page->name }}
+							<span>{{ $data_teams_home_page->position }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-@endforeach
-<div class="clear"></div>
-<div class="divider"></div>
+	<div class="clear"></div>
+	<div class="divider"></div>
 @endif
+

@@ -1,11 +1,12 @@
 <?php
-	$data_review = \App\Models\Contact::where('type','REVIEW')->where('blocked', 0)->get();
+	$data_review = \App\Models\Contact::where('type','REVIEW')->where('blocked', 0)->inRandomOrder()->limit(2)->get();
 ?>
 @if(isset($data_review))
 <div class="container clearfix">
-	<div id="oc-testi" class="owl-carousel testimonials-carousel carousel-widget" data-margin="20" data-items-sm="1" data-items-md="2" data-items-xl="3">
+	<div class="divider divider-center"><a href="#" data-scrollto="#header"><i class="icon-chevron-up"></i></a></div>
+	<ul class="testimonials-grid clearfix">
 		@foreach($data_review as $item)
-		<div class="oc-item">
+		<li>
 			<div class="testimonial">
 				<div class="testi-image">
 					<a href="#"><img src="{{asset($item->image)}}" alt="{{$item->name}}"></a>
@@ -18,10 +19,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</li>
 		@endforeach
-	</div>
-	</div>
+	</ul>
 </div>
-</div>
+<div class="clear"></div>
 @endif
