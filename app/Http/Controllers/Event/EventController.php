@@ -36,7 +36,8 @@ class EventController extends Controller
         if(isset($categories))
         {
             $top_product_of_service = Product::getProductByAlias('da-ngoai-teambuiding', 5);
-            return view('event.post.event_list', compact('categories','top_product_of_service'));
+            $meta_description = $categories->description;
+            return view('event.post.event_list', compact('categories','top_product_of_service','meta_description'));
         }
         else{
             return back();
@@ -50,7 +51,9 @@ class EventController extends Controller
         {
             $categories = Categories::where('id', $product_detail->categories)->first();
             $top_product_of_service = Product::getProductByAlias('da-ngoai-teambuiding', 5);
-            return view('event.post.event_detail', compact('product_detail', 'categories','top_product_of_service'));
+            $page_title = $product_detail->name;
+            $meta_description = $product_detail->description;
+            return view('event.post.event_detail', compact('product_detail', 'categories','top_product_of_service','page_title','meta_description'));
         }
         else
         {
@@ -65,7 +68,9 @@ class EventController extends Controller
         {
             $categories = Categories::where('id', $product_detail->cate_id)->first();
             $top_product_of_service = Product::getProductByAlias('da-ngoai-teambuiding', 5);
-            return view('event.post.blog_detail', compact('product_detail', 'categories','top_product_of_service'));
+            $page_title = $product_detail->name;
+            $meta_description = $product_detail->description;
+            return view('event.post.blog_detail', compact('product_detail', 'categories','top_product_of_service','page_title','meta_description'));
         }
         else
         {

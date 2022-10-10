@@ -9,7 +9,7 @@
 			<div class="entry clearfix">
 				<div class="entry-image d-md-none d-lg-block">
 					<a href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">
-						<img src="{{asset($item->thumbnail)}}" alt="Inventore voluptates velit totam ipsa tenetur">
+						<img src="{{asset($item->thumbnail)}}" alt="{{$item->name}}">
 					</a>
 				</div>
 				<div class="entry-c">
