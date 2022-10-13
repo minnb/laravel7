@@ -13,7 +13,7 @@
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
-			<div class="postcontent nobottommargin clearfix">
+			<div class="postcontent nobottommargin clearfix" id = "postcontent-detail">
 				@if(isset($product_detail))
 					{!! $product_detail->content !!}
 				@else

@@ -79,7 +79,10 @@
 <script src="{{asset('event/js/events-data.js')}}"></script>
 <script src="{{asset('event/js/functions.js')}}"></script>
 <script>
-	jQuery(document).ready( function($){
+	jQuery(document).ready( function($)
+	{
+		$('#postcontent-detail').children('p').children('img').removeAttr('style');
+		$('#postcontent-detail').children('p').children('img').addClass('responsive');
 		var newDate = new Date(2022, 9, 30);
 		$('#countdown-ex1').countdown({until: newDate});
 	});
