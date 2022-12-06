@@ -1,24 +1,18 @@
 <?php
 	$video_right_sidebar = \App\Models\Video::GetRandomVideo();
+	$images_sidebar = App\Models\Gallery::getImageFromPublicFolder(12);
 ?>
 <div class="col_two_fifth nobottommargin col_last">
+	@if(isset($images_sidebar))
 	<div class="fancy-title title-border">
 		<h4>Hình ảnh</h4>
 	</div>
 	<div class="col_full masonry-thumbs grid-4 clearfix" data-lightbox="gallery">
-		<a href="{{asset('event/images/events/1.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/1.jpg')}}" alt="Gallery Thumb 1"></a>
-		<a href="{{asset('event/images/events/2.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/2.jpg')}}" alt="Gallery Thumb 2"></a>
-		<a href="{{asset('event/images/events/3.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/3.jpg')}}" alt="Gallery Thumb 3"></a>
-		<a href="{{asset('event/images/events/4.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/4.jpg')}}" alt="Gallery Thumb 4"></a>
-		<a href="{{asset('event/images/events/5.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/5.jpg')}}" alt="Gallery Thumb 5"></a>
-		<a href="{{asset('event/images/events/6.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/6.jpg')}}" alt="Gallery Thumb 6"></a>
-		<a href="{{asset('event/images/events/7.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/7.jpg')}}" alt="Gallery Thumb 7"></a>
-		<a href="{{asset('event/images/events/8.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/8.jpg')}}" alt="Gallery Thumb 8"></a>
-		<a href="{{asset('event/images/events/5.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/5.jpg')}}" alt="Gallery Thumb 5"></a>
-		<a href="{{asset('event/images/events/6.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/6.jpg')}}" alt="Gallery Thumb 6"></a>
-		<a href="{{asset('event/images/events/7.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/7.jpg')}}" alt="Gallery Thumb 7"></a>
-		<a href="{{asset('event/images/events/8.jpg')}}" data-lightbox="gallery-item"><img class="image_fade" src="{{asset('event/images/events/thumbs/8.jpg')}}" alt="Gallery Thumb 8"></a>
+		@foreach($images_sidebar as $item)
+		<a href="{{$item}}" data-lightbox="gallery-item"><img class="image_fade" src="{{$item}}" alt="VietpeaceTravell"></a>
+		@endforeach
 	</div>
+	@endif
 
 	@if(isset($video_right_sidebar))
 	<div class="fancy-title title-border">
@@ -27,3 +21,6 @@
 	<iframe src="{{$video_right_sidebar->url}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen title="{{$video_right_sidebar->name}}"></iframe>
 	@endif
 </div>
+
+
+

@@ -261,7 +261,7 @@
          <li class="{{ getRootCSS('dashboard.video') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-film"></i>
-                <span class="menu-text"> Videos </span>
+                <span class="menu-text"> Media </span>
 
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -270,7 +270,15 @@
                 <li class="{{ getActiveCSS('get.dashboard.video') }}">
                     <a href="{{ route('get.dashboard.video.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Lists
+                        Videos
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="{{ getActiveCSS('get.dashboard.gallery') }}">
+                    <a href="{{ route('get.dashboard.gallery.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Gallery
                     </a>
 
                     <b class="arrow"></b>
