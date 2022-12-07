@@ -283,6 +283,14 @@
 
                     <b class="arrow"></b>
                 </li>
+                <li class="{{ getActiveCSS('get.dashboard.social') }}">
+                    <a href="{{ route('get.dashboard.social.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Social Network
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
             </ul>
         </li>
         <li class="{{ getRootCSS('dashboard.user') }}">

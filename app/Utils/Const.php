@@ -45,6 +45,16 @@ function getArrDisplay(){
     return $arr;
 }
 
+function getSocial(){
+    $arr = [
+    	''=>'',
+      'FACEBOOK' => 'Facebook',
+      'GOOGLE_ANA' => 'Google Analytics',
+      'GOOGLE_ADS' => 'Google Ads',
+    ];
+    return $arr;
+}
+
 function getStatus($status)
 {
 	switch ($status) 

@@ -59,8 +59,7 @@
 				</div>
 			</div>
 			<div class="col_one_third col_last">
-				<div class="fb-page" data-href="https://www.facebook.com/DaNgoai.CuoiTuan.CungCon" data-tabs="timeline,events" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-lazy="true">
-        <blockquote cite="https://www.facebook.com/DaNgoai.CuoiTuan.CungCon" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DaNgoai.CuoiTuan.CungCon">Cùng con ra ngoài chơi</a></blockquote></div>
+				{!! App\Models\Social::where('type','FACEBOOK')->first()->link !!}
 			</div>
 		</div>
 	</div>

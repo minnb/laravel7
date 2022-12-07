@@ -15,6 +15,15 @@ Route::group(['prefix'=> 'dashboard'], function()
 		Route::post('edit/{id}', ['as'=>'post.dashboard.cate.edit','uses'=>'Dashboard\CateController@postEdit'])->where('id', '[0-9]+');
 	});
 
+	Route::group(['prefix'=> 'social'], function(){
+		Route::get('list', ['as'=>'get.dashboard.social.list','uses'=>'Dashboard\SocialController@list']);
+		Route::get('create', ['as'=>'get.dashboard.social.create','uses'=>'Dashboard\SocialController@create']);
+		Route::get('edit/{id}', ['as'=>'get.dashboard.social.edit','uses'=>'Dashboard\SocialController@edit'])->where('id', '[0-9]+');;
+		Route::get('delete/{id}', ['as'=>'get.dashboard.social.delete','uses'=>'Dashboard\SocialController@delete'])->where('id', '[0-9]+');
+		Route::post('create', ['as'=>'post.dashboard.social.create','uses'=>'Dashboard\SocialController@postCreate']);
+		Route::post('edit/{id}', ['as'=>'post.dashboard.social.edit','uses'=>'Dashboard\SocialController@postEdit'])->where('id', '[0-9]+');
+	});
+
 	Route::group(['prefix'=> 'post'], function(){
 		Route::get('list', ['as'=>'get.dashboard.post.list','uses'=>'Dashboard\PostController@list']);
 		Route::get('create', ['as'=>'get.dashboard.post.create','uses'=>'Dashboard\PostController@create']);
