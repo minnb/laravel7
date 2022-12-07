@@ -66,10 +66,6 @@
             //
         });
     });
-        $(document).ready(function(){
-        ckeditor('link')
-        $('.textarea').wysihtml5();
-      });
 
 </script>
 @endsection
