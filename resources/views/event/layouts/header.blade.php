@@ -27,6 +27,9 @@
 	<script>
 		  {!! App\Models\Social::where('type','GOOGLE_ANA')->first()->link !!}
 	</script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="OZNOj2zU">
+	</script>
 </head>
 <body class="stretched">
 	<div id="wrapper" class="clearfix">
