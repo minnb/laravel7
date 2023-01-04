@@ -29,7 +29,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $tour_home_page = Product::getProductByAlias('da-ngoai-teambuiding', 3);
+        $tour_home_page = Product::getProductByAlias('da-ngoai-teambuiding', 5);
         $service_page = Categories::getServicePage();
         return view('event.layouts.index', compact('tour_home_page','service_page'));
     }

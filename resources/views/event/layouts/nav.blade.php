@@ -8,29 +8,29 @@
 			<!-- Logo
 			============================================= -->
 			<div id="logo">
-				<a href="{{url('/')}}" class="standard-logo" data-dark-logo="{{asset('event/images/logo.png')}}"><img src="{{asset('event/images/logo.png')}}" alt="{{ config('app.name', 'Vietpeace Edu') }}"></a>
-				<a href="{{url('/')}}" class="retina-logo" data-dark-logo="{{asset('event/images/logo.png')}}"><img src="{{asset('event/images/logo.png')}}" alt="{{ config('app.name', 'Vietpeace Edu') }}"></a>
+				<a rel="canonical" href="{{url('/')}}" class="standard-logo" data-dark-logo="{{asset('event/images/logo.png')}}"><img src="{{asset('event/images/logo.png')}}" alt="{{ config('app.name', 'Vietpeace Edu') }}"></a>
+				<a rel="canonical" href="{{url('/')}}" class="retina-logo" data-dark-logo="{{asset('event/images/logo.png')}}"><img src="{{asset('event/images/logo.png')}}" alt="{{ config('app.name', 'Vietpeace Edu') }}"></a>
 			</div><!-- #logo end -->
 			<!-- Primary Navigation
 			============================================= -->
 			<nav id="primary-menu">
 				<ul>
-					<li class="current"><a href="{{ route('get.event.price.check') }}"><div>Về chúng tôi</div></a>
+					<li class="current"><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Về chúng tôi</div></a>
 					</li>
-					<li><a href="#"><div>Dịch vụ</div></a>
+					<li><a href="#service"><div>Dịch vụ</div></a>
 						<ul>
 							@if(isset($service_page))
 							@foreach($service_page as $item)
-								<li><a href="{{ route('get.event.service', ['alias'=>$item->alias]) }}"><div>{{$item->name}}</div></a></li>
+								<li><a rel="canonical" href="{{ route('get.event.service', ['alias'=>$item->alias]) }}"><div>{{$item->name}}</div></a></li>
 							@endforeach
 							@endif
 						</ul>
 					</li>
-					<li><a href="{{route('get.event.list', ['alias'=>'da-ngoai-teambuiding'])}}"><div>Chương trình đã tổ chức</div></a>
+					<li><a rel="canonical" href="{{route('get.event.list', ['alias'=>'da-ngoai-teambuiding'])}}"><div>Chương trình đã tổ chức</div></a>
 					</li>
-					<li><a href="{{ route('get.event.price.check') }}"><div>Báo giá</div></a>
+					<li><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Báo giá</div></a>
 					</li>
-					<li><a href="{{ route('get.event.price.check') }}"><div>Liên hệ</div></a>
+					<li><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Liên hệ</div></a>
 					</li>
 				</ul>
 				<!-- Top Search

@@ -6,11 +6,11 @@
 		@foreach($top_product_of_service as $item)
 		<div class="spost clearfix">
 			<div class="entry-image">
-				<a href="{{ route('get.event.detail', ['alias'=>$item->alias])}}" class="nobg"><img src="{{asset($item->thumbnail)}}" alt=""></a>
+				<a rel="canonical" href="{{ route('get.event.detail', ['alias'=>$item->alias])}}" class="nobg"><img src="{{asset($item->thumbnail)}}" alt=""></a>
 			</div>
 			<div class="entry-c">
 				<div class="entry-title">
-					<h4><a href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">{{$item->name}}</a></h4>
+					<h4><a rel="canonical" href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">{{$item->name}}</a></h4>
 				</div>
 				<ul class="entry-meta">
 					<li>{{date('d-m-Y', strtotime($item->created_at))}}</li>
@@ -31,11 +31,11 @@
 		@foreach($top_blogs as $item)
 		<div class="spost clearfix">
 			<div class="entry-image">
-				<a href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}" class="nobg"><img src="{{asset($item->thumbnail)}}" alt=""></a>
+				<a rel="canonical" href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}" class="nobg"><img src="{{asset($item->thumbnail)}}" alt=""></a>
 			</div>
 			<div class="entry-c">
 				<div class="entry-title">
-					<h4><a href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}">{{$item->title}}</a></h4>
+					<h4><a rel="canonical" href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}">{{$item->title}}</a></h4>
 				</div>
 				<ul class="entry-meta">
 					<li>{{date('d-m-Y', strtotime($item->created_at))}}</li>
@@ -46,6 +46,5 @@
 	</div>
 </div>
 @endif
-
 </div>
 </div>

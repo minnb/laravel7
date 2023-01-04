@@ -3,11 +3,11 @@
 ?>
 @if(isset($home_page))
 <?php $service = json_decode($home_page[0]->options); ?>
-<div class="container clearfix">
+<div class="container clearfix" id="service">
 	<div class="col_one_third nobottommargin">
 		<div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
 			<div class="fbox-icon">
-				<a href="#"><i class="icon-check i-alt"></i></a>
+				<a rel="canonical" href="#"><i class="icon-check i-alt"></i></a>
 			</div>
 			<h3>{{$service->name1}}<span class="subtitle"></span></h3>
 		</div>
@@ -15,7 +15,7 @@
 	<div class="col_one_third nobottommargin">
 		<div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
 			<div class="fbox-icon">
-				<a href="#"><i class="icon-search3 i-alt"></i></a>
+				<a rel="canonical" href="#"><i class="icon-search3 i-alt"></i></a>
 			</div>
 			<h3>{{$service->name2}}<span class="subtitle"></span></h3>
 		</div>
@@ -23,7 +23,7 @@
 	<div class="col_one_third nobottommargin">
 		<div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
 			<div class="fbox-icon">
-				<a href="#"><i class="icon-beaker i-alt"></i></a>
+				<a rel="canonical" href="#"><i class="icon-beaker i-alt"></i></a>
 			</div>
 			<h3>{{$service->name3}}<span class="subtitle"></span></h3>
 		</div>

@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="{{asset('event/css/calendar.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{asset('event/css/responsive.css')}}" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-   {!! App\Models\Social::where('type','GOOGLE_ANA')->first()->link !!}
+    {!! App\Models\Social::where('type','GOOGLE_ANA')->first()->link !!}
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="OZNOj2zU">
 	</script>

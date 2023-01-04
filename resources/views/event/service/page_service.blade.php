@@ -5,7 +5,7 @@
 		<h1>{{$categories->name}}</h1>
 		<span><i>Cho những kỷ niệm đẹp</i></span>
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="{{url('/')}}">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a rel="canonical" href="{{url('/')}}">Trang chủ</a></li>
 			<li class="breadcrumb-item active" aria-current="page">{{$categories->name}}</li>
 		</ol>
 	</div>

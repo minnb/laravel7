@@ -5,7 +5,7 @@
 		<h1>{{$categories->name}}</h1>
 		<span><i>Cho những kỷ niệm đẹp</i></span>
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="{{url('/')}}">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a rel="canonical" href="{{url('/')}}">Trang chủ</a></li>
 			<li class="breadcrumb-item active" aria-current="page">{{$categories->name}}</li>
 		</ol>
 	</div>
@@ -19,7 +19,7 @@
 						@foreach($top_product_of_service as $item)
 						<div class="entry clearfix">
 							<div class="entry-image d-md-none d-lg-block">
-								<a href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">
+								<a rel="canonical" href="{{ route('get.event.detail', ['alias'=>$item->alias])}}">
 									<img src="{{asset($item->thumbnail)}}" alt="Inventore voluptates velit totam ipsa tenetur">
 								</a>
 							</div>

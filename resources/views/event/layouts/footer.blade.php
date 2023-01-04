@@ -30,9 +30,9 @@
 									<li><a href="{{ route('get.event.service', ['alias'=>$item->alias]) }}">{{$item->name}}</a></li>
 								@endforeach
 							@endif
-							<li><a href="https://vietpeacetravel.com/"><div>Vietpeace Travel</div></a>
-							<li><a href="{{ route('get.event.price.check') }}"><div>Báo giá</div></a></li>
-							<li><a href="{{ route('get.event.price.check') }}"><div>Liên hệ</div></a>
+							<li><a rel="canonical" href="https://vietpeacetravel.com/"><div>Vietpeace Travel</div></a>
+							<li><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Báo giá</div></a></li>
+							<li><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Liên hệ</div></a>
 						</ul>
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 							<div class="spost clearfix">
 								<div class="entry-c">
 									<div class="entry-title">
-										<h4><a href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}">{{$item->title}}</a></h4>
+										<h4><a rel="canonical" href="{{ route('get.blog.detail', ['alias'=>$item->alias])}}">{{$item->title}}</a></h4>
 									</div>
 									<ul class="entry-meta">
 										<li>{{date('d-m-Y', strtotime($item->created_at))}}</li>

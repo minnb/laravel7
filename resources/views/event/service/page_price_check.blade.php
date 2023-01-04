@@ -5,7 +5,7 @@
 		<h1>BÁO GIÁ</h1>
 		<span><i>Công ty du lịch Bình An Việt</i></span>
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="{{url('/')}}">Trang chủ</a></li>
+			<li class="breadcrumb-item"><a rel="canonical" href="{{url('/')}}">Trang chủ</a></li>
 			<li class="breadcrumb-item active" aria-current="page">Báo giá</li>
 		</ol>
 	</div>
