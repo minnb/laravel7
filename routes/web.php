@@ -17,6 +17,9 @@ Auth::routes();
 Route::get('/dashboard', ['as'=>'get.dashboard','uses'=>'Dashboard\DashboardController@index'])->name('dashboard');
 Route::get('404', 'HomeController@page_404');
 
+Route::get('/auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('/auth/{provide}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
 Route::fallback(function () {
     return redirect('/');
 });

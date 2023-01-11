@@ -63,6 +63,18 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <a class="btn btn-link" href="{{ URL::to('auth/facebook') }}">
+                                    <i class="fa fa-facebook-official" aria-hidden="true"></i> Đăng nhập bằng Facebook
+                                </a>
+                                <a class="btn btn-link" href="{{ URL::to('auth/google') }}">
+                                    <i class="fa fa-google-plus-square" aria-hidden="true"></i> Đăng nhập bằng Google
+                                </a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
