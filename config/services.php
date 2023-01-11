@@ -31,8 +31,8 @@ return [
     ],
 
     'google' => [
-        'client_id' => '1028258603296-alms198p2fr8ganhhad70mch2ovshspl.apps.googleusercontent.com',
-        'client_secret' => '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',
-        'redirect' => 'http://localhost:8000/projects/event.vietpeace/public/auth/google/callback',
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT'),
     ],
 ];

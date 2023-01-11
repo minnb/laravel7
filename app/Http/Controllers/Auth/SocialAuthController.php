@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Socialite, Auth, Redirect, Session, URL;
-use App\User;
+use App\Models\User;
 
 class SocialAuthController extends Controller
 {
@@ -28,29 +28,46 @@ class SocialAuthController extends Controller
      */
     public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver($provider)->user();
+        try
+        {
+            $user = Socialite::driver($provider)->user();
+            $authUser = $this->findOrCreateUser($user);
+            if($authUser)
+            {
+                Auth::login($authUser);
 
-        $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::login($authUser, true);
-        return Redirect::to(Session::get('pre_url'));
+                return redirect()->route('get.dashboard');
+            }
+            else
+            {
+                return back()->withErrors(['errors'=>'Lỗi đăng nhập'])->withInput()->with(['flash_message'=>'Vui lòng đăng nhập lại']);
+            }
+        }
+        catch (\Exception $e) 
+        {
+            return back()->withErrors($e->getMessage())->withInput();
+        }
+
+        //return Redirect::to(Session::get('pre_url'));
     }
 
-    /**
-     * @param  $user Socialite user object
-     * @param $provider Social auth provider
-     * @return  User
-     */
-    public function findOrCreateUser($user, $provider)
+    public function findOrCreateUser($user)
     {
-        $authUser = User::where('provider_id', $user->id)->first();
-        if ($authUser) {
+        $authUser = User::where('email', $user->email)->first();
+        if($authUser)
+        {
             return $authUser;
         }
-        return User::create([
-            'name'     => $user->name,
-            'email'    => $user->email,
-            'provider' => $provider,
-            'provider_id' => $user->id
-        ]);
+        else
+        {
+            return User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'password' => bcrypt('passw0rd123'),
+                'blocked' => 0
+            ]);
+        }
     }
+
+   
 }
