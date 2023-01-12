@@ -7,6 +7,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Roles;
 use Log;
+use App\Models\User;
 
 class RedirectIfAuthenticated
 {
@@ -20,9 +21,17 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-         if (Auth::guard($guard)->check()) {
-             return redirect(RouteServiceProvider::HOME);
-         }
-        return $next($request);
+        if (Auth::check()) {
+            if(User::checkUserRole(Auth::user()->email) == 'guest')
+            {
+                return redirect('/');
+            }
+            elseif (User::checkUserRole(Auth::user()->email) == 'author' || User::checkUserRole(Auth::user()->email) == 'administrator')
+            {
+                return $next($request);
+            }
+        }
+        return redirect('/');
     }
 }
+

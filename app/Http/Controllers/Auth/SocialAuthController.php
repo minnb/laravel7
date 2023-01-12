@@ -1,73 +1,123 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Socialite, Auth, Redirect, Session, URL;
 use App\Models\User;
+use App\Models\Role_User;
+use App\Models\Roles;
+use App\Models\Contact;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
+use App\Providers\RouteServiceProvider;
 
 class SocialAuthController extends Controller
 {
+    protected $redirectTo = RouteServiceProvider::DASHBOARD;
+    protected $redirectToHome = RouteServiceProvider::HOME;
+    protected $redirectToLogin = RouteServiceProvider::TO_LOGIN;
+
     public function redirectToProvider($provider)
     {
-        // if(!Session::has('pre_url')){
-        //     Session::put('pre_url', URL::previous());
-        // }else{
-        //     if(URL::previous() != URL::to('login')) Session::put('pre_url', URL::previous());
-        // }
+        if(!Session::has('pre_url'))
+        {
+            Session::put('pre_url', URL::previous());
+        }else
+        {
+            if(URL::previous() != URL::to('login')) Session::put('pre_url', URL::previous());
+        }
         return Socialite::driver($provider)->redirect();
     }  
 
-    /**
-     * Lấy thông tin từ Provider, kiểm tra nếu người dùng đã tồn tại trong CSDL
-     * thì đăng nhập, ngược lại nếu chưa thì tạo người dùng mới trong SCDL.
-     *
-     * @return Response
-     */
     public function handleProviderCallback($provider)
     {
         try
         {
-            $user = Socialite::driver($provider)->user();
-            $authUser = $this->findOrCreateUser($user);
-            if($authUser)
-            {
-                Auth::login($authUser);
+            Log::info('start Socialite:google');
+            $user = Socialite::driver('google')->user();
+            //Log::info(print_r($user, true));
+            $social_user = $this->findOrCreateUser($user);
 
-                return redirect()->route('get.dashboard');
+            if(isset($social_user))
+            {
+                if($this->postLogin($social_user))
+                {
+                    Log::info('Socialite login success');
+                    return redirect($this->redirectTo);
+                }
+                else
+                {
+                    return redirect($this->redirectToLogin);
+                }
             }
             else
             {
-                return back()->withErrors(['errors'=>'Lỗi đăng nhập'])->withInput()->with(['flash_message'=>'Vui lòng đăng nhập lại']);
+                return redirect($this->redirectToLogin)->with(['flash_message'=>'Vui lòng đăng nhập lại']);
             }
         }
         catch (\Exception $e) 
         {
-            return back()->withErrors($e->getMessage())->withInput();
+            Log::info($e->getMessage());
+            return redirect($this->redirectToLogin)->with(['flash_message'=>'Vui lòng đăng nhập lại']);
         }
-
-        //return Redirect::to(Session::get('pre_url'));
     }
 
-    public function findOrCreateUser($user)
+    protected function findOrCreateUser($user)
     {
-        $authUser = User::where('email', $user->email)->first();
-        if($authUser)
+        try
         {
-            return $authUser;
+            $checkUser = User::where('email', $user->email)->first();
+            if(isset($checkUser))
+            {
+                return $checkUser;
+            }
+            else
+            {
+                $user = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'password' => Hash::make('passw0rd123'),
+                    'blocked' => 0,
+                    'provider' => empty($user->provider) ? "google" : $user->provider,
+                    'provider_id' => empty($user->id) ? "" : $user->id
+                ]);
+
+                Role_User::insertRoleUser($user->id, false);
+                
+                return $user;
+            }
         }
-        else
+        catch (\Exception $e) 
         {
-            return User::create([
-                'name' => $user->name,
-                'email' => $user->email,
-                'password' => bcrypt('passw0rd123'),
-                'blocked' => 0
-            ]);
+            Log::info($e->getMessage());
+            return null;
         }
     }
 
-   
+    protected function postLogin($user)
+    {
+        Log::info('start postLogin');
+        try
+        {
+            $credentials = ['email' => $user->email, 'password' => 'passw0rd123'];
+            if(Auth::attempt($credentials))
+            {
+                Log::info('postLogin done');
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (\Exception $e) 
+        {
+            Log::info($e->getMessage());
+            return false;
+        }
+    }    
 }

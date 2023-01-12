@@ -15,6 +15,9 @@
 			============================================= -->
 			<nav id="primary-menu">
 				<ul>
+					@if(Auth::user())
+					<li>{{ Auth::User()->name }}</li>
+					@endif
 					<li class="current"><a rel="canonical" href="{{ route('get.event.price.check') }}"><div>Về chúng tôi</div></a>
 					</li>
 					<li><a href="#service"><div>Dịch vụ</div></a>

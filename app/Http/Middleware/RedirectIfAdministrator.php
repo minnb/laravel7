@@ -6,6 +6,7 @@ use Closure;
 use App\Models\User;
 use App\Models\Roles;
 use Auth;
+use Log;
 
 class RedirectIfAdministrator extends Middleware
 {
@@ -18,14 +19,16 @@ class RedirectIfAdministrator extends Middleware
      */
     public function handle($request, Closure $next)
     {
-        //if (Auth::check() && Roles::isAdmin(Auth::user()->id)) 
-        if (Auth::check())
-        {
-            return $next($request);
+        if (Auth::check()) {
+            if(User::checkUserRole(Auth::user()->email) == 'guest')
+            {
+                return redirect('/');
+            }
+            elseif (User::checkUserRole(Auth::user()->email) == 'author' || User::checkUserRole(Auth::user()->email) == 'administrator')
+            {
+                return $next($request);
+            }
         }
-        else
-        {
-            return redirect('/');
-        }
+        return redirect('/');
     }
 }

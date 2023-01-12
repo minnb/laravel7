@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','provider', 'provider_id'
     ];
 
     /**
@@ -54,7 +54,28 @@ class User extends Authenticatable
             abort(404);
         }
     }
-    
+
+    public static function getRoleName($id)
+    {
+      $role = Role_User::where('user_id', $id)->get();
+      $roleName = '';
+      if($role->count()>0){
+        $roleName = Roles::find($role[0]->role_id)->name;
+      }
+      return $roleName;
+    }
+
+    public static function checkUserRole($email)
+    {
+      $roleName = '';
+      $user = User::where('email', $email)->get();
+      if($user->count()>0){
+        $user_id = $user[0]->id;
+        $roleName = User::getRoleName($user_id);
+      }
+      return $roleName;
+    }
+
     public function hasAnyRole($roles): bool
     {
         return (bool) $this->roles()->whereIn('name', $roles)->first();

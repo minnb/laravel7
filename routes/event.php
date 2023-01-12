@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', 'Event\IndexController@index')->name('home');
-Route::get('/home', 'Event\IndexController@index')->name('home');
+//Route::get('/', 'Event\IndexController@index')->name('home');
 
 //service
 Route::get('/dich-vu/{alias}', ['as'=>'get.event.service','uses'=>'Event\ServiceController@page_service']);

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Log;
 use Auth;
 use App\Models\Roles;
 use App\Models\Contact;
 class DashboardController extends Controller
 {
+    protected $redirectToHome = RouteServiceProvider::HOME;
+
     public function __construct()
     {
         $this->middleware('admin');
@@ -21,6 +24,6 @@ class DashboardController extends Controller
 
     public function getLogout(){
         Auth::logout();
-        return redirect()->route('home');
+        return redirect($this->redirectToHome);
     }	
 }
