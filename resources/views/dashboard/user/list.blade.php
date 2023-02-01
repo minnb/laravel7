@@ -1,5 +1,5 @@
 @extends('dashboard.app')
-@section('title', 'Categories')
+@section('title', 'User')
 @section('page-header', 'List')
 @section('content')
 @include('dashboard.layouts.alert')
