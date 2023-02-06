@@ -13,7 +13,7 @@
 	@endif
     <meta name="robots" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm">
 	<meta name="keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm"/>
-  	<meta name="news_keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm"/>
+  	<meta name="news_keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm, sinh nhật"/>
 
 	<meta property="fb:app_id" content="1234567890" /> 
 	<meta property="og:type" content="article" /> 

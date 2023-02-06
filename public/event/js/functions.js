@@ -21,7 +21,7 @@ $.fn.doOnce = function( func ) {
 	if (!window.requestAnimationFrame)
 		window.requestAnimationFrame = function(callback, element) {
 			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 5 - (currTime - lastTime));
+			var timeToCall = Math.max(0, 3 - (currTime - lastTime));
 			var id = window.setTimeout(function() { callback(currTime + timeToCall); },
 			  timeToCall);
 			lastTime = currTime + timeToCall;
