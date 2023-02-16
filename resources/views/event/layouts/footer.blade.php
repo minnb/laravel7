@@ -1,5 +1,5 @@
 <?php
-	$topPost = \App\Models\Post::Top3Post(0, 3);
+	$topPost = \App\Models\Post::Top3Post(0, 5);
 	$service_page_footer = \App\Models\Categories::getServicePage();
 ?>
 <footer id="footer" class="dark">

@@ -114,7 +114,7 @@
 body,
 .dropdown-menu { font-size: 0.875rem; }
 
-
+.postcontent-blog { font-size: 0.975rem; }
 /* ----------------------------------------------------------------
 	Basic
 -----------------------------------------------------------------*/
@@ -3535,7 +3535,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 .content-wrap {
 	position: relative;
-	padding: 80px 0;
+	padding: 75px 0;
 }
 
 #content .container { position: relative; }
@@ -11511,7 +11511,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 .divider {
 	position: relative;
 	overflow: hidden;
-	margin: 35px 0;
+	margin: 20px 0;
 	color: #E5E5E5;
 	width: 100%;
 }
@@ -12152,7 +12152,7 @@ button.toast-close-button {
 
 .widget {
 	position: relative;
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 .widget p { line-height: 1.7; }
@@ -12170,7 +12170,7 @@ button.toast-close-button {
 }
 
 .widget > h4 {
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	font-size: 15px;
 	font-weight: 600;
 	letter-spacing: 2px;
@@ -13916,25 +13916,19 @@ body:not(.no-transition) #wrapper,
 /* ----------------------------------------------------------------
 	Star Ratings Component
 -----------------------------------------------------------------*/
-
 .rating-xl { font-size: 3rem !important; }
-
 .rating-lg { font-size: 2.5rem !important; }
-
 .rating-md { font-size: 2rem !important; }
-
 .rating-sm { font-size: 1.75rem !important; }
-
 .rating-xs { font-size: 1.25rem !important; }
-
 .rating-container .star { margin: 0 2px !important; }
-
 .rating-container .filled-stars {
 	-webkit-text-stroke: 0px !important;
 	text-shadow: none !important;
 }
-
-
+/*
+----------------POST content
+*/
 .postcontent p img
 {
 	width:100%;
@@ -13943,4 +13937,16 @@ body:not(.no-transition) #wrapper,
 .postcontent-reponsive-img
 {
 	
+}
+.postcontent-blog ol li
+{
+	margin-left: 25px;
+	text-align: justify;
+	line-height: 1.8;
+}
+.postcontent-blog ul li
+{
+	line-height: 1.8;
+	margin-left: 25px;
+	text-align: justify;
 }
