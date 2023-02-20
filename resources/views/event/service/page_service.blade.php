@@ -13,15 +13,14 @@
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
-			<div class="postcontent nobottommargin clearfix">
+			<div class="postcontent nobottommargin clearfix postcontent-blog" id = "postcontent-detail">
 				@if(isset($data_page_service))
 					{!! $data_page_service->content !!}
-					<!--<div class="divider divider-rounded divider-center"><i class="icon-map-marker"></i></div>-->
 				@else
 					<p>Chưa có dữ liệu</p>
 				@endif
-			</div>
-			
+				<div class="divider divider-right"><i class="icon-heart"></i></div>
+			</div>		
 			@include('event.post.event_sidebar')
 		</div>
 	</div>
