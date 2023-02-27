@@ -72,7 +72,7 @@
             &nbsp; &nbsp; &nbsp;
             <a class="btn btn-success" href="{{ route('get.dashboard.customer.list') }}">
                 <i class="ace-icon fa fa-list bigger-110"></i>
-                Categories
+                List
             </a>
         </div>
     </div>

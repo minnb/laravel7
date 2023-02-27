@@ -9,7 +9,7 @@
 	@if(isset($page_title))
 	<title>{{ $page_title }}</title>
 	@else
-	<title>Vietpeace - đơn vị tổ chức sự kiện, du lịch dã ngoại, chuyên nghiệp</title>
+	<title>Vietpeacetravel - CÔNG TY DU LỊCH BÌNH AN VIỆT</title>
 	@endif
     <meta name="robots" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm">
 	<meta name="keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm"/>
