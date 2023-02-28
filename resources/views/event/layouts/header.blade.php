@@ -15,12 +15,12 @@
 	<meta name="keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm"/>
   	<meta name="news_keywords" content="Dã ngoại cuối tuần cùng con yêu, tổ chức dã ngoại cuối tuần cho trẻ, tổ chức picnic cho học sinh, tổ chức sự kiện họp mặt liên hoan, hội nghị hội thảo, đêm gala cuối năm, họp lớp 10 năm, kỷ niệm ngày ra trường, tất niên cuối năm, sinh nhật"/>
 
-	<meta property="fb:app_id" content="1234567890" /> 
+	<meta property="fb:app_id" content="5689845492276583" /> 
 	<meta property="og:type" content="article" /> 
-	<meta property="og:url" content="https://www.facebook.com/dulichvietpeace/" /> 
+	<meta property="og:url" content="https://vietpeace.com" /> 
 	<meta property="og:title" content="Vietpeace Teambuilding - Event" /> 
-	<meta property="og:image" content="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/319332982_1821412901551040_3634522783829138749_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=bok3c6nC65oAX8kv6Es&_nc_ht=scontent.fhan2-3.fna&oh=00_AfCIorufRRcBrml0arWwG9rv6zwSaDoz4McZx2fQcDsrhQ&oe=63B00554" /> 
-	<meta property="og:description"    content="https://vietpeace.com/bao-gia-dich-vu" />
+	<meta property="og:image" content="https://vietpeace.com/event/images/logo.png" /> 
+	<meta property="og:description" content="https://vietpeace.com/bao-gia-dich-vu" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="{{asset('event/css/bootstrap.css')}}" type="text/css" />

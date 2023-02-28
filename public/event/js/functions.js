@@ -21,7 +21,7 @@ $.fn.doOnce = function( func ) {
 	if (!window.requestAnimationFrame)
 		window.requestAnimationFrame = function(callback, element) {
 			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 3 - (currTime - lastTime));
+			var timeToCall = Math.max(0, 2 - (currTime - lastTime));
 			var id = window.setTimeout(function() { callback(currTime + timeToCall); },
 			  timeToCall);
 			lastTime = currTime + timeToCall;
@@ -33,7 +33,6 @@ $.fn.doOnce = function( func ) {
 			clearTimeout(id);
 		};
 }());
-
 
 
 function debounce(func, wait, immediate) {
@@ -62,7 +61,6 @@ function debounce(func, wait, immediate) {
 
 
 var requesting = false;
-
 var killRequesting = debounce(function () {
 	requesting = false;
 }, 100);
@@ -78,17 +76,11 @@ function onScrollSliderParallax() {
 	killRequesting();
 }
 
-
-
 var SEMICOLON = SEMICOLON || {};
-
 (function($){
-
 	// USE STRICT
 	"use strict";
-
 	SEMICOLON.initialize = {
-
 		init: function(){
 
 			SEMICOLON.initialize.responsiveClasses();
@@ -111,12 +103,10 @@ var SEMICOLON = SEMICOLON || {};
 		},
 
 		responsiveClasses: function(){
-
 			if( typeof jRespond === 'undefined' ) {
 				console.log('responsiveClasses: jRespond not Defined.');
 				return true;
 			}
-
 			var jRes = jRespond([
 				{
 					label: 'smallest',
