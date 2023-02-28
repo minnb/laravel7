@@ -71,7 +71,7 @@ class ServiceController extends Controller
                 $data->email = trim($request->email);
                 $data->content = empty($request->content)?"":$request->content;
                 $data->flag = 0;
-                $data->blocked = $request->status == 'on' ? 0 : 1;
+                $data->blocked = 0;
                 $data->options = '{}';
                 $data->image = "";
                 $data->save();            

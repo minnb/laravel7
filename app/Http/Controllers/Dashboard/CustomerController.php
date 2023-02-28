@@ -18,7 +18,7 @@ class CustomerController extends Controller
 
     public function list()
     {
-        $data = Contact::where('blocked',0)->whereIn('type', ['REVIEW','CONTACT'])->get();
+        $data = Contact::whereIn('type', ['REVIEW','CONTACT'])->get();
     	return view('dashboard.cust.list', compact('data'));
     }
 
