@@ -36,6 +36,8 @@
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="OZNOj2zU">
 	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5689845492276583"
+     crossorigin="anonymous"></script>
 </head>
 <body class="stretched">
 	<div id="wrapper" class="clearfix">
