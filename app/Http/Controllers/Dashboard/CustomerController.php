@@ -29,7 +29,8 @@ class CustomerController extends Controller
 
     public function postCreate(Request $request)
     {
-        try{
+        try
+        {
             DB::beginTransaction();
                 $data = new Contact();            
                 $data->type = "REVIEW";

@@ -80,28 +80,6 @@
             <b class="arrow"></b>
         </li>
 
-        <li class="{{ getRootCSS('dashboard.cate') }}">
-            <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
-                <span class="menu-text"> Categories </span>
-
-                <b class="arrow fa fa-angle-down"></b>
-            </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-                <li class="{{ getActiveCSS('get.dashboard.cate.list') }}">
-                    <a href="{{ route('get.dashboard.cate.list') }}">
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Categories
-                    </a>
-                    <b class="arrow"></b>
-                </li>
-
-            </ul>
-        </li>
-
         <li class="{{ getRootCSS('dashboard.post') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-pencil-square-o"></i>
@@ -286,6 +264,29 @@
             </ul>
         </li>
         @if(App\Models\User::checkUserRole(Auth::user()->email) == 'administrator')
+        <li class="{{ getRootCSS('dashboard.cate') }}">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"> Categories </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="{{ getActiveCSS('get.dashboard.cate.list') }}">
+                    <a href="{{ route('get.dashboard.cate.list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Categories
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+
+            </ul>
+        </li>
+
+
         <li class="{{ getRootCSS('dashboard.user') }}">
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-user"></i>
