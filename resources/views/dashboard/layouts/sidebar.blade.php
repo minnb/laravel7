@@ -128,6 +128,7 @@
                     </a>
                     <b class="arrow"></b>
                 </li>
+  <!--
                 <li class="{{ getActiveCSS('dashboard.product.price') }}">
                     <a href="{{ route('get.dashboard.product.price.list') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
@@ -158,6 +159,7 @@
 
                     <b class="arrow"></b>
                 </li>
+            -->
             </ul>
         </li>
 

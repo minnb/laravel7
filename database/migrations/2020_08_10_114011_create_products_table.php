@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->longText('content');
             $table->string('base_unit',20);
+            $table->integer('unit_price');
             $table->string('tax',20);
             $table->json('options');          
             $table->boolean('blocked')->default(0);

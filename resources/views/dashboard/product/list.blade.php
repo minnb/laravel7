@@ -32,6 +32,7 @@
                     <th>Categories</th>
                     <th>Tags</th>
                     <th>Time</th>
+                    <th>Price</th>
                     <th>Status</th>
                     <th></th>
                 </tr>
@@ -52,6 +53,7 @@
                         </td>
                         <td>{{ \App\Models\Tag::getListTagsFromArr($item->id) }}</td>
                         <td>{{ $item->base_unit }}</td>
+                        <td>{{ number_format($item->unit_price) }}</td>
                         <td>{{ $item->blocked }}</td>
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons">
@@ -111,7 +113,7 @@
                 bAutoWidth: false,
                 "aoColumns": [
                   { "bSortable": false },
-                  null, null,null, null, null,null,null,
+                  null, null,null, null, null,null,null,null,
                   { "bSortable": false }
                 ],
                 "aaSorting": [],

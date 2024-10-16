@@ -53,6 +53,7 @@ class ProductController extends Controller
                 $data->user_id = Auth::user()->id;
                 $data->tax = '';
                 $data->base_unit = $request->base_unit;
+                $data->unit_price = $request->unit_price;
                 $data->options = json_encode($tourOpt);
                 
                 $destinationPath = path_storage('images');
@@ -137,6 +138,7 @@ class ProductController extends Controller
             $data->name = trim($request->name);
             $data->alias = Str::slug($request->name);
             $data->base_unit = $request->base_unit;
+            $data->unit_price = $request->unit_price;
             $data->description = empty($request->description)?"":$request->description;
             $data->content = empty($request->content)?"":$request->content;;
             $data->blocked = $request->status == 'on' ? 0 : 1;

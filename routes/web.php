@@ -28,7 +28,7 @@ Route::fallback(function () {
 });
 
 include('dashboard.php');
-include('event.php');
+include('binhanviet.php');
 
 // if(config('app.front_end') == 'event_vietpeace')
 // {

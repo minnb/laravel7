@@ -1160,10 +1160,10 @@ body.stretched #header.full-header .container {
 	padding: 39px 15px;
 	color: #444;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 0.875rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'VNE1', "Times New Roman", Times, Baskerville, Georgia, serif;
 	-webkit-transition: margin .4s ease, padding .4s ease;
 	-o-transition: margin .4s ease, padding .4s ease;
 	transition: margin .4s ease, padding .4s ease;
@@ -1193,6 +1193,11 @@ body.stretched #header.full-header .container {
 
 body.no-superfish #primary-menu li:hover > ul:not(.mega-menu-column),
 body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; }
+
+body
+{
+	font-family: 'VNE1', "Times New Roman", Times, Baskerville, Georgia, serif;
+}
 
 #primary-menu ul ul:not(.mega-menu-column),
 #primary-menu ul li .mega-menu-content {
@@ -3535,7 +3540,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 .content-wrap {
 	position: relative;
-	padding: 75px 0;
+	padding: 35px 0;
 }
 
 #content .container { position: relative; }
@@ -5867,7 +5872,7 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-image > a {
 
 .product-title h3 {
 	margin: 0;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .product-title h3 a,
@@ -7226,7 +7231,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .promo {
 	position: relative;
-	padding: 30px 200px 30px 0;
+	padding: 30px 200px 10px 0;
 }
 
 .promo h3 {
@@ -12923,14 +12928,14 @@ body:not(.no-transition) #wrapper,
 
 .css3-spinner .css3-spinner-bounce1 {
 	margin-left: -31px;
-	-webkit-animation-delay: -0.32s;
-	animation-delay: -0.32s;
+	-webkit-animation-delay: -0.05s;
+	animation-delay: -0.05s;
 }
 
 .css3-spinner .css3-spinner-bounce2 {
 	margin-left: -9px;
-	-webkit-animation-delay: -0.16s;
-	animation-delay: -0.16s;
+	-webkit-animation-delay: -0.6s;
+	animation-delay: -0.6s;
 }
 
 @-webkit-keyframes bouncedelay {
@@ -13949,4 +13954,15 @@ body:not(.no-transition) #wrapper,
 	line-height: 1.8;
 	margin-left: 25px;
 	text-align: justify;
+}
+.h3-uppercase
+{
+	text-transform: uppercase;
+}
+.margin-top-40{
+	margin-top: 40px;
+}
+.background_F8F8F8{
+	border: 1px solid #F8F8F8;
+	background-color: #F8F8F8;
 }

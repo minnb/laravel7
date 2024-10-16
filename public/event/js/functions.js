@@ -21,7 +21,7 @@ $.fn.doOnce = function( func ) {
 	if (!window.requestAnimationFrame)
 		window.requestAnimationFrame = function(callback, element) {
 			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 2 - (currTime - lastTime));
+			var timeToCall = Math.max(0, 1 - (currTime - lastTime));
 			var id = window.setTimeout(function() { callback(currTime + timeToCall); },
 			  timeToCall);
 			lastTime = currTime + timeToCall;
@@ -63,7 +63,7 @@ function debounce(func, wait, immediate) {
 var requesting = false;
 var killRequesting = debounce(function () {
 	requesting = false;
-}, 100);
+}, 10);
 
 function onScrollSliderParallax() {
 	if (!requesting) {

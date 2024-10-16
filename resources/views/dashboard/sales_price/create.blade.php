@@ -22,7 +22,7 @@
     <div class="form-group">
         <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Uom </label>
         <div class="col-xs-4">
-            <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a Uom..." name="uom[]" required>
+            <select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choose a Uom..." name="uom[]" >
                 <option value="">  </option>
                 
             </select>

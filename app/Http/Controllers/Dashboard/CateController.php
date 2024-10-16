@@ -17,7 +17,7 @@ class CateController extends Controller
 
     public function list()
     {
-        $data = Categories::where('parent','>',0)->get();
+        $data = Categories::where('parent','>',0)->orderBy('type')->get();
     	return view('dashboard.cate.list', compact('data'));
     }
 

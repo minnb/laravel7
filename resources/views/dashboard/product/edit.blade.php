@@ -17,7 +17,7 @@
                     Content
                 </a>
             </li>
-            <li>
+           <!--  <li>
                 <a data-toggle="tab" href="#Gallery">
                     Gallery
                     <span class="badge badge-danger"></span>
@@ -28,7 +28,7 @@
                     Policy
                     <span class="badge badge-danger"></span>
                 </a>
-            </li>
+            </li> -->
         </ul>
         <div class="tab-content">
             <div id="Content" class="tab-pane fade in active">
@@ -61,7 +61,12 @@
                         </select>
                     </div>
                 </div>
-                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Unit Price </label>
+                    <div class="col-xs-9">
+                        <input type="number" name="unit_price" class="col-xs-10 col-sm-5" required value="{{ old('unit_price', isset($data) ? $data['unit_price'] : '')}}" required />
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tags </label>
                     <div class="col-xs-10">
