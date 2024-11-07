@@ -3,8 +3,10 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use Log; use DB;
-use Auth;use Image;
+use Auth;
+//use Image;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Models\Post_Tag;
@@ -59,9 +61,11 @@ class ProductController extends Controller
                 $destinationPath = path_storage('images');
                 if($request->file('fileImage')){
                     foreach($request->file('fileImage') as $file ){
-                        if(isset($file)){
-                            $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
-                            $file->move($destinationPath, $file_name);
+                        if(isset($file))
+                        {
+                            $file_name = $this->resizeFileImage($file, $destinationPath, 600, 800);
+                            //$file_name = time().randomString().'.'.$file->getClientOriginalExtension();
+                            //$file->move($destinationPath, $file_name);
                             $data->thumbnail = $destinationPath.'/'.$file_name;
                         }
                     }
@@ -131,7 +135,8 @@ class ProductController extends Controller
 	
     public function postEdit(Request $request, $id)
     {
-        try{
+        try
+        {
             DB::beginTransaction();
             $data = Product::find($id);
             $data->categories = implode("|",$request->category);
@@ -149,16 +154,20 @@ class ProductController extends Controller
             $tourOpt->service = empty($request->service)?"":$request->service;
             $tourOpt->policy = empty($request->policy)?"":$request->policy;
             $tourOpt->rules = empty($request->rules)?"":$request->rules;
-
             $data->options = json_encode($tourOpt);
 
             $destinationPath = path_storage('images');
-            if($request->file('fileImage')){
-                foreach($request->file('fileImage') as $file ){
-                    if(isset($file)){
-                        $file_name = time().randomString().'.'.$file->getClientOriginalExtension();
-                        $file->move($destinationPath, $file_name);
+            if($request->file('fileImage'))
+            {
+                $old_img = $data->thumbnail;
+                foreach($request->file('fileImage') as $file)
+                {
+                    if(isset($file))
+                    {
+                        $file_name = $this->resizeFileImage($file, $destinationPath, 600, 800);
+                        //$file->move($destinationPath, $file_name);
                         $data->thumbnail = $destinationPath.'/'.$file_name;
+                        delete_image_no_path($old_img);
                     }
                 }
             }
@@ -167,14 +176,15 @@ class ProductController extends Controller
                 foreach($request->file('fileImage2') as $file2 ){
                     if(isset($file2)){
                         $file_name2 = time().randomString().'.'.$file2->getClientOriginalExtension();
-
                         $imgSingle = ImageSingle::where('post_id', $id)->first();
-                        if(isset($imgSingle)){
-                            $file2->move($destinationPath, $file_name2);
-
+                        if(isset($imgSingle))
+                        {
+                            $file2->move($destinationPath, $file_name2);                        
                             $imgSingle->path = $destinationPath.'/'.$file_name2;
                             $imgSingle->save();
-                        }else{
+                        }
+                        else
+                        {
                             $imgSingle = new ImageSingle();
                             $imgSingle->post_id = $id;
                             $imgSingle->path = $destinationPath.'/'.$file_name2;
@@ -221,5 +231,31 @@ class ProductController extends Controller
             DB::rollBack();
             return back()->withErrors($e->getMessage())->withInput($request->input());
         }
+    }
+
+    private function resizeFileImage($file, $destinationPath, $fixedHeight, $fixedWidth)
+    {
+        $file_name = time().randomString().'.'.$file->getClientOriginalExtension();                    
+        $img = Image::make($file->getRealPath());
+        if ($img->height() < $fixedHeight) 
+        {
+            $background = Image::canvas($fixedWidth, $fixedHeight, '#ffffff');
+            $img->resize($fixedWidth, $fixedHeight, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $background->insert($img, 'center');
+            $background->save($destinationPath . '/' . $file_name);
+        }
+        else
+        {
+            $img->resize(null, $fixedHeight, function ($constraint) {
+                $constraint->aspectRatio();
+            })->crop($fixedWidth, $fixedHeight);
+            
+            $img->save($destinationPath . '/' . $file_name);
+        }
+
+        return $file_name;
     }
 }

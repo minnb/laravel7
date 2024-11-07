@@ -1,99 +1,3 @@
-/*-----------------------------------------------------------------------------------
-
-	Theme Name: Canvas
-	Theme URI: http://themes.semicolonweb.com/html/canvas
-	Description: The Multi-Purpose Template
-	Author: SemiColonWeb
-	Author URI: http://themeforest.net/user/semicolonweb
-	Version: 5.9.1
-
------------------------------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-
-	- Basic
-	- Typography
-	- Basic Layout Styles
-	- Helper Classes
-	- Sections
-	- Columns & Grids
-	- Flex Slider
-	- Swiper Slider
-	- Top Bar
-	- Header
-		- Logo
-		- Primary Menu
-		- Mega Menu
-		- Top Search
-		- Top Cart
-		- Sticky Header
-		- Page Menu
-		- Side Header
-	- Side Panel
-	- Slider
-	- Page Title
-	- Content
-	- Portfolio
-	- Blog
-	- Shop
-	- Events
-	- Shortcodes
-		- Countdown
-		- Buttons
-		- Promo Boxes
-		- Featured Boxes
-		- Process Steps
-		- Styled Icons
-		- Toggles
-		- Accordions
-		- Tabs
-		- Side Navigation
-		- FAQ List
-		- Clients
-		- Testimonials
-		- Team
-		- Pricing Boxes
-		- Counter
-		- Animated Rounded Skills
-		- Skills Bar
-		- Dropcaps & Highlights
-		- Quotes & Blockquotes
-		- Text Rotater
-	- Owl Carousel
-	- Overlays
-	- Forms
-	- Google Maps
-	- Heading Styles
-	- Divider
-	- Magazine Specific Classes
-	- Go To Top
-	- Error 404
-	- Landing Pages
-	- Preloaders
-	- Toastr Notifications
-	- Footer
-	- Widgets
-		- Tag Cloud
-		- Links
-		- Testimonial & Twitter
-		- Quick Contact Form
-		- Newsletter
-		- Twitter Feed
-		- Navigation Tree
-	- Wedding
-	- Bootstrap Specific
-	- Cookie Notification
-	- Stretched Layout
-	- Page Transitions
-	- Youtube Video Backgrounds
-
----------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------
-	Bootstrap Adjustments
------------------------------------------------------------------*/
-
 @media (min-width: 576px) {
 	.container { max-width: 540px; }
 }
@@ -110,14 +14,10 @@
 	.container { max-width: 1170px; }
 }
 
-
 body,
 .dropdown-menu { font-size: 0.875rem; }
 
 .postcontent-blog { font-size: 0.975rem; }
-/* ----------------------------------------------------------------
-	Basic
------------------------------------------------------------------*/
 
 dl, dt, dd, ol, ul, li {
 	margin: 0;
@@ -155,16 +55,10 @@ dl, dt, dd, ol, ul, li {
 :active,
 :focus { outline: none !important; }
 
-
-/* ----------------------------------------------------------------
-	Typography
------------------------------------------------------------------*/
-
-
 body {
 	line-height: 1.5;
 	color: #555;
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -179,12 +73,6 @@ a img { border: none; }
 img { max-width: 100%; }
 
 iframe { border: none !important; }
-
-
-/* ----------------------------------------------------------------
-	Basic Layout Styles
------------------------------------------------------------------*/
-
 
 h1,
 h2,
@@ -3367,10 +3255,12 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 #page-title span {
 	display: block;
 	margin-top: 10px;
-	font-weight: 300;
-	color: #777;
+	font-weight: 500;
 	font-size: 18px;
+	color: #686666;
+	font-family: 'Roboto', sans-serif;
 }
+
 
 .breadcrumb {
 	position: absolute !important;
@@ -5873,6 +5763,13 @@ body:not(.device-touch):not(.device-sm):not(.device-xs) .product-image > a {
 .product-title h3 {
 	margin: 0;
 	font-size: 16px;
+    height: 2.5em;                /* Chiều cao cố định cho 2 dòng (điều chỉnh nếu cần) */
+    line-height: 1.3em;           /* Đặt line-height phù hợp để tạo khoảng cách giữa 2 dòng */
+    overflow: hidden;             /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis;      /* Hiển thị dấu ... nếu bị cắt */
+    display: block;               /* Đảm bảo thành phần là block */
+    word-break: break-word;       /* Ngắt từ nếu quá dài */
+    white-space: normal;          /* Cho phép xuống dòng */
 }
 
 .product-title h3 a,
@@ -13965,4 +13862,13 @@ body:not(.no-transition) #wrapper,
 .background_F8F8F8{
 	border: 1px solid #F8F8F8;
 	background-color: #F8F8F8;
+}
+
+div.product-desc p{
+	font-size: 1rem;
+	line-height: 1.3;
+}
+div.tour_detail p{
+	line-height: 1.3;
+	font-size: 1.1rem;
 }

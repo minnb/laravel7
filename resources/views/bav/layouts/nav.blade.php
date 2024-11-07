@@ -52,7 +52,7 @@
 						<li class="{{getActiveRoot('')}}"><a href="{{url('')}}"><div>Trang chủ</div></a></li>
 						@if(isset($cate_menu))
 						@foreach($cate_menu as $item)
-							<li class="mega-menu"><a href="#"><div>{{$item->name}}</div><span>{{$item->alias}}</span></a>
+							<li class="mega-menu"><a href="{{ route('get.tour.by.cate', ['cate'=>$item->alias]) }}"><div>{{$item->name}}</div><span>{{$item->alias}}</span></a>
 								
 							</li>
 						<!--

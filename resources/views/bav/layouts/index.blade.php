@@ -17,18 +17,18 @@
 					@foreach($index_tours as $tour)
 					<div class="product clearfix background_F8F8F8">
 						<div class="product-image">
-							<a href="#"><img src="{{asset($tour->thumbnail)}}" alt="{{$tour->name}}"></a>
-							<a href="#"><img src="{{asset($tour->thumbnail)}}" alt="{{$tour->name}}"></a>
+							<a href="{{ route('get.tour.detail', ['id'=> $tour->id,'cate'=>$item->alias,'alias'=>$tour->alias]) }}"><img src="{{asset($tour->thumbnail)}}" alt="{{$tour->name}}"></a>
+							<a href="{{ route('get.tour.detail', ['id'=> $tour->id,'cate'=>$item->alias,'alias'=>$tour->alias]) }}"><img src="{{asset($tour->thumbnail)}}" alt="{{$tour->name}}"></a>
 							<!--
 							<div class="sale-flash">50% Off*</div>
 							-->
 							<div class="product-overlay">
-								<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Đặt tour</span></a>
-								<a href="#" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Chi tiết</span></a>
+								<a href="{{ route('get.tour.detail', ['id'=> $tour->id,'cate'=>$item->alias,'alias'=>$tour->alias]) }}" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Đặt tour</span></a>
+								<a href="{{ route('get.tour.detail', ['id'=> $tour->id,'cate'=>$item->alias,'alias'=>$tour->alias]) }}" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Chi tiết</span></a>
 							</div>
 						</div>
 						<div class="product-desc">
-							<div class="product-title"><h3><a href="#">{{$tour->name}}</a></h3></div>
+							<div class="product-title"><h3><a href="{{ route('get.tour.detail', ['id'=> $tour->id,'cate'=>$item->alias,'alias'=>$tour->alias]) }}">{{$tour->name}}</a></h3></div>
 							
 							@if($tour->unit_price > 0)
 							<div class="product-price"><ins>{{number_format($tour->unit_price)}}đ</ins></div>

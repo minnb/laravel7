@@ -3,7 +3,9 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="VietpeaceTravel" />
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="
+	text/css" />
+	
 	<link rel="stylesheet" href="{{asset('event/css/bootstrap.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{asset('event/style.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{asset('event/css/dark.css')}}" type="text/css" />
