@@ -1,4 +1,7 @@
-<?php $cate_menu = $global_category->where('type', 1)->where('parent','<>', 0); ?>
+<?php 
+	$cate_menu = $global_category->where('type', 1)->where('parent','<>', 0); 
+	$footer_location = App\Models\Tag::getTagsInProduct();
+?>
 <footer id="footer" class="dark">
 	<div class="container">
 		<!-- Footer Widgets	============================================= -->
@@ -26,7 +29,7 @@
 						<ul>
 							@if(isset($cate_menu))
 							@foreach($cate_menu as $item)
-								<li><a href="#">{{$item->name}}</a></li>
+								<li><a href="{{ route('get.tour.by.cate', ['cate'=>$item->alias]) }}">{{$item->name}}</a></li>
 							@endforeach
 							@endif
 						</ul>
@@ -34,11 +37,11 @@
 				</div>
 				<div class="col_one_third col_last">
 					<div class="widget clearfix">
-						<h4>Tour chủ đề</h4>
+						<h4>ĐỊA ĐIỂM</h4>
 						<ul>
-							@if(isset($cate_menu))
-							@foreach($cate_menu as $item)
-								<li><a href="#">{{$item->name}}</a></li>
+							@if(isset($footer_location))
+							@foreach($footer_location as $location)
+								<li><a href="{{ route('get.tour.by.location', ['alias'=> $location->tag_alias]) }}">{{$location->tag_name}}</a></li>
 							@endforeach
 							@endif
 						</ul>

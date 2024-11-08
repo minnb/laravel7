@@ -4,14 +4,5 @@ Route::get('/', 'BAV\IndexController@index')->name('home');
 Route::get('/lien-he', 'BAV\IndexController@contact')->name('lien-he');
 Route::get('/tour/{cate}', ['as'=>'get.tour.by.cate','uses'=>'BAV\TourController@list_tours_by_cate']);
 Route::get('/tour/{cate}/{id}-{alias}', ['as'=>'get.tour.detail','uses'=>'BAV\TourController@detail'])->where('id', '[0-9]+');
+Route::get('/tour/dia-diem/{alias}', ['as'=>'get.tour.by.location','uses'=>'BAV\TourController@list_tours_by_location']);
 
-
-// //page
-// Route::get('/lien-he', 'Home\HomeController@contact')->name('lien-he');
-// //detail tour
-// Route::get('/{cate}', ['as'=>'get.home.tour.list','uses'=>'Home\ProductController@list']);
-// Route::get('/{cate}/dia-diem/{id}-{name}', ['as'=>'get.home.tour.location.list','uses'=>'Home\ProductController@listByLocation']);
-// Route::get('/{cate}/{id}-{name}', ['as'=>'get.home.tour.detail','uses'=>'Home\ProductController@detail'])->where('id', '[0-9]+');
-// Route::post('/tour/post/guide/{type}', ['as'=>'post.home.tour.guide','uses'=>'Home\ProductController@guide']);
-// //blog
-// Route::get('/blog/{cate}/{id}-{name}', ['as'=>'get.home.post.detail','uses'=>'Home\PostController@detailPost'])->where('id', '[0-9]+');

@@ -23,6 +23,24 @@ class Tag extends Model
 
         return $data;
     }
+
+    public static function getTagsInProduct()
+    {
+        return  DB::table('m_post_tag as pt')
+                ->join('m_tags as t', 'pt.tag_id', '=', 't.id')
+                ->join('m_products as p', 'pt.post_id', '=', 'p.id')
+                ->select(
+                    't.id as tag_id',
+                    't.name as tag_name',
+                    't.alias as tag_alias',
+                    DB::raw('GROUP_CONCAT(p.id) as product_ids'),
+                    DB::raw('GROUP_CONCAT(p.name) as product_names')
+                )
+                ->groupBy('t.id', 't.name', 't.alias')
+                ->limit(12)
+                ->orderBy('t.name')
+                ->get();
+    }
     
     public static function getFistTagName($post_id)
     {

@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-xs-2 control-label no-padding-right">Image <span>(1920x720)</span></label>
+            <label class="col-xs-2 control-label no-padding-right">Image <span>(800x600)</span></label>
             <div class="col-xs-4">
                 <label class="ace-file-input">
                     <input type="file" id="id-input-file-2" name="fileImage[]">

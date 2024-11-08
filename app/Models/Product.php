@@ -28,4 +28,14 @@ class Product extends Model
             ->where('m_products.description','!=','')
             ->select('m_products.*')->orderBy('m_products.created_at', 'desc')->limit($limit)->get();
     }
+
+    public static function getProductByTagAlias($alias, $limit = 3)
+    {
+        return DB::table('m_products')
+            ->join('m_categories', 'm_categories.id', '=', 'm_products.categories')
+            ->join('m_post_tag', 'm_post_tag.post_id', '=', 'm_products.id')
+            ->join('m_tags', 'm_tags.id', '=', 'm_post_tag.tag_id')
+            ->where('m_tags.alias','=', $alias)
+            ->select('m_categories.alias as cate_alias', 'm_products.*')->orderBy('m_products.created_at', 'desc')->limit($limit)->get();
+    }
 }
