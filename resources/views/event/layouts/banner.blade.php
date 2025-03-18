@@ -1,7 +1,7 @@
 <?php
 	$banner_slide = App\Models\SysPage::getSlideIndex(5);
 	$link_description_banner = '#';
-	if(isset($banner_slide) && $banner_slide[0]->description <> '')
+	if(isset($banner_slide))
 	{
 		$link_description_banner = $banner_slide[0]->description;
 	}

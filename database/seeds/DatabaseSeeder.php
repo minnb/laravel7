@@ -39,6 +39,8 @@ class DatabaseSeeder extends Seeder
         $user->email = 'minhnb.it@gmail.com';
         $user->password = Hash::make('passw0rd123');
         $user->blocked = 0;
+        $user->provider = 'local';
+        $user->provider_id = '';
         $user->save();
 
         App\Models\Role_User::insertRoleUser($user->id, true);
