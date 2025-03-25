@@ -1051,7 +1051,7 @@ body.stretched #header.full-header .container {
 	font-size: 0.875rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-family: 'VNE1', "Times New Roman", Times, Baskerville, Georgia, serif;
+	font-family: 'Roboto', "Times New Roman", Times, Baskerville, Georgia, serif;
 	-webkit-transition: margin .4s ease, padding .4s ease;
 	-o-transition: margin .4s ease, padding .4s ease;
 	transition: margin .4s ease, padding .4s ease;
@@ -1084,7 +1084,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
 
 body
 {
-	font-family: 'VNE1', "Times New Roman", Times, Baskerville, Georgia, serif;
+	font-family: 'Roboto', "Arial", Times, Baskerville, Georgia, serif;
 }
 
 #primary-menu ul ul:not(.mega-menu-column),
@@ -13871,4 +13871,16 @@ div.product-desc p{
 div.tour_detail p{
 	line-height: 1.3;
 	font-size: 1.1rem;
+}
+
+accordion div.acc_content p{
+	line-height: 1.3;
+	font-size: 1.1rem;
+}
+span.uppercase-span{
+	text-transform: uppercase;
+	font-size: 15px;
+}
+.col_two_fifth .product-image{
+	margin-bottom: 0px;
 }

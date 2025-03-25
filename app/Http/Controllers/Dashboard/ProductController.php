@@ -37,8 +37,8 @@ class ProductController extends Controller
     {
         $tourOpt = new TourOpt();
         $tourOpt->experience = empty($request->experience)?"":$request->experience;
-        $tourOpt->service = empty($request->service)?"":$request->service;
-        $tourOpt->policy = empty($request->policy)?"":$request->policy;
+        $tourOpt->service = empty($request->tour_service)?"":$request->tour_service;
+        $tourOpt->policy = empty($request->tour_policy)?"":$request->tour_policy;
         $tourOpt->rules = empty($request->rules)?"":$request->rules;
 
         try{
@@ -151,8 +151,8 @@ class ProductController extends Controller
             
             $tourOpt = new TourOpt();
             $tourOpt->experience = empty($request->experience)?"":$request->experience;
-            $tourOpt->service = empty($request->service)?"":$request->service;
-            $tourOpt->policy = empty($request->policy)?"":$request->policy;
+            $tourOpt->service = empty($request->tour_service)?"":$request->tour_service;
+            $tourOpt->policy = empty($request->tour_policy)?"":$request->tour_policy;
             $tourOpt->rules = empty($request->rules)?"":$request->rules;
             $data->options = json_encode($tourOpt);
 

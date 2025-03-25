@@ -7,6 +7,9 @@
 @endsection
 @section('content')
 @include('dashboard.layouts.alert')
+<?php
+    $option_data = json_decode($data->options);
+?>
 <form class="form-horizontal" role="form" action="{{ route('post.dashboard.product.edit', ['id'=>$id])}}" method="post" enctype="multipart/form-data">
     @csrf
         <div class="tabbable">
@@ -17,18 +20,12 @@
                     Content
                 </a>
             </li>
-           <!--  <li>
+            <li>
                 <a data-toggle="tab" href="#Gallery">
                     Gallery
                     <span class="badge badge-danger"></span>
                 </a>
             </li>
-            <li>
-                <a data-toggle="tab" href="#Policy">
-                    Policy
-                    <span class="badge badge-danger"></span>
-                </a>
-            </li> -->
         </ul>
         <div class="tab-content">
             <div id="Content" class="tab-pane fade in active">
@@ -39,13 +36,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Name </label>
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Tiêu đề </label>
                     <div class="col-sm-9">
                         <input type="text" id="form-field-1" placeholder="Title" name="name" class="col-xs-10 col-sm-5" required="" value="{{ old('name', isset($data) ? $data['name'] : '')}}" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Category </label>
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Danh mục </label>
                     <div class="col-xs-10">
                         <select multiple="" id="category" name="category[]" class="select2">
                             {!! getSelectArrayForm(App\Models\Categories::getSelect2Category(1), old('category', isset($data) ? convertStrToArr("|", $data['categories']): [0]) ) !!}
@@ -54,7 +51,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Time </label>
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Thời gian </label>
                     <div class="col-xs-4">
                         <select class="form-control" id="form-field-select-1" name="base_unit" required="">
                             <?php selectedOption(getTourTime(), old('base_unit', isset($data) ? $data['base_unit']: '1N')) ?>
@@ -62,7 +59,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Unit Price </label>
+                    <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> Đơn giá </label>
                     <div class="col-xs-9">
                         <input type="number" name="unit_price" class="col-xs-10 col-sm-5" required value="{{ old('unit_price', isset($data) ? $data['unit_price'] : '')}}" required />
                     </div>
@@ -76,7 +73,7 @@
                     </div>
                 </div>
                             <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right">Status</label>
+                    <label class="col-xs-2 control-label no-padding-right">Trạng thái</label>
                     <div class="col-xs-9">
                         @if($data['blocked'] == 0)
                             <input name="status" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" checked="true" />
@@ -87,7 +84,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right">Thumbnail<span class="img-size">(270x230)</span></label>
+                    <label class="col-xs-2 control-label no-padding-right">Ảnh đại diện<span class="img-size">(270x230)</span></label>
                     <div class="col-xs-4">
                         <label class="ace-file-input">
                             <input type="file" id="id-input-file-1" name="fileImage[]">
@@ -104,7 +101,7 @@
                 @endif
 
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right">Image<span class="img-size">(870x470)</span></label>
+                    <label class="col-xs-2 control-label no-padding-right">Ảnh lớn<span class="img-size">(870x470)</span></label>
                     <div class="col-xs-4">
                         <label class="ace-file-input">
                             <input type="file" id="id-input-file-2" name="fileImage2[]">
@@ -122,15 +119,27 @@
                 @endif
 
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Description </label>
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Giới tiệu </label>
                     <div class="col-xs-9">
                         <textarea name="description" id="description" rows="6" class="col-xs-9 col-sm-5">{{ old('description', isset($data) ? $data['description'] : '')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Content </label>
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Lịch trình tour </label>
                     <div class="col-xs-9">
                         <textarea name="content" id="content" rows="6" class="col-xs-9 col-sm-5">{{ old('content', isset($data) ? $data['content'] : '')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Giá tour </label>
+                    <div class="col-xs-9">
+                        <textarea name="tour_service" id="tour_service" rows="6" class="col-xs-9 col-sm-5">{{ old('tour_service', isset($option_data) ? $option_data->service : '')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Chính sách tour </label>
+                    <div class="col-xs-9">
+                        <textarea name="tour_policy" id="tour_policy" rows="6" class="col-xs-9 col-sm-5">{{ old('tour_policy', isset($option_data) ? $option_data->policy : '')}}</textarea>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -138,33 +147,6 @@
             <div id="Gallery" class="tab-pane fade ">
                         Gallery
              </div>
-
-            <div id="Policy" class="tab-pane fade ">
-                <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Trải nghiệm </label>
-                    <div class="col-xs-9">
-                        <textarea name="experience" id="experience" rows="6" class="col-xs-9 col-sm-5">{{ old('experience', isset($tourPolicy) ? $tourPolicy->experience : '')}}</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Dịch vụ</label>
-                    <div class="col-xs-9">
-                        <textarea name="service" id="service" rows="6" class="col-xs-9 col-sm-5">{{ old('service', isset($tourPolicy) ? $tourPolicy->service : '')}}</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Chính sách</label>
-                    <div class="col-xs-9">
-                        <textarea name="policy" id="policy" rows="6" class="col-xs-9 col-sm-5">{{ old('policy', isset($tourPolicy) ? $tourPolicy->policy : '')}}</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-xs-2 control-label no-padding-right" for="form-field-1"> Điều khoản</label>
-                    <div class="col-xs-9">
-                        <textarea name="rules" id="rules" rows="6" class="col-xs-9 col-sm-5">{{ old('rules', isset($tourPolicy) ? $tourPolicy->rules : '')}}</textarea>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="clearfix form-actions">
             <div class="col-md-offset-2 col-md-9">
@@ -222,20 +204,14 @@
         ckeditor('content')
         $('.textarea').wysihtml5();
     });
-        $(document).ready(function(){
-        ckeditor('experience')
+
+    $(document).ready(function(){
+        ckeditor('tour_service')
         $('.textarea').wysihtml5();
     });
+
     $(document).ready(function(){
-        ckeditor('service')
-        $('.textarea').wysihtml5();
-    });
-    $(document).ready(function(){
-        ckeditor('policy')
-        $('.textarea').wysihtml5();
-    });
-    $(document).ready(function(){
-        ckeditor('rules')
+        ckeditor('tour_policy')
         $('.textarea').wysihtml5();
     });
 
