@@ -533,7 +533,7 @@ body.stretched .container-fullwidth {
 	display: block;
 	position: relative;
 	margin-right: 1%;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 	float: left;
 }
 
@@ -570,7 +570,7 @@ body.stretched .container-fullwidth {
 	-webkit-backface-visibility: hidden;
 }
 
-.fslider { min-height: 32px; }
+.fslider { min-height: 32px;}
 
 
 .flex-container a:active,
@@ -13882,5 +13882,10 @@ span.uppercase-span{
 	font-size: 15px;
 }
 .col_two_fifth .product-image{
-	margin-bottom: 0px;
+	margin-bottom: 0px !important;
+}
+
+div.acc_content  p{
+	margin-bottom: 5px !important;
+	padding-bottom: 5px !important;
 }

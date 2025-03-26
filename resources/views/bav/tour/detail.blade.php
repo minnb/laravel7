@@ -96,10 +96,10 @@
    				    <div class="col_full nobottommargin">
    				    	<div class="accordion accordion-bg clearfix">
 							<div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open"></i><span class="uppercase-span">Giới thiệu</span></div>
-							<div class="acc_content clearfix">{!! $cate_of_tour[0]->description !!}</div>
+							<div class="acc_content clearfix">{!! $tour_detail->description !!}</div>
 
 							<div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open"></i><span class="uppercase-span">Lịch trình tour</span></div>
-							<div class="acc_content clearfix">{!! $cate_of_tour[0]->content !!}</div>
+							<div class="acc_content clearfix">{!! $tour_detail->content !!}</div>
 
 							<div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open"></i><span class="uppercase-span">Giá tour</span></div>
 							<div class="acc_content clearfix">{!! $option_data->service !!}</div>
