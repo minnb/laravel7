@@ -13885,7 +13885,7 @@ span.uppercase-span{
 	margin-bottom: 0px !important;
 }
 
-div.acc_content  p{
+div.acc_content  p, ul{
 	margin-bottom: 5px !important;
 	padding-bottom: 5px !important;
 }
