@@ -13873,7 +13873,7 @@ div.tour_detail p{
 	font-size: 1.1rem;
 }
 
-accordion div.acc_content p{
+.accordion div.acc_content p{
 	line-height: 1.3;
 	font-size: 1.1rem;
 }
@@ -13882,10 +13882,10 @@ span.uppercase-span{
 	font-size: 15px;
 }
 
-/*.col_two_fifth .product-image{
+.col_two_fifth .product-image{
 	margin-bottom: 0px !important;
 }
-*/
+
 div.acc_content  p, ul{
 	margin-bottom: 5px !important;
 	padding-bottom: 5px !important;
