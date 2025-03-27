@@ -13875,15 +13875,12 @@ div.tour_detail p{
 
 .accordion div.acc_content p{
 	line-height: 1.3;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
+
 span.uppercase-span{
 	text-transform: uppercase;
 	font-size: 15px;
-}
-
-.col_two_fifth .product-image{
-	margin-bottom: 0px !important;
 }
 
 div.acc_content  p, ul{
